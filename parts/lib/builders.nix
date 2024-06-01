@@ -10,7 +10,6 @@ let
   mkNixSystem =
     {
       host,
-      deployable ? false,
       modules,
       system,
       withSystem,
