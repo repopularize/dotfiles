@@ -4,5 +4,7 @@
 
     ./modules # outputed nixos and home-manager modules
     ./lib # the lib that is used throughout system and home
+
+    ../hosts # add more hosts to nixos
   ];
 }
