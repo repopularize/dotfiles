@@ -2,8 +2,6 @@
 let
   inherit (inputs) self;
 
-  inherit (import ./hardware.nix { inherit lib; }) ldTernary;
-
   # mkSystem is a helper function that wraps lib.nixosSystem
   mkSystem = lib.nixosSystem;
 
@@ -22,14 +20,10 @@ let
       { inputs', self', ... }:
       let
         pkgs = inputs.nixpkgs.legacyPackages.${system};
-
-        # yet another helper function that wraps lib.nixosSystem
-        # or lib.darwinSystem based on the system type
-        mkSystem' = ldTernary pkgs mkSystem inputs.darwin.lib.darwinSystem;
       in
       lib.mkMerge [
         {
-          "nixosConfigurations".${args.host} = mkSystem' {
+          "nixosConfigurations".${args.host} = mkSystem {
             inherit (args) system;
             modules = [
               # depending on the base operating system we can only use some options therefore these
