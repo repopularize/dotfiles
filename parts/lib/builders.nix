@@ -26,20 +26,16 @@ let
         # yet another helper function that wraps lib.nixosSystem
         # or lib.darwinSystem based on the system type
         mkSystem' = ldTernary pkgs mkSystem inputs.darwin.lib.darwinSystem;
-
-        # this is used to determine the target system and modules that are going to be needed
-        # for this specific system
-        target = ldTernary pkgs "nixos" "darwin";
       in
       lib.mkMerge [
         {
-          "${target}Configurations".${args.host} = mkSystem' {
+          "nixosConfigurations".${args.host} = mkSystem' {
             inherit (args) system;
             modules = [
               # depending on the base operating system we can only use some options therefore these
               # options means that we can limit these options to only those given operating systems
-              "${self}/modules/${target}"
-              inputs.home-manager."${target}Modules".home-manager
+              "${self}/modules/nixos"
+              inputs.home-manager.nixosModules.home-manager
 
               # configurations based on that are imported based hostname
               "${self}/hosts/${args.host}"
@@ -61,25 +57,6 @@ let
             } // args.specialArgs or { };
           };
         }
-
-        # deploy-rs allows us to deploy to a remote system
-        # this is will enabled hosts if they are deployable
-        (lib.mkIf deployable {
-          deploy = {
-            autoRollback = true;
-            magicRollback = true;
-
-            nodes.${args.host} = {
-              hostname = args.host;
-              skipChecks = true;
-              sshUser = "root";
-              user = "root";
-              profiles.system.path =
-                inputs.deploy-rs.lib.${system}.activate.nixos
-                  inputs.self.nixosConfigurations.${args.host};
-            };
-          };
-        })
       ]
     );
 
