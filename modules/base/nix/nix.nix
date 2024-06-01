@@ -1,7 +1,7 @@
 { lib, pkgs, inputs, ... }:
 let
   inherit (builtins) attrValues mapAttrs;
-  inherit (lib) filterAttrs mkForce ldTernary;
+  inherit (lib) filterAttrs mkForce;
 
   flakeInputs =
     filterAttrs (name: value: (value ? outputs) && (name != "self")) inputs;
@@ -12,11 +12,6 @@ in {
 
     # pin the registry to avoid downloading and evaluating a new nixpkgs version everytime
     registry = mapAttrs (_: v: { flake = v; }) flakeInputs;
-
-    # We love legacy support (for now)
-    nixPath = ldTernary pkgs
-      (attrValues (mapAttrs (k: v: "${k}=${v.outPath}") flakeInputs))
-      (mkForce (mapAttrs (_: v: v.outPath) flakeInputs));
 
     # set up garbage collection to run daily, and removing packages after 3 days
     gc = {
