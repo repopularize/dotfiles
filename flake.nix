@@ -42,5 +42,17 @@
         flake-compat.follows = "";
       };
     };
+
+    # catppuccin the vscode extension
+    catppuccin-vsc = {
+      url = "github:catppuccin/vscode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+     # Rust overlay
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
