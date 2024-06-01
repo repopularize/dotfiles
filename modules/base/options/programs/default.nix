@@ -3,18 +3,13 @@ let
   inherit (lib) mkEnableOption mkOption types;
 
   cfg = config.modules.programs;
-in {
+in
+{
   imports = [ ./defaults.nix ];
 
   options.modules.programs = {
     # For programs that are not exactly limited to cli, tui or gui
     agnostic = {
-      git.signingKey = mkOption {
-        type = types.str;
-        default = "";
-        description = "The default gpg key used for signing commits";
-      };
-
       editors = {
         neovim.enable = mkEnableOption "Neovim editor" // { default = true; };
         vscode.enable = mkEnableOption "VScode editor" // {
@@ -22,10 +17,6 @@ in {
         };
         micro.enable = mkEnableOption "Micro editor";
       };
-
-      wine.enable = mkEnableOption "Enable wine";
-      pentesting.enable =
-        mkEnableOption "Enable packages designed for pentesting";
     };
 
     cli = {
@@ -41,7 +32,9 @@ in {
 
       okular.enable =
         mkEnableOption "Enable okular, the universal document reader";
-      discord.enable = mkEnableOption "Enable the discord client";
+      discord.enable = mkEnableOption "Enable the discord client" // {
+        default = cfg.gui.enable;
+      };
 
       kdeconnect = {
         enable = mkEnableOption "Enable kdeconnect";
@@ -62,14 +55,14 @@ in {
 
       browsers = {
         chromium = {
-          enable = mkEnableOption "Chromium browser" // {
-            default = cfg.gui.enable;
-          };
+          enable = mkEnableOption "Chromium browser";
           ungoogled = mkEnableOption "Enable ungoogled-chromium Tweaks";
         };
 
         firefox = {
-          enable = mkEnableOption "Firefox browser";
+          enable = mkEnableOption "Firefox browser" // {
+            default = cfg.gui.enable;
+          };
           schizofox = mkEnableOption "Enable Schizofox Firefox Tweaks" // {
             default = true;
           };
@@ -87,11 +80,12 @@ in {
       };
 
       fileManagers = {
-        thunar.enable = mkEnableOption "Enable thunar file manager" // {
-          default = cfg.gui.enable;
-        };
+        thunar.enable = mkEnableOption "Enable thunar file manager";
         dolphin.enable = mkEnableOption "Enable dolphin file manager";
         nemo.enable = mkEnableOption "Enable nemo file manager";
+        nautilus.enable = mkEnableOption "Enable nautilus file manager" // {
+          default = cfg.gui.enable;
+        };
       };
     };
   };

@@ -8,17 +8,17 @@ in {
     };
 
     fileManager = mkOption {
-      type = types.enum [ "thunar" "dolphin" "nemo" ];
+      type = types.enum [ "thunar" "dolphin" "nemo" "nautilus" ];
       default = "thunar";
     };
 
     browser = mkOption {
       type = types.enum [ "schizofox" "chromium" ];
-      default = "chromium";
+      default = "schizofox";
     };
 
     editor = mkOption {
-      type = types.enum [ "nvim" "codium" ];
+      type = types.enum [ "nvim" "code" ];
       default = "nvim";
     };
 
@@ -33,7 +33,7 @@ in {
     };
 
     screenLocker = mkOption {
-      type = with types; nullOr (enum [ "swaylock" "gtklock" ]);
+      type = with types; nullOr (enum [ "swaylock" "gtklock" "hyprlock" ]);
       default = "gtklock";
       description = mdDoc ''
         The lockscreen module to be loaded by home-manager.
