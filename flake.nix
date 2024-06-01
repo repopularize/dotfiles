@@ -17,5 +17,8 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    # catppuccin theme for nix
+    catppuccin.url = "github:catppuccin/nix";
   };
 }
