@@ -1,22 +1,12 @@
-{
-  lib,
-  pkgs,
-  config,
-  inputs',
-  ...
-}:
+{ lib, pkgs, config, inputs', ... }:
 let
   inherit (pkgs) plymouth;
   inherit (lib) mkIf;
 
   cfg = config.modules.system.boot.plymouth;
-in
-{
+in {
   config = mkIf cfg.enable {
-    boot.plymouth =
-      {
-        enable = true;
-      };
+    boot.plymouth = { enable = true; };
 
     # make plymouth work with sleep
     powerManagement = {

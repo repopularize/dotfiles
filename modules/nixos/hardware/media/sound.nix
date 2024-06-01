@@ -1,15 +1,9 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}:
+{ lib, pkgs, config, ... }:
 let
   inherit (lib) mkIf mkDefault;
   inherit (config.modules) device;
   cfg = config.modules.system.sound;
-in
-{
+in {
   config = mkIf (cfg.enable && device.hasSound) {
     # enable sound support and media keys if device has sound
     sound = {
@@ -31,9 +25,7 @@ in
       pulse.enable = true;
       jack.enable = true;
 
-      alsa = {
-        enable = true;
-      };
+      alsa = { enable = true; };
 
       wireplumber = {
         inherit (config.services.pipewire) enable;

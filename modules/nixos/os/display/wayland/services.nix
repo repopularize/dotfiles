@@ -1,13 +1,6 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-let
-  inherit (lib) mkIf getExe isWayland;
-in
-{
+{ config, lib, pkgs, ... }:
+let inherit (lib) mkIf getExe isWayland;
+in {
   config = mkIf (isWayland config) {
     systemd.services.seatd = {
       enable = true;

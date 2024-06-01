@@ -1,15 +1,11 @@
 { lib, config, ... }:
-let
-  inherit (lib) mkOption optionals types;
-in
-{
-  config.warnings = optionals (config.modules.system.users == [ ]) [
-    ''
-      You have not added any users to be supported by your system. You may end up with an unbootable system!
+let inherit (lib) mkOption optionals types;
+in {
+  config.warnings = optionals (config.modules.system.users == [ ]) [''
+    You have not added any users to be supported by your system. You may end up with an unbootable system!
 
-      Consider setting {option}`config.modules.system.users` in your configuration
-    ''
-  ];
+    Consider setting {option}`config.modules.system.users` in your configuration
+  ''];
 
   options.modules.system = {
     mainUser = mkOption {

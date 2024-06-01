@@ -1,13 +1,6 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-let
-  sys = config.modules.system;
-in
-{
+{ config, pkgs, lib, ... }:
+let sys = config.modules.system;
+in {
   config = lib.mkIf (sys.bluetooth.enable) {
     modules.system.boot.extraKernelParams = [ "btusb" ];
     hardware.bluetooth = {

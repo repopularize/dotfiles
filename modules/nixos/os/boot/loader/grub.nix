@@ -3,8 +3,7 @@ let
   inherit (lib) mkDefault mkIf;
 
   cfg = config.modules.system;
-in
-{
+in {
   config = mkIf (cfg.boot.loader == "grub") {
     boot.loader = {
       grub = {

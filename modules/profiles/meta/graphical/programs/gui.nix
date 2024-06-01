@@ -1,10 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-{
+{ pkgs, lib, config, ... }: {
   environment.systemPackages = with pkgs; [
     # packages necessary for thunar thumbnails
     xfce.tumbler

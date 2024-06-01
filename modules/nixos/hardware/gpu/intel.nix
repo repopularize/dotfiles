@@ -1,14 +1,8 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}:
+{ lib, pkgs, config, ... }:
 let
   inherit (lib) mkIf;
   inherit (config.modules) device;
-in
-{
+in {
   config = mkIf (device.gpu == "intel" || device.gpu == "hybrid-nv") {
     # i915 kernel module
     boot.initrd.kernelModules = [ "i915" ];
@@ -39,8 +33,9 @@ in
       ];
     };
 
-    environment.variables = mkIf (config.hardware.opengl.enable && device.gpu != "hybrid-nv") {
-      VDPAU_DRIVER = "va_gl";
-    };
+    environment.variables =
+      mkIf (config.hardware.opengl.enable && device.gpu != "hybrid-nv") {
+        VDPAU_DRIVER = "va_gl";
+      };
   };
 }

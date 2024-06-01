@@ -1,26 +1,14 @@
-{ lib
-, config
-, pkgs
-, ...
-}:
+{ lib, config, pkgs, ... }:
 let
   inherit (lib) optionals mkIf concatLists;
   sys = config.modules.system;
   cfg = sys.virtualization;
-in
-{
+in {
   config = mkIf cfg.enable {
-    environment.systemPackages =
-      with pkgs;
+    environment.systemPackages = with pkgs;
       concatLists [
-        (optionals cfg.qemu.enable [
-          virt-manager
-          virt-viewer
-        ])
-        (optionals cfg.docker.enable [
-          podman
-          podman-compose
-        ])
+        (optionals cfg.qemu.enable [ virt-manager virt-viewer ])
+        (optionals cfg.docker.enable [ podman podman-compose ])
         (optionals (cfg.docker.enable && sys.video.enable) [ lxd ])
         (optionals cfg.waydroid.enable [ waydroid ])
       ];
@@ -47,10 +35,9 @@ in
         enable = true;
         dockerCompat = true;
         dockerSocket.enable = true;
-        defaultNetwork.settings = {
-          dns_enabled = true;
-        };
-        enableNvidia = builtins.any (driver: driver == "nvidia") config.services.xserver.videoDrivers;
+        defaultNetwork.settings = { dns_enabled = true; };
+        enableNvidia = builtins.any (driver: driver == "nvidia")
+          config.services.xserver.videoDrivers;
         autoPrune = {
           enable = true;
           flags = [ "--all" ];
@@ -86,5 +73,4 @@ in
       };
     };
   };
-};
 }

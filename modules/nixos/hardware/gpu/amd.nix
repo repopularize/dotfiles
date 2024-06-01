@@ -1,13 +1,6 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}:
-let
-  inherit (config.modules) device;
-in
-{
+{ lib, pkgs, config, ... }:
+let inherit (config.modules) device;
+in {
   config = lib.mkIf (device.gpu == "amd" || device.gpu == "hybrid-amd") {
     # enable amdgpu xorg drivers
     services.xserver.videoDrivers = [ "amdgpu" ];

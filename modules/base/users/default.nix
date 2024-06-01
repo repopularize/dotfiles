@@ -1,6 +1,1 @@
-{
-  imports = [
-    ./root.nix
-    ./yusof.nix
-  ];
-}
+{ imports = [ ./root.nix ./yusof.nix ]; }

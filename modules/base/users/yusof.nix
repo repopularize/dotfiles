@@ -1,6 +1,4 @@
-{
-
-}{ lib, pkgs, config, self, ... }:
+{ lib, pkgs, config, self, ... }:
 let inherit (lib) ifTheyExist;
 in {
   users.users.yusof = {

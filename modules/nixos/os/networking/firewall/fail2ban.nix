@@ -1,32 +1,24 @@
 { lib, config, ... }:
 let
-  inherit (lib)
-    mkIf
-    mkMerge
-    concatStringsSep
-    mkForce
-    ;
+  inherit (lib) mkIf mkMerge concatStringsSep mkForce;
 
   cfg = config.modules.services;
-in
-{
+in {
   # fail2ban firewall jail
   services.fail2ban = {
     enable = true;
     banaction = "iptables-multiport[blocktype=DROP]";
     maxretry = 7;
-    ignoreIP = [
-      "127.0.0.0/8"
-      "10.0.0.0/8"
-      "192.168.0.0/16"
-    ];
+    ignoreIP = [ "127.0.0.0/8" "10.0.0.0/8" "192.168.0.0/16" ];
 
     jails = mkMerge [
       {
         # sshd jail
         sshd = mkForce ''
           enabled = true
-          port = ${concatStringsSep "," (map toString config.services.openssh.ports)}
+          port = ${
+            concatStringsSep "," (map toString config.services.openssh.ports)
+          }
           mode = aggressive
         '';
       }

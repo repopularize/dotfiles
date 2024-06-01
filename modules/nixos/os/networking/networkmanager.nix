@@ -1,16 +1,10 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}:
+{ lib, pkgs, config, ... }:
 let
   inherit (lib) mkIf mkForce;
 
   dev = config.modules.device;
   sys = config.modules.system;
-in
-{
+in {
   environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 
   networking.networkmanager = {
@@ -29,13 +23,16 @@ in
     ];
 
     wifi = {
-      backend = sys.networking.wirelessBackend; # this can be iwd or wpa_supplicant, use wpa_s until iwd support is stable
+      backend =
+        sys.networking.wirelessBackend; # this can be iwd or wpa_supplicant, use wpa_s until iwd support is stable
       # The below is disabled as my uni hated me for it
       # macAddress = "random"; # use a random mac address on every boot, this can scew with static ip
       powersave = true;
-      scanRandMacAddress = true; # MAC address randomization of a Wi-Fi device during scanning
+      scanRandMacAddress =
+        true; # MAC address randomization of a Wi-Fi device during scanning
     };
 
-    ethernet.macAddress = mkIf (dev.type != "server") "random"; # causes server to be unreachable over SSH
+    ethernet.macAddress = mkIf (dev.type != "server")
+      "random"; # causes server to be unreachable over SSH
   };
 }

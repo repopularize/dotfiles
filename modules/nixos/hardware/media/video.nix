@@ -1,14 +1,8 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ pkgs, lib, config, ... }:
 let
   inherit (lib) mkIf;
   sys = config.modules.system;
-in
-{
+in {
   config = mkIf sys.video.enable {
     hardware = {
       opengl = {
@@ -18,9 +12,6 @@ in
     };
 
     # benchmarking tools
-    environment.systemPackages = with pkgs; [
-      glxinfo
-      glmark2
-    ];
+    environment.systemPackages = with pkgs; [ glxinfo glmark2 ];
   };
 }

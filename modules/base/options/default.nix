@@ -1,9 +1,1 @@
-{
-  imports = [
-    ./device
-    ./system
-    ./themes
-    ./environment
-    ./programs
-  ];
-}
+{ imports = [ ./device ./system ./themes ./environment ./programs ]; }
