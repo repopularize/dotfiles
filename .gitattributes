@@ -1,0 +1,3 @@
+# noisy diffs
+flake.lock -diff
+lazy-lock.json -diff
