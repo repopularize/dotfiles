@@ -6,5 +6,5 @@ let
   primaryMonitor = config: builtins.elemAt config.modules.device.monitors 0;
 in
 {
-  inherit isx86Linux primaryMonitor;
+  inherit primaryMonitor;
 }

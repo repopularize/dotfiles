@@ -42,8 +42,8 @@
     sharedArgs = { inherit lib; };
   in mkMerge [
     (mkSystems [{
-      host = "andromeda";
       inherit withSystem;
+      host = "andromeda";
       system = "x86_64-linux";
       modules = [ graphical ] ++ concatLists [ shared ];
       specialArgs = sharedArgs;
