@@ -3,8 +3,6 @@ let
   inherit (lib) mkForce mkIf;
   inherit (config.modules) programs device;
 in {
-  imports = [ ./fail2ban.nix ];
-
   config = {
     # enable opensnitch firewall
     # inactive until opensnitch UI is opened
