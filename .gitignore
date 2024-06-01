@@ -1,0 +1,12 @@
+# Ignore nixos build outputs
+result
+*.qcow2
+.direnv/
+
+# Ignore pre-commit config
+.pre-commit-config.yaml
+
+# Base configuration files (generated using `nixos-generate-config --dir ./`)
+
+configuration.nix
+hardware-configuration.nix
