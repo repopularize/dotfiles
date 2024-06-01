@@ -168,10 +168,7 @@ in {
 
       # Disable Thunderbolt and FireWire to prevent DMA attacks
       [ "thunderbolt" "firewire-core" ]
-
-      (optionals (!sys.security.fixWebcam) [
-        "uvcvideo" # this is why your webcam no worky
-      ])
+      
       (optionals (!sys.bluetooth.enable) [
         "bluetooth"
         "btusb" # bluetooth dongles

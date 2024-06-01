@@ -6,10 +6,10 @@ let
 in {
   config = mkIf (isWayland config) {
     environment = {
-      etc."greetd/environments".text = mkIf config.services.greetd.enable ''
-        ${optionalString (env.desktop == "Hyprland") "Hyprland"}
-        nu
-      '';
+      # etc."greetd/environments".text = mkIf config.services.greetd.enable ''
+      #   ${optionalString (env.desktop == "Hyprland") "Hyprland"}
+      #   nu
+      # '';
 
       variables = {
         NIXOS_OZONE_WL = "1";
