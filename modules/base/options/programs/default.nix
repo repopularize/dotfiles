@@ -22,13 +22,15 @@ in
     cli = {
       enable = mkEnableOption "Enable CLI programs" // { default = true; };
       modernShell.enable =
-        mkEnableOption "Enable programs for a more modern shell";
+        mkEnableOption "Enable programs for a more modern shell" // {
+          default = true;
+        };
     };
 
     tui.enable = mkEnableOption "Enable TUI programs" // { default = true; };
 
     gui = {
-      enable = mkEnableOption "Enable GUI programs";
+      enable = mkEnableOption "Enable GUI programs" // { default = true; };
 
       okular.enable =
         mkEnableOption "Enable okular, the universal document reader";
@@ -42,7 +44,7 @@ in
       };
 
       launchers = {
-        rofi.enable = mkEnableOption "Enable rofi launcher";
+        fuzzel.enable = mkEnableOption "Enable fuzzel launcher"; #TODO
         wofi.enable = mkEnableOption "Enable wofi launcher";
       };
 

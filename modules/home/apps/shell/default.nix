@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./nushell # nushell configuration
+  ];
+}

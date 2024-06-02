@@ -8,6 +8,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -49,10 +51,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-     # Rust overlay
+    # Rust overlay
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # firefox for paranoids
+    schizofox = {
+      url = "github:schizofox/schizofox";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
+    
+    # even more self explanatory
+    vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 }

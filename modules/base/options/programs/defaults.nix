@@ -23,8 +23,8 @@ in {
     };
 
     launcher = mkOption {
-      type = with types; nullOr (enum [ "rofi" "wofi" ]);
-      default = "rofi";
+      type = with types; nullOr (enum [ "fuzzel" "wofi" ]);
+      default = "wofi";
     };
 
     bar = mkOption {

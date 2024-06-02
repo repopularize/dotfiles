@@ -67,7 +67,7 @@ in
           enable = true;
           okular.enable = true;
 
-          launchers.rofi.enable = true;
+          launchers.wofi.enable = true;
           bars.waybar.enable = true;
 
           browsers.firefox = {
@@ -87,7 +87,7 @@ in
           terminal = "foot";
           fileManager = "nautilus";
           editor = "code";
-          launcher = "rofi";
+          launcher = "wofi";
           bar = "waybar";
           screenLocker = "gtklock";
         };

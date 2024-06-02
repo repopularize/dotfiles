@@ -1,0 +1,12 @@
+@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-rosewater.theme.css");
+
+:root {
+    --font-primary: "Inter";
+    --font-display: "Inter";
+    --font-headline: 'ABC Ginto Nord', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-code: "JetBrainsMono Nerd Font Mono";
+}
+
+* {
+    font-feature-settings: "cv11", "cv13";
+}

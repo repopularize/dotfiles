@@ -3,7 +3,6 @@
 {
   fonts = {
     packages = [
-      pkgs.rubik
       pkgs.inter
       pkgs.noto-fonts-cjk-sans
       pkgs.source-sans-pro
@@ -15,7 +14,6 @@
     fontDir.enable = true;
     fontconfig.defaultFonts = {
       sansSerif = [
-        "Rubik"
         "Inter Variable"
         "Inter Variable Regular"
         "Inter"
