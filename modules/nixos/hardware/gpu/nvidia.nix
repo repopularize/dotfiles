@@ -19,7 +19,6 @@ in
     };
 
     services.xserver.videoDrivers = [ "nvidia" ];
-    boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
     boot.kernelParams = [ "module_blacklist=i915" ];
 
