@@ -11,6 +11,8 @@
   # Wofi
   "opacity 0.7,class:^(wofi)$"
 
-  # VSCode
-  "opacity 0.8,class:^(Code)$"
+  # Opacity
+  "opacity 0.7,class:^(Code)$"
+  "opacity 0.7,class:^(vesktop)$"
 ]
+
