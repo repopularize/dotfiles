@@ -27,7 +27,7 @@ in
       modesetting.enable = true;
       open = false;
       nvidiaSettings = true;
-      package = nvStable;
+      package = nvBeta;
     };
 
     hardware.enableAllFirmware = true;
