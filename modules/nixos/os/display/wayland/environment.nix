@@ -7,7 +7,7 @@ in
 {
   config = mkIf (isWayland config) {
     environment = {
-      variables = {
+      sessionVariables = {
         NIXOS_OZONE_WL = "1";
         GDK_BACKEND = "wayland,x11";
         ANKI_WAYLAND = "1";
@@ -15,9 +15,7 @@ in
         XDG_SESSION_TYPE = "wayland";
         SDL_VIDEODRIVER = "wayland";
         CLUTTER_BACKEND = "wayland";
-      };
 
-      sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = "1";
         WLR_DRM_DEVICES = mkDefault "/dev/dri/card1";
       };
