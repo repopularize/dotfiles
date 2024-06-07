@@ -12,7 +12,7 @@
   "opacity 0.7,class:^(wofi)$"
 
   # Opacity
-  "opacity 0.7,class:^(Code)$"
+  "opacity 0.7,class:^(code-url-handler)$"
   "opacity 0.7,class:^(vesktop)$"
 ]
 

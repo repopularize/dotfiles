@@ -1,9 +1,8 @@
-{
-  lib,
-  pkgs,
-  inputs,
-  osConfig,
-  ...
+{ lib
+, pkgs
+, inputs
+, osConfig
+, ...
 }:
 let
   cfg = osConfig.modules.style;
@@ -19,7 +18,7 @@ in
     };
 
     # pointer / cursor theming
-    home.pointerCursor = lib.mkIf pkgs.stdenv.isLinux {
+    home.pointerCursor = {
       inherit (cfg.pointerCursor) name package size;
       gtk.enable = true;
       x11.enable = true;

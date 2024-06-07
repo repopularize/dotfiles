@@ -7,6 +7,5 @@ in
     gnome.nautilus # nautilus file explorer
     gnome.sushi # nautilus file previewer thingy
     gnome.gnome-weather # i still kinda use this i guess
-    epiphany # I honestly do not know why
   ]);
 }

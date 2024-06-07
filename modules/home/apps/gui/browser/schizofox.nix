@@ -24,65 +24,65 @@ in
         };
 
         extraUserChrome = ''
-        .titlebar-buttonbox {
-            display: none !important;
-        }
-        .titlebar-spacer {
-            display: none !important;
-        }
-        :root {
-            --tab-border-radius: 50px !important;
-            --tabs-border-color: transparent !important;
-        }
-        #navigator-toolbox {
-            border: 0px !important;
-            background-color: #1e1e2e !important;
+          .titlebar-buttonbox {
+              display: none !important;
+          }
+          .titlebar-spacer {
+              display: none !important;
+          }
+          :root {
+              --tab-border-radius: 50px !important;
+              --tabs-border-color: transparent !important;
+          }
+          #navigator-toolbox {
+              border: 0px !important;
+              background-color: #1e1e2e !important;
+              color: #f5e0dc !important;
+          }
+          #TabsToolbar {
+              margin-left: 35vw !important;
+              background-color: #1e1e2e !important;
+              color: #f5e0dc !important;
+          }
+          #nav-bar {
+              background: transparent !important;
+              margin-top: -38px !important;
+              margin-bottom: 3px !important;
+              margin-right: 65vw !important;
+          }
+          #urlbar-container {
+              width: unset !important;
+              min-width: 0px !important;
+              transition: min-width 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+              transition-property: min-width transform;
+          }
+          #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #urlbar-container {
+              min-width: 100vw !important;
+              border: 0px none !important;
+              transform: translateX(-112px);
+              z-index: 999999 !important;
+          }
+          #urlbar-background, #searchbar {
+              border: 0px none !important;
+          }
+          #urlbar {
+              background: transparent !important;
+              border: none !important;
+              box-shadow: none !important;
+          }
+          #page-action-buttons {
+              display: none !important;
+          }
+          #PanelUI-button {
+              display: none !important;
+          }
+          #nav-bar:not([tabs-hidden="true"]) {
+              box-shadow: none !important;
+          }
+          .tab-background {
+            background-color: #1e1e2e;
             color: #f5e0dc !important;
-        }
-        #TabsToolbar {
-            margin-left: 35vw !important;
-            background-color: #1e1e2e !important;
-            color: #f5e0dc !important;
-        }
-        #nav-bar {
-            background: transparent !important;
-            margin-top: -38px !important;
-            margin-bottom: 3px !important;
-            margin-right: 65vw !important;
-        }
-        #urlbar-container {
-            width: unset !important;
-            min-width: 0px !important;
-            transition: min-width 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-            transition-property: min-width transform;
-        }
-        #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #urlbar-container {
-            min-width: 100vw !important;
-            border: 0px none !important;
-            transform: translateX(-112px);
-            z-index: 999999 !important;
-        }
-        #urlbar-background, #searchbar {
-            border: 0px none !important;
-        }
-        #urlbar {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
-        #page-action-buttons {
-            display: none !important;
-        }
-        #PanelUI-button {
-            display: none !important;
-        }
-        #nav-bar:not([tabs-hidden="true"]) {
-            box-shadow: none !important;
-        }
-        .tab-background {
-          background-color: #1e1e2e;
-          color: #f5e0dc !important;
-        }'';
+          }'';
       };
 
       search = {
@@ -104,7 +104,7 @@ in
       };
 
       extensions = {
-        darkreader.enable = true;
+        darkreader.enable = false;
 
         extraExtensions = {
           # Addon IDs are in manifest.json or manifest-firefox.json

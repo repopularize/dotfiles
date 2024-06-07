@@ -1,12 +1,9 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
+{ lib
+, pkgs
+, config
+, ...
 }:
 let
-  inherit (pkgs.stdenv) isLinux;
-
   browser = [
     "text/html"
     "x-scheme-handler/http"
@@ -51,7 +48,7 @@ let
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [ "nautilus.desktop" ];
     };
-  
+
 in
 {
   home.packages = with pkgs; [ xdg-utils ];
