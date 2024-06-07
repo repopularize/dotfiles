@@ -13,6 +13,7 @@ in
     ./optimize.nix
     ./tailscale.nix
     ./tcpcrypt.nix
+    ./warp.nix
   ];
 
   networking = {
