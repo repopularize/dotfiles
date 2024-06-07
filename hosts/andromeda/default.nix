@@ -22,14 +22,16 @@ in
       };
 
       system = {
+        hostname = "andromeda";
         mainUser = "yusof";
+        autoLogin = true;
 
         boot = {
-          loader = "grub";
+          loader = "systemd-boot";
           enableKernelTweaks = true;
           loadRecommendedModules = true;
 
-          plymouth.enable = true;
+          plymouth.enable = false;
 
           initrd = {
             enableTweaks = true;
@@ -57,6 +59,7 @@ in
 
       environment = {
         desktop = "Hyprland";
+        loginManager = "gdm";
         useHomeManager = true;
       };
 
@@ -93,14 +96,5 @@ in
         };
       };
     };
-
-    hardware.nvidia =
-      mkIf
-        (builtins.elem device.gpu [
-          "nvidia"
-        ])
-        {
-          open = mkForce false; # open source drivers are kind of a pain in the ass
-        };
   };
 }

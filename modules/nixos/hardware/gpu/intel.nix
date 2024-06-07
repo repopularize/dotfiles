@@ -2,12 +2,9 @@
 let
   inherit (lib) mkIf;
   inherit (config.modules) device;
-in {
+in
+{
   config = mkIf (device.gpu == "intel" || device.gpu == "hybrid-nv") {
-    # i915 kernel module
-    boot.initrd.kernelModules = [ "i915" ];
-    # better performance than the actual Intel driver, lol
-    services.xserver.videoDrivers = [ "modesetting" ];
 
     # let me play youtube videos without h.264
     nixpkgs.config.packageOverrides = pkgs: {

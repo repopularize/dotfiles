@@ -12,7 +12,7 @@ in {
       # required for network discovery of printers
       avahi = {
         enable = true;
-        nssmdns = true;
+        nssmdns4 = true;
         openFirewall = true;
       };
     };

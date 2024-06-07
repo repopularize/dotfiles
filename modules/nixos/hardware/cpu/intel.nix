@@ -6,7 +6,6 @@ in {
 
     boot = {
       kernelModules = [ "kvm-intel" ];
-      kernelParams = [ "i915.fastboot=1" "enable_gvt=1" ];
     };
 
     environment.systemPackages = with pkgs; [ intel-gpu-tools ];

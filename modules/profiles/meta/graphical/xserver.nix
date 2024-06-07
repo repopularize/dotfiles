@@ -4,7 +4,7 @@ let
   manager = environment.loginManager;
 in {
   services.xserver = {
-    enable = (manager == "gdm" || manager == "lightdm");
+    enable = manager == "gdm";
     displayManager = {
       gdm.enable = manager == "gdm";
       lightdm.enable = manager == "lightdm";
@@ -12,4 +12,11 @@ in {
 
     excludePackages = [ pkgs.xterm ];
   };
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  programs.steam.gamescopeSession.enable = true;
 }

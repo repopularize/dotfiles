@@ -1,25 +1,25 @@
 { lib, config, ... }:
 let
-  inherit (lib) mkIf isWayland optionalString;
+  inherit (lib) mkIf isWayland mkDefault;
 
   env = config.modules.environment;
-in {
+in
+{
   config = mkIf (isWayland config) {
     environment = {
-      # etc."greetd/environments".text = mkIf config.services.greetd.enable ''
-      #   ${optionalString (env.desktop == "Hyprland") "Hyprland"}
-      #   nu
-      # '';
-
       variables = {
         NIXOS_OZONE_WL = "1";
-        _JAVA_AWT_WM_NONEREPARENTING = "1";
         GDK_BACKEND = "wayland,x11";
         ANKI_WAYLAND = "1";
         MOZ_ENABLE_WAYLAND = "1";
         XDG_SESSION_TYPE = "wayland";
         SDL_VIDEODRIVER = "wayland";
         CLUTTER_BACKEND = "wayland";
+      };
+
+      sessionVariables = {
+        WLR_NO_HARDWARE_CURSORS = "1";
+        WLR_DRM_DEVICES = mkDefault "/dev/dri/card1";
       };
     };
   };

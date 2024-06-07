@@ -7,13 +7,14 @@ let
   };
 in
 {
-  home.packages = optionals (osConfig.modules.programs.cli.enable) (with pkgs; [
-    whois
-    ngrok
-    nixfmt
-    yt-dlp
-    fastfetch
-  ]) ++ optionals (osConfig.modules.programs.gui.enable)  (with pkgs; [
+  home.packages = optionals (osConfig.modules.programs.cli.enable)
+    (with pkgs; [
+      whois
+      ngrok
+      nixfmt
+      yt-dlp
+      fastfetch
+    ]) ++ optionals (osConfig.modules.programs.gui.enable) (with pkgs; [
     tor-browser
     obsidian
     newsflash
@@ -25,7 +26,6 @@ in
     piper
     protonvpn-gui
     (pkgs.prismlauncher.override { glfw = pkgs.glfw-wayland-minecraft; })
-    monophony
     g4music
     amberol
     kdePackages.kdenlive

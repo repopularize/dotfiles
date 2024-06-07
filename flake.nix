@@ -65,8 +65,10 @@
         flake-parts.follows = "flake-parts";
       };
     };
-    
+
     # even more self explanatory
     vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 }

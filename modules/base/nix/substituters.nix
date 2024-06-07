@@ -8,13 +8,11 @@
       "https://nix-gaming.cachix.org" # nix-gaming
       "https://nixpkgs-unfree.cachix.org" # unfree-package cache
       "https://numtide.cachix.org" # another unfree package cache
-      "https://isabelroses.cachix.org" # precompiled binarys from flake
       "https://nekowinston.cachix.org" # precompiled binarys from nekowinston NUR
       "https://catppuccin.cachix.org" # a cache for ctp nix
       "https://pre-commit-hooks.cachix.org" # pre commit hooks
       "https://cache.garnix.io" # extra things here and there
       "https://ags.cachix.org" # ags
-      "https://cache.lix.systems" # lix
     ];
 
     trusted-public-keys = [

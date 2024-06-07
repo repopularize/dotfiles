@@ -3,6 +3,7 @@
 , config
 , osConfig
 , defaults
+, inputs'
 , ...
 }:
 let
@@ -21,6 +22,7 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
+      package = inputs'.hyprland.packages.hyprland;
       xwayland.enable = true;
 
       systemd = {
@@ -33,6 +35,9 @@ in
       };
 
       settings = {
+        monitor =
+          [ "HDMI-A-1,1920x1080@180.00,auto,1" "DVI-D-1,1440x900@75.03,auto,1" ];
+
         exec-once = [
           "wl-paste --type text --watch cliphist store" # Stores only text data
           "wl-paste --type image --watch cliphist store" # Stores only image data
@@ -96,8 +101,6 @@ in
         misc = {
           # Disables default wallpaper
           disable_hyprland_logo = true;
-          # Variable Refresh Rate
-          vrr = 1;
         };
 
         bind = import ./binds.nix { inherit pkgs lib defaults; };
