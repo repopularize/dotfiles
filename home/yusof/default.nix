@@ -20,5 +20,12 @@ in
 
     # let HM manage itself when in standalone mode
     programs.home-manager.enable = true;
+
+    # git config
+
+    programs.git = {
+      userName = "yosoof3";
+      userEmail = "boxicalcube@proton.me";
+    };
   };
 }
