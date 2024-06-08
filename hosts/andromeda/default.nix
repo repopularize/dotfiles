@@ -55,6 +55,8 @@ in
           podman.enable = true;
           qemu.enable = true;
         };
+
+        networking.tailscale.enable = true;
       };
 
       environment = {
