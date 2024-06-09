@@ -24,6 +24,7 @@
     "Debugging {file_name}:{current_line}:{current_column}";
   "rpc.detailsDebugging" = "In {workspace} {problems}";
   "rpc.smallImage" = "Code";
+  "nix.enableLanguageServer" = true;
   "nix.serverPath" = "${lib.getExe pkgs.nil}";
   "nix.formatterPath" = "${lib.getExe pkgs.nixpkgs-fmt}";
   "security.workspace.trust.enabled" = false;
