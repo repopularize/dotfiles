@@ -1,15 +1,10 @@
-{ lib
-, pkgs
-, inputs
-, ...
-}:
-let
-  inherit (lib) mkDefault;
-in
-{
+{ lib, pkgs, inputs, ... }:
+let inherit (lib) mkDefault;
+in {
   config = {
     # reload system units when changing configs
-    systemd.user.startServices = mkDefault "sd-switch"; # or "legacy" if "sd-switch" breaks again
+    systemd.user.startServices =
+      mkDefault "sd-switch"; # or "legacy" if "sd-switch" breaks again
 
     home = {
       username = "yusof";

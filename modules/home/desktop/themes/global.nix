@@ -1,13 +1,6 @@
-{ lib
-, pkgs
-, inputs
-, osConfig
-, ...
-}:
-let
-  cfg = osConfig.modules.style;
-in
-{
+{ lib, pkgs, inputs, osConfig, ... }:
+let cfg = osConfig.modules.style;
+in {
   imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
 
   config = {

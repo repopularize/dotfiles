@@ -1,94 +1,80 @@
-{
-  lib,
-  pkgs,
-  config,
-  osConfig,
-  ...
-}:
+{ lib, pkgs, config, osConfig, ... }:
 let
   inherit (lib) mkIf boolToNum;
   inherit (osConfig.modules) device;
   cfg = osConfig.modules.style;
 
-  acceptedTypes = [
-    "laptop"
-    "desktop"
-    "hybrid"
-    "lite"
-  ];
-in
-{
-  config = mkIf (builtins.elem device.type acceptedTypes && pkgs.stdenv.isLinux) {
-    xdg.systemDirs.data =
-      let
-        schema = pkgs.gsettings-desktop-schemas;
-      in
-      [ "${schema}/share/gsettings-schemas/${schema.name}" ];
+  acceptedTypes = [ "laptop" "desktop" "hybrid" "lite" ];
+in {
+  config =
+    mkIf (builtins.elem device.type acceptedTypes && pkgs.stdenv.isLinux) {
+      xdg.systemDirs.data = let schema = pkgs.gsettings-desktop-schemas;
+      in [ "${schema}/share/gsettings-schemas/${schema.name}" ];
 
-    home = {
-      packages = with pkgs; [
-        glib # gsettings
-      ];
+      home = {
+        packages = with pkgs;
+          [
+            glib # gsettings
+          ];
 
-      # gtk applications should use xdg specified settings
-      sessionVariables.GTK_USE_PORTAL = "${toString (boolToNum cfg.gtk.usePortal)}";
-    };
-
-    gtk = {
-      enable = true;
-
-      font = {
-        inherit (cfg.gtk.font) name size;
+        # gtk applications should use xdg specified settings
+        sessionVariables.GTK_USE_PORTAL =
+          "${toString (boolToNum cfg.gtk.usePortal)}";
       };
 
-      gtk2 = {
-        configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-        extraConfig = ''
-          gtk-xft-antialias=1
-          gtk-xft-hinting=1
-          gtk-xft-hintstyle="hintslight"
-          gtk-xft-rgba="rgb"
-        '';
-      };
+      gtk = {
+        enable = true;
 
-      gtk3.extraConfig = {
-        # make things look nice
-        gtk-application-prefer-dark-theme = true;
+        font = { inherit (cfg.gtk.font) name size; };
 
-        gtk-decoration-layout = "appmenu:none";
+        gtk2 = {
+          configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+          extraConfig = ''
+            gtk-xft-antialias=1
+            gtk-xft-hinting=1
+            gtk-xft-hintstyle="hintslight"
+            gtk-xft-rgba="rgb"
+          '';
+        };
 
-        gtk-xft-antialias = 1;
-        gtk-xft-hinting = 1;
-        gtk-xft-hintstyle = "hintslight";
+        gtk3.extraConfig = {
+          # make things look nice
+          gtk-application-prefer-dark-theme = true;
 
-        # stop annoying sounds
-        gtk-enable-event-sounds = 0;
-        gtk-enable-input-feedback-sounds = 0;
-        gtk-error-bell = 0;
+          gtk-decoration-layout = "appmenu:none";
 
-        # config that is not the same as gtk4
-        gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
-        gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
+          gtk-xft-antialias = 1;
+          gtk-xft-hinting = 1;
+          gtk-xft-hintstyle = "hintslight";
 
-        gtk-button-images = 1;
-        gtk-menu-images = 1;
-      };
+          # stop annoying sounds
+          gtk-enable-event-sounds = 0;
+          gtk-enable-input-feedback-sounds = 0;
+          gtk-error-bell = 0;
 
-      gtk4.extraConfig = {
-        # make things look nice
-        gtk-application-prefer-dark-theme = true;
+          # config that is not the same as gtk4
+          gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
+          gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
 
-        gtk-decoration-layout = "appmenu:none";
+          gtk-button-images = 1;
+          gtk-menu-images = 1;
+        };
 
-        gtk-xft-antialias = 1;
-        gtk-xft-hinting = 1;
-        gtk-xft-hintstyle = "hintslight";
+        gtk4.extraConfig = {
+          # make things look nice
+          gtk-application-prefer-dark-theme = true;
 
-        # stop annoying sounds again
-        gtk-enable-event-sounds = 0;
-        gtk-enable-input-feedback-sounds = 0;
-        gtk-error-bell = 0;
+          gtk-decoration-layout = "appmenu:none";
+
+          gtk-xft-antialias = 1;
+          gtk-xft-hinting = 1;
+          gtk-xft-hintstyle = "hintslight";
+
+          # stop annoying sounds again
+          gtk-enable-event-sounds = 0;
+          gtk-enable-input-feedback-sounds = 0;
+          gtk-error-bell = 0;
+        };
       };
     };
-  };
 }

@@ -3,8 +3,7 @@ let
   inherit (lib) mkIf isWayland mkDefault;
 
   env = config.modules.environment;
-in
-{
+in {
   config = mkIf (isWayland config) {
     environment = {
       sessionVariables = {

@@ -1,13 +1,12 @@
-{ lib, pkgs, config, ... }:
+{ lib, config, ... }:
 let
   # only the newest nvidia package
-  nvStable = config.boot.kernelPackages.nvidiaPackages.stable;
-  nvBeta = config.boot.kernelPackages.nvidiaPackages.beta;
+  # nvStable = config.boot.kernelPackages.nvidiaPackages.stable;
+  # nvBeta = config.boot.kernelPackages.nvidiaPackages.beta;
 
   inherit (config.modules) device;
-  inherit (lib) mkIf mkMerge mkDefault isWayland;
-in
-{
+  inherit (lib) mkIf;
+in {
   config = mkIf (device.gpu == "nvidia") {
     # nvidia drivers kinda are unfree software
     nixpkgs.config.allowUnfree = true;
@@ -26,7 +25,7 @@ in
       modesetting.enable = true;
       open = false;
       nvidiaSettings = true;
-      package = nvBeta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
     hardware.enableAllFirmware = true;

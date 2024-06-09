@@ -2,8 +2,7 @@
 let
   inherit (lib) mkIf;
   inherit (config.modules) device;
-in
-{
+in {
   config = mkIf (device.gpu == "intel" || device.gpu == "hybrid-nv") {
 
     # let me play youtube videos without h.264

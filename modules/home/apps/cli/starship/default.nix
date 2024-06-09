@@ -1,9 +1,4 @@
-{
-  lib,
-  config,
-  osConfig,
-  ...
-}:
+{ lib, config, osConfig, ... }:
 let
   ss = symbol: style: {
     inherit symbol;
@@ -13,8 +8,7 @@ let
     inherit symbol;
     format = "via [$symbol](${style})";
   };
-in
-{
+in {
   programs.starship = {
     inherit (osConfig.modules.programs.cli) enable;
     enableBashIntegration = config.programs.bash.enable;
@@ -24,10 +18,7 @@ in
 
     settings = {
       add_newline = true;
-      format = lib.concatStrings [
-        "[╭╴](238)$os"
-        "$all[╰─󰁔](237)$character"
-      ];
+      format = lib.concatStrings [ "[╭╴](238)$os" "$all[╰─󰁔](237)$character" ];
 
       character = {
         success_symbol = "";

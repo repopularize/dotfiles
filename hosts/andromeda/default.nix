@@ -2,8 +2,7 @@
 let
   inherit (lib) mkIf mkForce;
   inherit (config.modules) device;
-in
-{
+in {
   imports = [ ./hardware.nix ];
 
   config = {
@@ -13,10 +12,7 @@ in
         cpu = "intel";
         gpu = "nvidia";
 
-        monitors = [
-          "HDMI-A-1"
-          "DVI-D-1"
-        ];
+        monitors = [ "HDMI-A-1" "DVI-D-1" ];
         hasBluetooth = false; # my computer is so old :sob:
         hasSound = true;
       };
@@ -39,10 +35,7 @@ in
           };
         };
 
-        fs = [
-          "ext4"
-          "vfat"
-        ];
+        fs = [ "ext4" "vfat" ];
 
         video.enable = true;
         sound.enable = true;
@@ -75,18 +68,14 @@ in
           launchers.wofi.enable = true;
           bars.waybar.enable = true;
 
-          browsers.firefox = {
-            enable = true;
-          };
+          browsers.firefox = { enable = true; };
 
           terminals = {
             foot.enable = true;
             kitty.enable = true;
           };
 
-          fileManagers = {
-            nautilus.enable = true;
-          };
+          fileManagers = { nautilus.enable = true; };
         };
         defaults = {
           terminal = "foot";

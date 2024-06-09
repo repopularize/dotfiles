@@ -1,24 +1,12 @@
 # stolen from https://github.com/NotAShelf/nyx/blob/refactor/modules/extra/shared/home-manager/gtklock/default.nix
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, pkgs, ... }:
 with builtins;
 let
   cfg = config.programs.gtklock;
 
   inherit (lib)
-    types
-    mkIf
-    mkOption
-    mkEnableOption
-    mkPackageOptionMD
-    literalExpression
-    optionals
-    optionalString
-    ;
+    types mkIf mkOption mkEnableOption mkPackageOptionMD literalExpression
+    optionals optionalString;
   inherit (lib.generators) toINI;
 
   # the main config includes two very niche options: style (which takes a path) and modules, which takes a list of module paths
@@ -27,14 +15,16 @@ let
   # extraConfig takes an attrset, and converts it to the correct INI format - it's mostly just strings and integers, so that's fine
   baseConfig = ''
     [main]
-    ${optionalString (cfg.config.gtk-theme != "") "gtk-theme=${cfg.config.gtk-theme}"}
+    ${optionalString (cfg.config.gtk-theme != "")
+    "gtk-theme=${cfg.config.gtk-theme}"}
     ${optionalString (cfg.config.style != "") "style=${cfg.config.style}"}
-    ${optionalString (cfg.config.modules != [ ]) "modules=${concatStringsSep ";" cfg.config.modules}"}
+    ${optionalString (cfg.config.modules != [ ])
+    "modules=${concatStringsSep ";" cfg.config.modules}"}
   '';
 
-  finalConfig = baseConfig + optionals (cfg.extraConfig != null) (toINI { } cfg.extraConfig);
-in
-{
+  finalConfig = baseConfig
+    + optionals (cfg.extraConfig != null) (toINI { } cfg.extraConfig);
+in {
   meta.maintainers = [ maintainers.NotAShelf ];
   options.programs.gtklock = {
     enable = mkEnableOption "GTK-based lockscreen for Wayland";
@@ -51,12 +41,7 @@ in
       };
 
       style = mkOption {
-        type =
-          with types;
-          oneOf [
-            str
-            path
-          ];
+        type = with types; oneOf [ str path ];
         default = "";
         description = ''
           The css file to be used for gtklock.
@@ -113,6 +98,7 @@ in
   config = mkIf cfg.enable {
     home.packages = [ cfg.package ];
 
-    xdg.configFile."gtklock/config.ini".source = pkgs.writeText "gtklock-config.ini" finalConfig;
+    xdg.configFile."gtklock/config.ini".source =
+      pkgs.writeText "gtklock-config.ini" finalConfig;
   };
 }

@@ -32,6 +32,6 @@ in {
       key_exit = "Escape";
     };
 
-    style = import ./style.nix {};
+    style = import ./style.nix { };
   };
 }

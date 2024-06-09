@@ -3,8 +3,7 @@ let
   inherit (lib) mkEnableOption mkOption types;
 
   cfg = config.modules.programs;
-in
-{
+in {
   imports = [ ./defaults.nix ];
 
   options.modules.programs = {
@@ -44,7 +43,7 @@ in
       };
 
       launchers = {
-        fuzzel.enable = mkEnableOption "Enable fuzzel launcher"; #TODO
+        fuzzel.enable = mkEnableOption "Enable fuzzel launcher"; # TODO
         wofi.enable = mkEnableOption "Enable wofi launcher";
       };
 

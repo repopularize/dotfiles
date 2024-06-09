@@ -168,7 +168,7 @@ in {
 
       # Disable Thunderbolt and FireWire to prevent DMA attacks
       [ "thunderbolt" "firewire-core" ]
-      
+
       (optionals (!sys.bluetooth.enable) [
         "bluetooth"
         "btusb" # bluetooth dongles

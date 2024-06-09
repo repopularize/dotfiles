@@ -7,8 +7,7 @@ let
   mainModC = "SUPER_CTRL";
   launchMod = "ALT";
   launchModS = "ALT_SHIFT";
-in
-[
+in [
   # App launcher && other apps
   "${launchMod}, T, exec, ${defaults.terminal}"
   "${launchMod}, Q, exec, ${defaults.browser}"
@@ -38,7 +37,7 @@ in
 ] ++ optionals (defaults.launcher == "wofi") [
   "${mainMod}, SUPER_L, exec, wofi --show drun"
   "${mainMod}, escape, exec, wlogout"
-  "${mainMod}, period, exec, BEMOJI_PICKER_CMD=\"wofi -d\" bemoji"
+  ''${mainMod}, period, exec, BEMOJI_PICKER_CMD="wofi -d" bemoji''
   "${mainMod}, V, exec, ${lib.getExe pkgs.cliphist} list | ${
     lib.getExe pkgs.wofi
   } --dmenu | ${lib.getExe pkgs.cliphist} decode | ${

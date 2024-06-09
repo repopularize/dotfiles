@@ -1,24 +1,11 @@
-{ lib
-, pkgs
-, config
-, osConfig
-, defaults
-, inputs'
-, ...
-}:
+{ lib, pkgs, config, osConfig, defaults, inputs', ... }:
 let
   inherit (lib) imap0 optionalString optionals;
   inherit (osConfig.modules) environment;
   pointer = config.home.pointerCursor;
-in
-{
+in {
   config = lib.mkIf (environment.desktop == "Hyprland") {
-    home.packages = with pkgs; [
-      hyprpicker
-      bemoji
-      swww
-      cliphist
-    ];
+    home.packages = with pkgs; [ hyprpicker bemoji swww cliphist ];
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -35,15 +22,19 @@ in
       };
 
       settings = {
-        monitor =
-          [ "HDMI-A-1,1920x1080@180.00,auto,1" "DVI-D-1,1440x900@75.03,auto,1" ];
+        monitor = [
+          "HDMI-A-1,1920x1080@180.00,auto,1"
+          "DVI-D-1,1440x900@75.03,auto,1"
+        ];
 
         exec-once = [
           "wl-paste --type text --watch cliphist store" # Stores only text data
           "wl-paste --type image --watch cliphist store" # Stores only image data
           "wlsunset -S 8:00 -s 20:00"
           "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
-          "${lib.getExe pkgs.swww} init && ${lib.getExe pkgs.swww} img ${../wallpapers/yusof.png}"
+          "${lib.getExe pkgs.swww} init && ${lib.getExe pkgs.swww} img ${
+            ../wallpapers/yusof.png
+          }"
         ] ++ optionals (defaults.bar == "waybar") [ "waybar" ];
 
         general = {
@@ -71,9 +62,7 @@ in
 
         animations = {
           enabled = true;
-          bezier = [
-            "bez, 0.16, 1, 0.3, 1"
-          ];
+          bezier = [ "bez, 0.16, 1, 0.3, 1" ];
           animation = [
             "windows, 1, 7, bez, slide"
             "windowsOut, 1, 7, bez, popin 80%"
@@ -89,9 +78,7 @@ in
           preserve_split = true;
         };
 
-        master = {
-          new_is_master = true;
-        };
+        master = { new_is_master = true; };
 
         gestures = {
           # macOS style workspace switching

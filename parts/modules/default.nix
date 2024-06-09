@@ -17,7 +17,7 @@ in {
 
     homeManagerModules = {
       gtklock = mkModule /modules/extra/home-manager/gtklock.nix;
-      
+
       default = builtins.throw "There is no default module.";
     };
   };

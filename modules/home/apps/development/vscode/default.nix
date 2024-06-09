@@ -1,8 +1,6 @@
 { inputs, pkgs, osConfig, lib, ... }:
-let
-  inherit (lib) mkIf;
-in
-{
+let inherit (lib) mkIf;
+in {
   config = mkIf (osConfig.modules.programs.agnostic.editors.vscode.enable) {
     home.file.".vscode-oss/argv.json" = {
       force = true;

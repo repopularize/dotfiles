@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./gtklock.nix
-  ];
-}
+{ imports = [ ./gtklock.nix ]; }

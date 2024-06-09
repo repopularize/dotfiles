@@ -21,30 +21,31 @@ let
     '';
   };
 
-  screenshot-window = pkgs.writeShellApplication
-    {
-      name = "screenshot-window-bind";
+  screenshot-window = pkgs.writeShellApplication {
+    name = "screenshot-window-bind";
 
-      runtimeInputs = with pkgs; [ grim satty jq wl-clipboard ];
+    runtimeInputs = with pkgs; [ grim satty jq wl-clipboard ];
 
-      text = ''
-        # shellcheck disable=SC2046
-        grim -g "$(hyprctl clients -j | jq -r ".[] | select(.workspace.id == "$(hyprctl activewindow -j | jq -r '.workspace.id')\)""| jq -r ".at,.size" | jq -s "add" | jq '_nwise(4)' | jq -r '"\(.[0]),\(.[1]) \(.[2])x\(.[3])"'| slurp)" - | satty --filename - --early-exit --copy-command="wl-copy"
-      '';
-    };
+    text = ''
+      # shellcheck disable=SC2046
+      grim -g "$(hyprctl clients -j | jq -r ".[] | select(.workspace.id == "$(hyprctl activewindow -j | jq -r '.workspace.id')\)""| jq -r ".at,.size" | jq -s "add" | jq '_nwise(4)' | jq -r '"\(.[0]),\(.[1]) \(.[2])x\(.[3])"'| slurp)" - | satty --filename - --early-exit --copy-command="wl-copy"
+    '';
+  };
 
-  screenshot-quick = pkgs.writeShellApplication
-    {
-      name = "screenshot-quick-bind";
+  screenshot-quick = pkgs.writeShellApplication {
+    name = "screenshot-quick-bind";
 
-      runtimeInputs = with pkgs; [ grim slurp wl-clipboard ];
+    runtimeInputs = with pkgs; [ grim slurp wl-clipboard ];
 
-      text = ''
-        grim -g "$(slurp - d)" - | wl-copy
-      '';
-    };
-in
-{
-  home.packages = with pkgs;
-    [ powermenu screenshot screenshot-window screenshot-quick ];
+    text = ''
+      grim -g "$(slurp - d)" - | wl-copy
+    '';
+  };
+in {
+  home.packages = with pkgs; [
+    powermenu
+    screenshot
+    screenshot-window
+    screenshot-quick
+  ];
 }

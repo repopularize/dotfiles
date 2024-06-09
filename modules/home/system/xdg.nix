@@ -1,8 +1,4 @@
-{ lib
-, pkgs
-, config
-, ...
-}:
+{ lib, pkgs, config, ... }:
 let
   browser = [
     "text/html"
@@ -32,25 +28,19 @@ let
     "text/x-c++"
   ];
 
-  media = [
-    "video/*"
-    "audio/*"
-  ];
+  media = [ "video/*" "audio/*" ];
 
   images = [ "image/*" ];
 
-  associations =
-    (lib.genAttrs code (_: [ "code.desktop" ]))
+  associations = (lib.genAttrs code (_: [ "code.desktop" ]))
     // (lib.genAttrs media (_: [ "mpv.desktop" ]))
     // (lib.genAttrs images (_: [ "okular.desktop" ]))
-    // (lib.genAttrs browser (_: [ "firefox.desktop" ]))
-    // {
+    // (lib.genAttrs browser (_: [ "firefox.desktop" ])) // {
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [ "nautilus.desktop" ];
     };
 
-in
-{
+in {
   home.packages = with pkgs; [ xdg-utils ];
 
   xdg = {

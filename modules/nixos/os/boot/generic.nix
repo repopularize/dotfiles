@@ -2,8 +2,7 @@
 let
   inherit (lib) mkDefault mkForce mkOverride mkMerge mkIf optionals;
   sys = config.modules.system;
-in
-{
+in {
   boot = {
     consoleLogLevel = 3;
 
@@ -26,17 +25,11 @@ in
         verbose = false;
 
         # List of modules that are loaded by the initrd
-        kernelModules =
-          [ "nvme" "xhci_pci" "ahci" "sd_mod" "dm_mod" ];
+        kernelModules = [ "nvme" "xhci_pci" "ahci" "sd_mod" "dm_mod" ];
 
         # the set of kernel modules in the initial ramdisk used during the boot process
-        availableKernelModules = [
-          "ehci_pci"
-          "ahci"
-          "usb_storage"
-          "usbhid"
-          "sd_mod"
-        ];
+        availableKernelModules =
+          [ "ehci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
       })
     ];
 
