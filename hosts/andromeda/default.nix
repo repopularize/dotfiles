@@ -97,6 +97,11 @@ in
           screenLocker = "gtklock";
         };
       };
+
+      style = {
+        gtk.enable = true;
+        qt.enable = true;
+      };
     };
   };
 }
