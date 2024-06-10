@@ -1,8 +1,4 @@
-{ lib, config, ... }:
-let
-  inherit (lib) mkIf mkForce;
-  inherit (config.modules) device;
-in {
+{
   imports = [ ./hardware.nix ];
 
   config = {
@@ -68,7 +64,10 @@ in {
           launchers.wofi.enable = true;
           bars.waybar.enable = true;
 
-          browsers.firefox = { enable = true; };
+          browsers = {
+            firefox.enable = true;
+            chromium.enable = true;
+          };
 
           terminals = {
             foot.enable = true;
