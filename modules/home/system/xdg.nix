@@ -35,7 +35,7 @@ let
   associations = (lib.genAttrs code (_: [ "code.desktop" ]))
     // (lib.genAttrs media (_: [ "mpv.desktop" ]))
     // (lib.genAttrs images (_: [ "okular.desktop" ]))
-    // (lib.genAttrs browser (_: [ "firefox.desktop" ])) // {
+    // (lib.genAttrs browser (_: [ "schizofox.desktop" ])) // {
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [ "nautilus.desktop" ];
     };
@@ -63,8 +63,8 @@ in {
       pictures = "${config.home.homeDirectory}/Media/Pictures";
 
       extraConfig = {
-        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/screenshots";
-        XDG_DEV_DIR = "${config.home.homeDirectory}/dev";
+        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+        XDG_DEV_DIR = "${config.home.homeDirectory}/Development";
       };
     };
 
