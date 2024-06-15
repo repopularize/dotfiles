@@ -83,6 +83,7 @@
           launcher = "wofi";
           bar = "waybar";
           screenLocker = "gtklock";
+          browser = "chromium";
         };
       };
 

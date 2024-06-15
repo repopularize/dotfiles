@@ -1,4 +1,4 @@
-{ lib, inputs, pkgs, osConfig, ... }:
+{ lib, inputs, osConfig, ... }:
 let cfg = osConfig.modules.programs.gui.browsers.firefox;
 in {
   imports = [ inputs.schizofox.homeManagerModule ];

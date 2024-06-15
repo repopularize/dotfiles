@@ -38,7 +38,6 @@ in {
           "--no-default-browser-check"
           "--no-service-autorun"
           "--disable-features=PreloadMediaEngagementData,MediaEngagementBypassAutoplayPolicies"
-          "--disable-reading-from-canvas"
           "--no-pings"
           "--no-first-run"
           "--no-experiments"

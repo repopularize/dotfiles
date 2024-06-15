@@ -35,7 +35,7 @@ let
   associations = (lib.genAttrs code (_: [ "code.desktop" ]))
     // (lib.genAttrs media (_: [ "mpv.desktop" ]))
     // (lib.genAttrs images (_: [ "okular.desktop" ]))
-    // (lib.genAttrs browser (_: [ "schizofox.desktop" ])) // {
+    // (lib.genAttrs browser (_: [ "chromium-browser.desktop" ])) // {
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [ "nautilus.desktop" ];
     };
@@ -45,6 +45,7 @@ in {
 
   xdg = {
     enable = true;
+    portal.enable = true;
 
     cacheHome = "${config.home.homeDirectory}/.cache";
     configHome = "${config.home.homeDirectory}/.config";
