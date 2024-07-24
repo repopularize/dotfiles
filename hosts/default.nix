@@ -43,7 +43,7 @@
   in mkMerge [
     (mkSystems [{
       inherit withSystem;
-      host = "andromeda";
+      host = "wattage";
       system = "x86_64-linux";
       modules = [ graphical ] ++ concatLists [ shared ];
       specialArgs = sharedArgs;

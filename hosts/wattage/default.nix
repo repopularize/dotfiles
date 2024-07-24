@@ -14,7 +14,7 @@
       };
 
       system = {
-        hostname = "andromeda";
+        hostname = "wattage";
         mainUser = "yusof";
         autoLogin = true;
 
