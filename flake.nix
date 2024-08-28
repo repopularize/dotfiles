@@ -57,18 +57,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # firefox for paranoids
-    schizofox = {
-      url = "github:schizofox/schizofox";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # even more self explanatory
     vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    arkenfox.url = "github:dwarfmaster/arkenfox-nixos";
   };
 }

@@ -11,10 +11,9 @@ in {
     # nvidia drivers kinda are unfree software
     nixpkgs.config.allowUnfree = true;
 
-    hardware.opengl = {
+    hardware.graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
 
     services.xserver.videoDrivers = [ "nvidia" ];
@@ -25,7 +24,7 @@ in {
       modesetting.enable = true;
       open = false;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
     hardware.enableAllFirmware = true;

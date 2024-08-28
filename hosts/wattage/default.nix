@@ -65,8 +65,12 @@
           bars.waybar.enable = true;
 
           browsers = {
-            firefox.enable = true;
-            chromium.enable = true;
+            # arkenfox.enable = false;
+            # schizofox.enable = false;
+            chromium = {
+              enable = true;
+              ungoogled = true;
+            };
           };
 
           terminals = {
@@ -83,7 +87,7 @@
           launcher = "wofi";
           bar = "waybar";
           screenLocker = "gtklock";
-          browser = "chromium";
+          browser = "firefox";
         };
       };
 

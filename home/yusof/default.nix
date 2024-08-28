@@ -19,7 +19,7 @@ in {
     # git config
 
     programs.git = {
-      userName = "1yusof";
+      userName = "zramctl";
       userEmail = "zerowatts@tuta.io";
     };
   };

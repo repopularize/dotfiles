@@ -97,12 +97,11 @@ _: ''
   #battery,
   #custom-launcher,
   #backlight {
-    background: #1e1e2e;
-    padding: 0px 10px;
+    background: @base;
+    padding: 0px 20px;
+    border: 2px solid @rosewater;
     margin-top: 10px;
-    border: 1px solid @rosewater;
-    border-left: 0px;
-    border-right: 0px;
+    border-radius: 13px;
     color: @white;
   }
 
@@ -116,6 +115,7 @@ _: ''
   }
 
   #window {
+    background: @base;
     margin-left: 3px;
     margin-right: 3px;
   }

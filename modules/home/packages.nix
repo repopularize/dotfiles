@@ -7,7 +7,7 @@ let
   };
 in {
   home.packages = optionals (osConfig.modules.programs.cli.enable)
-    (with pkgs; [ whois ngrok nixfmt yt-dlp fastfetch ])
+    (with pkgs; [ whois ngrok nixfmt-classic yt-dlp fastfetch ])
     ++ optionals (osConfig.modules.programs.gui.enable) (with pkgs; [
       tor-browser
       obsidian

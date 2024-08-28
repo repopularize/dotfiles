@@ -42,7 +42,7 @@ _: ''
     background-color: rgb(30, 30, 46, 0.7);
     background-opacity: 0.6;
     color: @rosewater;
-    border-radius: 0px;
+    border-radius: 3px;
   }
 
   #outer-box {
@@ -52,7 +52,8 @@ _: ''
   #input {
     background-color: @mantle;
     padding: 8px 12px;
-    border-radius: 0px;
+    
+    border-radius: 3px;
   }
 
   #scroll {

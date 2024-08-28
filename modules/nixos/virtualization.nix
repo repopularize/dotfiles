@@ -36,8 +36,6 @@ in {
         dockerCompat = true;
         dockerSocket.enable = true;
         defaultNetwork.settings = { dns_enabled = true; };
-        enableNvidia = builtins.any (driver: driver == "nvidia")
-          config.services.xserver.videoDrivers;
         autoPrune = {
           enable = true;
           flags = [ "--all" ];
@@ -48,6 +46,8 @@ in {
       # waydroid config
       waydroid.enable = cfg.waydroid.enable;
       lxd.enable = cfg.waydroid.enable;
+
+      containers.cdi.dynamic.nvidia.enable = true;
 
       vmVariant = {
         # good for testing this machine configuration

@@ -8,13 +8,18 @@ in {
       enable = true;
       flavor = "mocha";
       accent = "rosewater";
+
+      pointerCursor = {
+        enable = true;
+        accent = "dark";
+      };
     };
 
     # pointer / cursor theming
     home.pointerCursor = {
-      inherit (cfg.pointerCursor) name package size;
+      size = 24;
       gtk.enable = true;
-      x11.enable = true;
+      x11.enable = !(lib.isWayland osConfig);
     };
   };
 }

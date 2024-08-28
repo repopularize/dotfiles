@@ -35,7 +35,7 @@ let
   associations = (lib.genAttrs code (_: [ "code.desktop" ]))
     // (lib.genAttrs media (_: [ "mpv.desktop" ]))
     // (lib.genAttrs images (_: [ "okular.desktop" ]))
-    // (lib.genAttrs browser (_: [ "chromium-browser.desktop" ])) // {
+    // (lib.genAttrs browser (_: [ "firefox.desktop" ])) // {
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [ "nautilus.desktop" ];
     };

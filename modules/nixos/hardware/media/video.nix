@@ -4,12 +4,7 @@ let
   sys = config.modules.system;
 in {
   config = mkIf sys.video.enable {
-    hardware = {
-      opengl = {
-        enable = true;
-        driSupport = true;
-      };
-    };
+    hardware = { opengl = { enable = true; }; };
 
     # benchmarking tools
     environment.systemPackages = with pkgs; [ glxinfo glmark2 ];

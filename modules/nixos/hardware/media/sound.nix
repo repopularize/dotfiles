@@ -5,12 +5,6 @@ let
   cfg = config.modules.system.sound;
 in {
   config = mkIf (cfg.enable && device.hasSound) {
-    # enable sound support and media keys if device has sound
-    sound = {
-      enable = mkDefault false; # this just enables ALSA
-      mediaKeys.enable = true;
-    };
-
     # able to change scheduling policies, e.g. to SCHED_RR
     security.rtkit.enable = config.services.pipewire.enable;
 

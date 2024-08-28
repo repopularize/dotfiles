@@ -14,7 +14,7 @@ in {
     mkIf (builtins.elem device.type acceptedTypes && pkgs.stdenv.isLinux) {
       qt = {
         enable = true;
-        platformTheme = "qtct";
+        platformTheme.name = "kvantum";
         style = {
           name = "kvantum";
           package = with pkgs; [
@@ -34,15 +34,15 @@ in {
 
         "Kvantum/kvantum.kvconfig".source =
           (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
-            General.theme = "Catppuccin-Mocha-Mauve";
+            General.theme = "Catppuccin-Mocha-Rosewater";
           };
 
-        "Kvantum/Catppuccin-Mocha-Mauve".source = "${
+        "Kvantum/Catppuccin-Mocha-Rosewater".source = lib.mkDefault "${
             pkgs.catppuccin-kvantum.override {
-              accent = "Mauve";
+              accent = "Rosewater";
               variant = "Mocha";
             }
-          }/share/Kvantum/Catppuccin-Mocha-Mauve";
+          }/share/Kvantum/Catppuccin-Mocha-Rosewwater";
       };
 
       home.sessionVariables = {

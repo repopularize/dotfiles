@@ -24,6 +24,7 @@ in {
 
       gtk = {
         enable = true;
+        catppuccin.enable = true;
 
         font = { inherit (cfg.gtk.font) name size; };
 

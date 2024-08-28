@@ -16,17 +16,15 @@ in {
           mainBar = {
             layer = "top";
             position = "top";
-            height = 50;
 
             exclusive = true;
             passthrough = false;
             gtk-layer-shell = true;
 
             spacing = 5;
-            margin-bottom = -11;
 
-            margin-right = 20;
-            margin-left = 20;
+            margin-right = 8;
+            margin-left = 8;
 
             modules-left = [ "hyprland/workspaces" "wlr/taskbar" ];
             modules-center = [ "custom/launcher" "hyprland/window" ];

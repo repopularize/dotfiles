@@ -19,7 +19,6 @@ in {
       ];
 
       package = chrome_pkg.override {
-        nss = pkgs.nss_latest;
         enableWideVine = true;
 
         commandLineArgs = [
@@ -53,7 +52,7 @@ in {
           # when disabling --use-gl=egl, it's not gonna show any emoji
           # and it's gonna be slow as hell
 
-          # "--use-gl=egl"
+          "--use-gl=egl"
 
           "--ozone-platform=wayland"
           "--enable-features=UseOzonePlatform"

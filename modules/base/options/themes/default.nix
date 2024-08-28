@@ -16,7 +16,7 @@ in {
       package = mkOption {
         type = types.package;
         description = "The package providing the cursors";
-        default = pkgs.catppuccin-cursors.mochaDark;
+        default = pkgs.catppuccin-cursors.mochaRosewater;
       };
 
       size = mkOption {

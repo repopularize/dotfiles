@@ -60,14 +60,8 @@ in {
           ungoogled = mkEnableOption "Enable ungoogled-chromium Tweaks";
         };
 
-        firefox = {
-          enable = mkEnableOption "Firefox browser" // {
-            default = cfg.gui.enable;
-          };
-          schizofox = mkEnableOption "Enable Schizofox Firefox Tweaks" // {
-            default = true;
-          };
-        };
+        # schizofox.enable = mkEnableOption "Enable firefox with schizo tweaks";
+        # arkenfox.enable = mkEnableOption "Enable firefox with arkenfox user.js";
       };
 
       terminals = {
