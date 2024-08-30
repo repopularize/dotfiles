@@ -9,9 +9,6 @@
 
       # Wofi
       "opacity 0.7,class:^(wofi)$"
-
-      # Opacity
-      "opacity 0.8,class:^(vesktop)$"
     ];
   };
 }

@@ -10,7 +10,7 @@ in {
       "wlsunset -S 8:00 -s 20:00"
       "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       "${lib.getExe pkgs.swww} init && ${lib.getExe pkgs.swww} img ${
-        ../../wallpapers/wallpaper.png
+        ../../wallpapers/zram.png
       }"
     ] ++ optionals (defaults.bar == "waybar") [ "waybar" ];
   };

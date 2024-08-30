@@ -39,10 +39,11 @@ _: ''
   }
 
   #window {
-    background-color: rgb(30, 30, 46, 0.7);
-    background-opacity: 0.6;
-    color: @rosewater;
-    border-radius: 3px;
+    background-color: @base;
+    background-opacity: 0.8;
+    border: 1.25px solid @mauve;
+    color: @mauve;
+    border-radius: 10px;
   }
 
   #outer-box {
@@ -53,7 +54,7 @@ _: ''
     background-color: @mantle;
     padding: 8px 12px;
     
-    border-radius: 3px;
+    border-radius: 10px;
   }
 
   #scroll {
@@ -68,7 +69,7 @@ _: ''
 
   #text {
     transition: 0.3s;
-    color: @rosewater;
+    color: @mauve;
   }
 
   #text:selected {
@@ -77,11 +78,12 @@ _: ''
 
   #entry {
     padding: 3px;
+    border-radius: 5px;
     transition: 0.3s;
   }
 
   #entry:selected {
-    background-color: @rosewater;
+    background-color: @mauve;
     padding-left: 35px;
     text-align: center;
   }
@@ -92,6 +94,6 @@ _: ''
 
   #input,
   #entry:selected {
-    border-radius: 0px;
+    border-radius: 5px;
   }
 ''

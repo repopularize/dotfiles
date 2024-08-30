@@ -6,5 +6,6 @@
     ./printing.nix
     ./runners.nix
     ./systemd.nix
+    ./ratbagd.nix
   ];
 }

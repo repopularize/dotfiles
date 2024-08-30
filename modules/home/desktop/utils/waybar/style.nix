@@ -42,20 +42,22 @@ _: ''
   }
 
   window#waybar {
-    background: rgba(21, 18, 27, 0);
+    background: @base;
+    border-radius: 10px;
+    border: 1.25px solid @mauve;
     color: #cdd6f4;
   }
 
   tooltip {
     background: #1e1e2e;
     border-radius: 10px;
-    border-width: 2px;
+    border-width: 1.25px;
     border-style: solid;
     border-color: #11111b;
   }
 
   #workspaces button {
-    padding: 5px;
+    padding: 5px 2px;
     color: #313244;
     margin-right: 5px;
     transition: 0.25s;
@@ -67,7 +69,7 @@ _: ''
   }
 
   #workspaces button.focused {
-    color: @lavender;
+    color: @mauve;
     background: #eba0ac;
   }
 
@@ -99,9 +101,8 @@ _: ''
   #backlight {
     background: @base;
     padding: 0px 20px;
-    border: 2px solid @rosewater;
-    margin-top: 10px;
-    border-radius: 13px;
+    margin: 1.25px;
+    border-radius: 10px;
     color: @white;
   }
 

@@ -10,13 +10,13 @@ in {
       name = mkOption {
         type = types.str;
         description = "The name of the cursor inside the package";
-        default = "catppuccin-mocha-rosewater-cursors";
+        default = "catppuccin-mocha-mauve-cursors";
       };
 
       package = mkOption {
         type = types.package;
         description = "The package providing the cursors";
-        default = pkgs.catppuccin-cursors.mochaRosewater;
+        default = pkgs.catppuccin-cursors.mochaMauve;
       };
 
       size = mkOption {

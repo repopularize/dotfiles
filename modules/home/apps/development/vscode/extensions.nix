@@ -40,7 +40,7 @@ builtins.concatLists (builtins.attrValues {
     pkief.material-icon-theme
     vscode-icons-team.vscode-icons
     (pkgs.catppuccin-vsc.override {
-      accent = "rosewater";
+      accent = "mauve";
       boldKeywords = true;
       italicComments = true;
       italicKeywords = true;
@@ -61,7 +61,6 @@ builtins.concatLists (builtins.attrValues {
     bierner.emojisense
     editorconfig.editorconfig
     esbenp.prettier-vscode
-    biomejs.biome
     github.remotehub
     pkgs.vscode-extensions.github.vscode-pull-request-github
     icrawl.discord-vscode

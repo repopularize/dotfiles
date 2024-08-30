@@ -9,7 +9,7 @@ in {
       concatLists [
         (optionals cfg.qemu.enable [ virt-manager virt-viewer ])
         (optionals cfg.docker.enable [ podman podman-compose ])
-        (optionals (cfg.docker.enable && sys.video.enable) [ lxd ])
+        (optionals (cfg.docker.enable && sys.video.enable) [ lxd-lts ])
         (optionals cfg.waydroid.enable [ waydroid ])
       ];
 
@@ -47,8 +47,6 @@ in {
       waydroid.enable = cfg.waydroid.enable;
       lxd.enable = cfg.waydroid.enable;
 
-      containers.cdi.dynamic.nvidia.enable = true;
-
       vmVariant = {
         # good for testing this machine configuration
         services.qemuGuest.enable = true;
@@ -72,5 +70,7 @@ in {
         };
       };
     };
+
+    hardware.nvidia-container-toolkit.enable = true;
   };
 }

@@ -11,7 +11,7 @@ in {
         type = types.package;
         default = pkgs.catppuccin-kde.override {
           flavour = [ "mocha" ];
-          accents = [ "rosewater" ];
+          accents = [ "mauve" ];
           winDecStyles = [ "modern" ];
         };
         description = "The theme package to be used for QT programs";
@@ -27,7 +27,7 @@ in {
     kdeglobals.source = mkOption {
       type = types.path;
       default =
-        "${cfg.qt.theme.package}/share/color-schemes/CatppuccinMochaRosewater.colors";
+        "${cfg.qt.theme.package}/share/color-schemes/CatppuccinMochaMauve.colors";
       description =
         "The source file for the kdeglobals file. Usually provided by the qt theme package";
     };

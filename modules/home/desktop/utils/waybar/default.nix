@@ -25,6 +25,7 @@ in {
 
             margin-right = 8;
             margin-left = 8;
+            margin-top = 12;
 
             modules-left = [ "hyprland/workspaces" "wlr/taskbar" ];
             modules-center = [ "custom/launcher" "hyprland/window" ];

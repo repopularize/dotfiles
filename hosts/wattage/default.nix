@@ -23,7 +23,7 @@
           enableKernelTweaks = true;
           loadRecommendedModules = true;
 
-          plymouth.enable = false;
+          plymouth.enable = true;
 
           initrd = {
             enableTweaks = true;

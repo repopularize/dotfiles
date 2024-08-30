@@ -1,10 +1,10 @@
-{ pkgs, lib, inputs, osConfig, ... }:
+{ pkgs, lib, osConfig, ... }:
 let
   inherit (lib) optionals;
-  unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.system;
-    config.allowUnfree = true;
-  };
+  # unstable = import inputs.nixpkgs-unstable {
+  #   system = pkgs.system;
+  #   config.allowUnfree = true;
+  # };
 in {
   home.packages = optionals (osConfig.modules.programs.cli.enable)
     (with pkgs; [ whois ngrok nixfmt-classic yt-dlp fastfetch ])

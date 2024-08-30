@@ -34,12 +34,12 @@ in {
 
         "Kvantum/kvantum.kvconfig".source =
           (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
-            General.theme = "Catppuccin-Mocha-Rosewater";
+            General.theme = "Catppuccin-Mocha-Mauve";
           };
 
-        "Kvantum/Catppuccin-Mocha-Rosewater".source = lib.mkDefault "${
+        "Kvantum/Catppuccin-Mocha-Mauve".source = lib.mkDefault "${
             pkgs.catppuccin-kvantum.override {
-              accent = "Rosewater";
+              accent = "Mauve";
               variant = "Mocha";
             }
           }/share/Kvantum/Catppuccin-Mocha-Rosewwater";
