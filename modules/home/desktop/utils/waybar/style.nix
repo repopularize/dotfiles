@@ -42,7 +42,7 @@ _: ''
   }
 
   window#waybar {
-    background: @base;
+    background: @mantle;
     border-radius: 10px;
     border: 1.25px solid @mauve;
     color: #cdd6f4;
@@ -100,7 +100,7 @@ _: ''
   #battery,
   #custom-launcher,
   #backlight {
-    background: @base;
+    background: @mantle;
     padding: 0px 20px;
     margin: 1.25px;
     border-radius: 10px;
@@ -117,9 +117,14 @@ _: ''
   }
 
   #window {
-    background: @base;
+    background: @mantle;
     margin-left: 3px;
     margin-right: 3px;
+    transition: 0.3s;
+  }
+
+  #window:hover {
+    background: @base;
   }
 
   #custom-launcher {

@@ -100,5 +100,11 @@
 
       inputs = { nixpkgs.follows = "nixpkgs"; };
     };
+
+    spicetify-nix = {
+      type = "github";
+      owner = "yuu-fur";
+      repo = "spicetify-flake";
+    };
   };
 }

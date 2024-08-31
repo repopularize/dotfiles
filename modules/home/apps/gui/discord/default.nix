@@ -1,4 +1,4 @@
-{ config, osConfig, lib, pkgs, ... }:
+{ osConfig, lib, pkgs, ... }:
 let inherit (lib) mkIf;
 in {
   config = mkIf (osConfig.modules.programs.gui.discord.enable) {

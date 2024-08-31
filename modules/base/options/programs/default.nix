@@ -3,7 +3,8 @@ let
   inherit (lib) mkEnableOption mkOption types;
 
   cfg = config.modules.programs;
-in {
+in
+{
   imports = [ ./defaults.nix ];
 
   options.modules.programs = {
@@ -34,6 +35,10 @@ in {
       okular.enable =
         mkEnableOption "Enable okular, the universal document reader";
       discord.enable = mkEnableOption "Enable the discord client" // {
+        default = cfg.gui.enable;
+      };
+
+      spotify.enable = mkEnableOption "Enable the spotify music player" // {
         default = cfg.gui.enable;
       };
 
