@@ -2,7 +2,7 @@
 
 {
   "terminal.integrated.shell.linux" = "${lib.getExe pkgs.nushell}";
-  "terminal.integrated.defaultProfile.linux" = "nu";
+  "terminal.integrated.defaultProfile.linux" = "Nushell";
   "workbench.colorTheme" = "Catppuccin Mocha";
   "workbench.iconTheme" = "catppuccin-mocha";
   "editor.smoothScrolling" = true;
@@ -17,16 +17,17 @@
   "editor.semanticHighlighting.enabled" = true;
   "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'DejaVu Sans Mono'";
   "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
-  "rpc.buttonEnabled" = true;
-  "rpc.buttonInactiveLabel" = "";
-  "rpc.buttonInactiveUrl" = "";
-  "rpc.lowerDetailsDebugging" =
-    "Debugging {file_name}:{current_line}:{current_column}";
-  "rpc.detailsDebugging" = "In {workspace} {problems}";
-  "rpc.smallImage" = "Code";
+  "vscord.status.buttons.button1.enabled" = true;
+  "vscord.status.state.text.debugging" =
+    "⚠️ {file_name}:{current_line}:{current_column}";
+  "vscord.status.details.textx.debugging" = "🪐✏️ {workspace} {problems}";
+  "vscord.status.image.small" = "Code";
   "nix.enableLanguageServer" = true;
   "nix.serverPath" = "${lib.getExe pkgs.nil}";
   "nix.formatterPath" = "${lib.getExe pkgs.nixpkgs-fmt}";
+  "nix.serverSettings" = {
+    "nil" = { "formatting" = { "command" = [ "nixpkgs-fmt" ]; }; };
+  };
   "security.workspace.trust.enabled" = false;
   "git.enableSmartCommit" = true;
   "[javascript]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };

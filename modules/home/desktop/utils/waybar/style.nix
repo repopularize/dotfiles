@@ -61,6 +61,7 @@ _: ''
     color: #313244;
     margin-right: 5px;
     transition: 0.25s;
+    border-radius: 5px;
   }
 
   #workspaces button.active {

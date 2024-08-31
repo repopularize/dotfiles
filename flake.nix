@@ -98,9 +98,7 @@
       owner = "dwarfmaster";
       repo = "arkenfox-nixos";
 
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs = { nixpkgs.follows = "nixpkgs"; };
     };
   };
 }
