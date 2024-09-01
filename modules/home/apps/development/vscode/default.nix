@@ -18,7 +18,7 @@ in {
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
       # https://github.com/nix-community/home-manager/issues/4394#issuecomment-1712909231
-      mutableExtensionsDir = false;
+      mutableExtensionsDir = true;
       userSettings = import ./settings.nix { inherit lib pkgs; };
       extensions = pkgs.callPackage ./extensions.nix {
         extensions =
