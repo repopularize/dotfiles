@@ -42,9 +42,8 @@ _: ''
   }
 
   window#waybar {
-    background: @mantle;
+    background: rgba(0,0,0,0);
     border-radius: 10px;
-    border: 1.25px solid @mauve;
     color: #cdd6f4;
   }
 
@@ -80,7 +79,7 @@ _: ''
   }
 
   #workspaces button:hover {
-    background: @blue;
+    background: @base;
     color: #cdd6f4;
   }
 
@@ -105,6 +104,7 @@ _: ''
     margin: 1.25px;
     border-radius: 10px;
     color: @white;
+    border: 1.25px solid @mauve;
   }
 
   #taskbar {
