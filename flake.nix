@@ -21,6 +21,13 @@
       ref = "master";
     };
 
+    # we can use this to provide overridable systems
+    systems = {
+      type = "github";
+      owner = "nix-systems";
+      repo = "default";
+    };
+
     flake-parts = {
       type = "github";
       owner = "hercules-ci";
