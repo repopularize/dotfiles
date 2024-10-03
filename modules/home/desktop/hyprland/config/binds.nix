@@ -1,13 +1,13 @@
 { lib, defaults, pkgs, ... }:
 let
   inherit (lib.lists) optionals;
-  inherit (builtins) toString genList concatLists;
 
   mainMod = "SUPER";
   mainModS = "SUPER_SHIFT";
   mainModC = "SUPER_CTRL";
   launchMod = "ALT";
-in {
+in
+{
   wayland.windowManager.hyprland.settings = {
     bind = [
       # App launcher && other apps
@@ -36,7 +36,7 @@ in {
       # Window keybinds
       "${mainMod}, F, togglefloating"
       "${mainMod}, W, killactive"
-    ] ++ optionals (defaults.launcher == "wofi") [
+    ] ++ optionals (defaults.bar == "waybar") [
       "${mainMod}, R, exec, wofi --show drun"
       "${mainMod}, escape, exec, wlogout"
       ''${mainMod}, period, exec, BEMOJI_PICKER_CMD="wofi -d" bemoji''

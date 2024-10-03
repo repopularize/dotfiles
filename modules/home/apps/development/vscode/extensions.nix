@@ -30,7 +30,7 @@ builtins.concatLists (builtins.attrValues {
   roblox = with extensions; [
     evaera.vscode-rojo
     koihik.vscode-lua-format
-    nightrains.robloxlsp
+    johnnymorganz.luau-lsp
     roblox-ts.vscode-roblox-ts
   ];
   themes = with extensions; [

@@ -9,7 +9,8 @@
   "workbench.list.smoothScrolling" = true;
   "window.customTitleBarVisibility" = "auto";
   "window.titleBarStyle" = "custom";
-  "files.autoSave" = "onFocusChange";
+  "files.autoSave" = "afterDelay";
+  "files.autoSaveDelay" = 500;
   "github.gitAuthentication" = false;
   "git.confirmSync" = false;
   "git.autofetch" = true;
