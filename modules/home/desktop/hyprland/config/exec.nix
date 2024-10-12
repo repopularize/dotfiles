@@ -2,7 +2,8 @@
 let
   inherit (lib) optionals;
   pointer = config.home.pointerCursor;
-in {
+in
+{
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "wl-paste --type text --watch cliphist store" # Stores only text data
@@ -10,7 +11,7 @@ in {
       "wlsunset -S 8:00 -s 20:00"
       "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       "${lib.getExe pkgs.swww} init && ${lib.getExe pkgs.swww} img ${
-        ../../wallpapers/zram.png
+        ../../wallpapers/zramctl.png
       }"
     ] ++ optionals (defaults.bar == "waybar") [ "waybar" ];
   };

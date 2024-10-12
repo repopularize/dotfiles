@@ -113,5 +113,15 @@
       owner = "yuu-fur";
       repo = "spicetify-flake";
     };
+
+    astal = {
+      type = "github";
+      owner = "Aylur";
+      repo = "astal";
+
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 }

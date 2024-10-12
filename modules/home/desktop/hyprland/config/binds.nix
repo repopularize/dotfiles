@@ -39,7 +39,7 @@ in
     ] ++ optionals (defaults.bar == "waybar") [
       "${mainMod}, R, exec, wofi --show drun"
       "${mainMod}, escape, exec, wlogout"
-      ''${mainMod}, period, exec, BEMOJI_PICKER_CMD="wofi -d" bemoji''
+      ''${mainMod}, dperiod, exec, BEMOJI_PICKER_CMD="wofi -d" bemoji''
       "${mainMod}, V, exec, ${lib.getExe pkgs.cliphist} list | ${
         lib.getExe pkgs.wofi
       } --dmenu | ${lib.getExe pkgs.cliphist} decode | ${

@@ -6,7 +6,8 @@ let
 
   inherit (config.modules) device;
   inherit (lib) mkIf;
-in {
+in
+{
   config = mkIf (device.gpu == "nvidia") {
     # nvidia drivers kinda are unfree software
     nixpkgs.config.allowUnfree = true;
@@ -21,7 +22,6 @@ in {
     boot.kernelParams = [ "module_blacklist=i915" ];
 
     hardware.nvidia = {
-      modesetting.enable = true;
       open = false;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.beta;

@@ -3,7 +3,8 @@ let
   inherit (lib) mkIf isWayland mkDefault;
 
   env = config.modules.environment;
-in {
+in
+{
   config = mkIf (isWayland config) {
     environment = {
       sessionVariables = {
@@ -16,7 +17,7 @@ in {
         CLUTTER_BACKEND = "wayland";
 
         WLR_NO_HARDWARE_CURSORS = "1";
-        WLR_DRM_DEVICES = mkDefault "/dev/dri/card1";
+        AQ_DRM_DEVICES = mkDefault "/dev/dri/card1";
       };
     };
   };

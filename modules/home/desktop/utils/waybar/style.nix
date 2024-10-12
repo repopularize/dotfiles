@@ -104,7 +104,6 @@ _: ''
     margin: 1.25px;
     border-radius: 10px;
     color: @white;
-    border: 1.25px solid @mauve;
   }
 
   #taskbar {

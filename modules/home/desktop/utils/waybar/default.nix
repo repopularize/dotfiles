@@ -3,9 +3,12 @@ let
   inherit (lib) optionalString;
   sys = osConfig.modules.system;
   cfg = osConfig.modules.programs;
-in {
-  config = lib.mkIf (lib.isWayland osConfig
-    && osConfig.modules.programs.gui.bars.waybar.enable) {
+in
+{
+  config = lib.mkIf
+    (lib.isWayland osConfig
+      && osConfig.modules.programs.gui.bars.waybar.enable)
+    {
       home.packages = with pkgs; [ wlogout ];
 
       programs.waybar = {
@@ -25,7 +28,7 @@ in {
 
             margin-right = 8;
             margin-left = 8;
-            margin-top = 12;
+            margin-top = 8;
 
             modules-left = [ "hyprland/workspaces" "wlr/taskbar" ];
             modules-center = [ "custom/launcher" "hyprland/window" ];
