@@ -9,7 +9,7 @@
     drop_shadow = false; # off for now
     shadow_range = 10;
     "col.shadow" = "rgb(cba6f7)";
-    "col.shadow_inactive" = "rgb(b7bdf8)";
+    "col.shadow_inactive" = "rgb(b4befe)";
 
     blur = {
       enabled = true;

@@ -8,7 +8,7 @@
     border_size = 2;
     no_border_on_floating = true;
 
-    "col.active_border" = "rgba(cba6f7ff) rgba(b4befeff) 45deg";
+    "col.active_border" = "rgb(cba6f7) rgb(b4befe) 45deg";
     "col.inactive_border" = "$surface1";
   };
 }

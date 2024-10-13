@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  inherit (lib) mkEnableOption mkOption types;
+  inherit (lib) mkEnableOption;
 
   cfg = config.modules.programs;
 in
@@ -53,10 +53,10 @@ in
       };
 
       bars = {
-        ags.enable = mkEnableOption "Enable ags bar/launcher";
-        waybar.enable = mkEnableOption "Enable waybar" // {
+        astal.enable = mkEnableOption "Enable astal bar/launcher" // {
           default = cfg.gui.enable;
         };
+        waybar.enable = mkEnableOption "Enable waybar";
       };
 
       browsers = {
@@ -65,6 +65,7 @@ in
           ungoogled = mkEnableOption "Enable ungoogled-chromium Tweaks";
         };
 
+        firefox.enable = mkEnableOption "Enable firefox";
         # schizofox.enable = mkEnableOption "Enable firefox with schizo tweaks";
         # arkenfox.enable = mkEnableOption "Enable firefox with arkenfox user.js";
       };

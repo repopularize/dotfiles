@@ -114,14 +114,11 @@
       repo = "spicetify-flake";
     };
 
-    astal = {
+    ags = {
       type = "github";
       owner = "Aylur";
-      repo = "astal";
-
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      repo = "ags";
+      ref = "v2";
     };
   };
 }

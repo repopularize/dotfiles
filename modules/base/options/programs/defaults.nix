@@ -28,8 +28,8 @@ in {
     };
 
     bar = mkOption {
-      type = with types; nullOr (enum [ "waybar" "ags" ]);
-      default = "waybar";
+      type = with types; nullOr (enum [ "waybar" "astal" ]);
+      default = "astal";
     };
 
     screenLocker = mkOption {
