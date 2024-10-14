@@ -9,6 +9,7 @@
 
       # Wofi
       "opacity 0.7,class:^(wofi)$"
+      "opacity 0.9,class:^(code-url-handler)"
     ];
   };
 }

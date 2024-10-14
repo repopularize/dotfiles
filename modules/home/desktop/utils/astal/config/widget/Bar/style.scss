@@ -1,15 +1,14 @@
-$bg: #212223;
-$fg: #f1f1f1;
-$accent: #378DF7;
-$radius: 7px;
-
-window.Bar {
-    border: none;
+window.bar {
+    border-bottom: 2px solid $accent;
     box-shadow: none;
-    background-color: $bg;
+    background-color: transparentize($bg, 0.3);
     color: $fg;
     font-size: 1.1em;
     font-weight: bold;
+
+    .bar-box {
+        padding: 10px 5px;
+    }
 
     button {
         all: unset;
@@ -33,29 +32,32 @@ window.Bar {
         border: 1pt solid transparent;
     }
 
-    .Workspaces .focused label {
+    .workspaces .focused label {
         color: $accent;
         border-color: $accent;
     }
 
-    .FocusedClient {
-        color: $accent;
-    }
-
-    .Media .Cover {
-        min-height: 1.2em;
-        min-width: 1.2em;
+    .mpris {
+        transition: 0.3s;
+        background-color: transparentize($bg, 0.8);
+        padding: 2px 5px;
         border-radius: $radius;
-        background-position: center;
-        background-size: contain;
+
+        &:hover {
+            background-color: $accent;
+        }
+
+        .mpris-cover {
+            min-height: 1.2em;
+            min-width: 1.2em;
+            border-radius: $radius;
+            background-position: center;
+            background-size: contain;
+            transition: 0.3s;
+        }
     }
 
-    .Battery label {
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .AudioSlider {
+    .audio-slider {
         * {
             all: unset;
         }
@@ -83,6 +85,28 @@ window.Bar {
             min-height: 1em;
             min-width: 1em;
             margin: -.2em;
+        }
+    }
+
+    .tray > .tray-item {
+        margin: 0px 5px;
+        padding: 3px;
+        border-radius: 8px;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $accent;
+        }
+    }
+
+    .command-center-access {
+        transition: 0.3s;
+        background-color: transparentize($bg, 0.8);
+        padding: 2px 5px;
+        border-radius: $radius;
+
+        &:hover {
+            background-color: $accent;
         }
     }
 }

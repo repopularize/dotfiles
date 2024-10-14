@@ -62,7 +62,11 @@
           okular.enable = true;
 
           launchers.wofi.enable = true;
-          bars.waybar.enable = true;
+          bars = {
+            waybar.enable = true;
+            astal.enable = true;
+          };
+
 
           browsers = {
             # arkenfox.enable = false;

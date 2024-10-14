@@ -6,6 +6,8 @@
     (lib.isWayland osConfig
       && osConfig.modules.programs.gui.bars.astal.enable)
     {
+      home.packages = [ inputs.ags.packages.${pkgs.system}.astal ];
+
       programs.ags = {
         enable = true;
         configDir = ./config;
@@ -16,6 +18,7 @@
           inputs.ags.packages.${pkgs.system}.network
           inputs.ags.packages.${pkgs.system}.wireplumber
           inputs.ags.packages.${pkgs.system}.tray
+          dart-sass
           fzf
         ];
       };

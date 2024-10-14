@@ -13,6 +13,7 @@ in
       "${lib.getExe pkgs.swww} init && ${lib.getExe pkgs.swww} img ${
         ../../wallpapers/zramctl.png
       }"
-    ] ++ optionals (defaults.bar == "waybar") [ "waybar" ];
+    ] ++ optionals (defaults.bar == "waybar") [ "waybar" ]
+    ++ optionals (defaults.bar == "astal") [ "ags" ];
   };
 }
