@@ -62,13 +62,13 @@
           okular.enable = true;
 
           launchers.wofi.enable = true;
-          bars.astal.enable = true;
+          bars.waybar.enable = true;
 
           browsers = {
             # arkenfox.enable = false;
-            # schizofox.enable = false;
+            firefox.enable = true;
             chromium = {
-              enable = true;
+              enable = false;
               ungoogled = true;
             };
           };
@@ -85,7 +85,7 @@
           fileManager = "nautilus";
           editor = "code";
           launcher = "wofi";
-          bar = "astal";
+          bar = "waybar";
           screenLocker = "gtklock";
           browser = "firefox";
         };
