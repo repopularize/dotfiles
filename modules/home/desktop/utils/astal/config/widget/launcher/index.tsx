@@ -65,7 +65,7 @@ export function Launcher() {
         }}
       >
         <box hexpand>
-          <icon css="font-size: 32px;" icon={app.get_icon_name() || ""} />
+          <icon css="font-size: 24px;" icon={app.get_icon_name() || ""} />
           <label label={`  ${app.get_name()}`} />
         </box>
       </ListBoxRow>
