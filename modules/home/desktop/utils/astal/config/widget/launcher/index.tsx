@@ -56,7 +56,7 @@ export function Launcher() {
         className={"launcher-item"}
         name={app.name}
         onActivate={(self) => {
-          exec(`hyprctl dispatch exec ${app.executable}`);
+          app.launch();
           App.toggle_window("launcher");
           if (self.is_selected()) self.set_state(Gtk.StateType.NORMAL);
         }}
@@ -100,7 +100,6 @@ export function Launcher() {
         event.get_keycode()[1] === 9 && window.hide()
       }
       setup={(self) => {
-        self.hide();
         // Moves to screen with mouse focus
         self.hook(hyprland, "notify", (self) => {
           if (self.monitor != hyprland.get_focused_monitor().id)
