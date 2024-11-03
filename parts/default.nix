@@ -11,5 +11,6 @@
 
     ./packages # some packages i want to export
     ./overlays # flake overlays
+    ./templates # some project templates so with flakes
   ];
 }

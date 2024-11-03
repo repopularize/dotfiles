@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsx scripts/build.mts",
+    "watch": "pnpm build -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.8.7",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.2"
+  }
+}
