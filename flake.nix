@@ -42,13 +42,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # catppuccin theme for nix
-    catppuccin = {
-      type = "github";
-      owner = "catppuccin";
-      repo = "nix";
-    };
-
     # self explanatory (jk i have no idea what this does)
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";

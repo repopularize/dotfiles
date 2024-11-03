@@ -1,4 +1,4 @@
-{ inputs', inputs, osConfig, lib, ... }:
+{ inputs', inputs, osConfig, lib, pkgs, ... }:
 let
   inherit (lib) mkIf;
 
@@ -8,23 +8,21 @@ in
   imports = [ inputs.spicetify-nix.homeManagerModule ];
 
   config = mkIf (osConfig.modules.programs.gui.spotify.enable) {
-    programs.spicetify = {
-      enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
+    programs.spicetify =
+      {
+        enable = true;
+        enabledExtensions = with spicePkgs.extensions; [
+          fullAppDisplay
+          adblock
+          fullScreen
+          genre
+          shuffle
+        ];
 
-      enabledExtensions = with spicePkgs.extensions; [
-        fullAppDisplay
-        adblock
-        fullScreen
-        genre
-        shuffle
-      ];
-
-      enabledCustomApps = with spicePkgs.apps; [
-        marketplace
-        spicePkgs.official.apps.lyrics-plus
-      ];
-    };
+        enabledCustomApps = with spicePkgs.apps; [
+          marketplace
+          spicePkgs.official.apps.lyrics-plus
+        ];
+      };
   };
 }

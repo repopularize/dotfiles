@@ -1,4 +1,5 @@
-import { App, bind } from "astal";
+import { App } from "astal/gtk3";
+import { bind } from "astal";
 import Gdk from "gi://Gdk?version=3.0";
 import AstalTray from "gi://AstalTray";
 
@@ -12,6 +13,9 @@ export function Tray() {
           if (item.iconThemePath) App.add_icons(item.iconThemePath);
 
           const menu = item.create_menu();
+
+          print(item.iconName)
+          print(item.iconThemePath)
 
           return (
             <button
@@ -27,7 +31,9 @@ export function Tray() {
                 );
               }}
             >
-              <icon gIcon={bind(item, "gicon")} />
+              <icon
+                gIcon={bind(item, "gicon")}
+              />
             </button>
           );
         })

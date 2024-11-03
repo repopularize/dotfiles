@@ -1,0 +1,49 @@
+.launcher {
+    * {
+        font-family: Inter;
+        font-weight: 500;
+    }
+
+    background-color: $bg;
+    border-radius: $radius;
+    border: 2px $accent solid;
+
+    .flat {
+        all: unset;
+
+        padding: 15px;
+        border-radius: $radius;
+    }
+
+    .launcher-container {
+        background-color: $bg;
+        margin: 3px;
+        border-radius: $radius;
+
+        scrollable {
+            all: unset;
+            border-radius: $radius;
+
+            .launcher-items {
+                all: unset;
+                padding: 15px;
+
+                .launcher-item {
+                    all: unset;
+
+                    @include space-between-x(15px);
+                    transition: 0.3s;
+                    -gtk-icon-shadow: none;
+                    border-radius: $radius;
+
+
+                    &:focus {
+                        padding-left: 15px;
+                        background-color: $fg;
+                        color: $bg;
+                    }
+                }
+            }
+        }
+    }
+}

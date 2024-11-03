@@ -89,7 +89,7 @@
           fileManager = "nautilus";
           editor = "code";
           launcher = "wofi";
-          bar = "waybar";
+          bar = "astal";
           screenLocker = "gtklock";
           browser = "firefox";
         };

@@ -1,0 +1,22 @@
+* {
+    font-family: "JetBrains Mono NF";
+    font-weight: 300;
+}
+
+@mixin rounded-full {
+    border-radius: 9999px;
+}
+
+// Add horizontal space between all direct child elements.
+@mixin space-between-x($space) {
+    >*+* {
+        margin-left: $space;
+    }
+}
+
+// Add vertical space between all direct child elements.
+@mixin space-between-y($space) {
+    >*+* {
+        margin-top: $space;
+    }
+}

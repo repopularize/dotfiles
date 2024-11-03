@@ -1,10 +1,8 @@
 window.bar {
-    border-bottom: 2px solid $accent;
+    border-bottom: 1px solid $accent;
     box-shadow: none;
     background-color: transparentize($bg, 0.3);
     color: $fg;
-    font-size: 1.1em;
-    font-weight: bold;
 
     .bar-box {
         padding: 10px 5px;
@@ -30,40 +28,62 @@ window.bar {
         margin: 2px;
         border-radius: $radius;
         border: 1pt solid transparent;
+        color: $fg;
     }
 
-    .workspaces .focused label {
-        color: $accent;
-        border-color: $accent;
+    .workspaces {
+        padding-top: 0.870em;
+        padding-bottom: 0.870em;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+
+        @include space-between-x(0.5em);
+
+        .workspace {
+            @include rounded-full;
+
+            transition-property: min-width, background-color;
+            transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+            transition-duration: 200ms;
+
+            min-height: 0.45em;
+            min-width: 0.6em;
+
+            margin-bottom: -0.20em;
+            margin-top: -0.20em;
+
+            background-color: $fg;
+
+            &.active {
+                min-height: 0.6em;
+                min-width: 1.8em;
+
+                margin-bottom: -0.30em;
+                margin-top: -0.30em;
+
+                background-color: $accent;
+            }
+        }
     }
 
     .mpris {
         transition: 0.3s;
-        background-color: transparentize($bg, 0.8);
         padding: 2px 5px;
         border-radius: $radius;
-
-        &:hover {
-            background-color: $accent;
-        }
 
         .mpris-cover {
             min-height: 1.2em;
             min-width: 1.2em;
-            border-radius: $radius;
+            border-radius: 3px;
             background-position: center;
             background-size: contain;
             transition: 0.3s;
         }
     }
 
-    .audio-slider {
-        * {
-            all: unset;
-        }
-
+    .audio {
         icon {
-            margin-right: .6em;
+            margin-right: .3em;
         }
 
         margin: 0 1em;
@@ -88,20 +108,20 @@ window.bar {
         }
     }
 
-    .tray > .tray-item {
-        margin: 0px 5px;
-        padding: 3px;
-        border-radius: 8px;
-        transition: 0.3s;
+    .tray {
+        @include space-between-x(0.5em);
 
-        &:hover {
-            background-color: $accent;
+        margin-left: 15px;
+        margin-right: 2em;
+
+        .tray-item {
+            padding: 3px;
+            border-radius: 8px;
         }
     }
 
     .command-center-access {
         transition: 0.3s;
-        background-color: transparentize($bg, 0.8);
         padding: 2px 5px;
         border-radius: $radius;
 

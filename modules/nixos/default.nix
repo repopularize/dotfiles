@@ -9,7 +9,6 @@
     ./virtualization.nix # docker, QEMU, waydroid, and most importantly the machine's vmVariant for testing these dotfiles
 
     ./nix.nix # nix settings for nixos only systems
-    ./themes.nix # themes
     ./emulation.nix # self explanatory
   ];
 }

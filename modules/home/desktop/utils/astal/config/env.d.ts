@@ -17,3 +17,5 @@ declare module "*.css" {
     const content: string
     export default content
 }
+
+declare const SRC: string;

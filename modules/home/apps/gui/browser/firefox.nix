@@ -2,11 +2,11 @@
 let
   cfg = osConfig.modules.programs.gui.browsers.firefox;
   font = "Inter";
-  background = "1e1e2e";
-  background-darker = "181825";
-  foreground = "cdd6f4";
-  primary = "b4befe";
-  border = "b4befe";
+  background = "000000";
+  background-darker = "000000";
+  foreground = "#ffffff";
+  primary = "#ffffff";
+  border = "#ffffff";
 in
 {
   imports = [ inputs.arkenfox.hmModules.arkenfox ];

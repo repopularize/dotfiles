@@ -6,7 +6,7 @@ export function Mpris() {
   const mpris = AstalMpris.get_default();
 
   return (
-    <box className="mpris">
+    <button className="mpris">
       {bind(mpris, "players").as((ps) =>
         ps[0] ? (
           <box>
@@ -17,12 +17,12 @@ export function Mpris() {
                 (cover) => `background-image: url('${cover}');`
               )}
             />
-            <label label={bind(ps[0], "title").as(() => `${ps[0].title}`)} />
+            <label label={bind(ps[0], "title").as(() => `${ps[0].title.replace(/\s*\(.*?\)\s*/g, "").replace(/\s*\[.*?\]\s*/g, "")}`)} />
           </box>
         ) : (
           ""
         )
       )}
-    </box>
+    </button>
   );
 }

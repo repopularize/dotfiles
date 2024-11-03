@@ -1,23 +1,14 @@
-{ lib, pkgs, inputs, osConfig, ... }:
-let cfg = osConfig.modules.style;
-in {
-  imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
-
+{ lib, osConfig, ... }:
+let
+  cfg = osConfig.modules.style.pointerCursor;
+in
+{
   config = {
-    catppuccin = {
-      enable = true;
-      flavor = "mocha";
-      accent = "mauve";
-
-      pointerCursor = {
-        enable = true;
-        accent = "dark";
-      };
-    };
-
     # pointer / cursor theming
     home.pointerCursor = {
-      size = 24;
+      package = cfg.package;
+      name = cfg.name;
+      size = cfg.size;
       gtk.enable = true;
       x11.enable = !(lib.isWayland osConfig);
     };

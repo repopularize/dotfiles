@@ -42,7 +42,7 @@ let
     '';
   };
 in {
-  home.packages = with pkgs; [
+  home.packages = [
     powermenu
     screenshot
     screenshot-window

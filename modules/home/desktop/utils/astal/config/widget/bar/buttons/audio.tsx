@@ -1,17 +1,18 @@
 import { bind } from "astal";
 import Wp from "gi://AstalWp";
 
-export function AudioSlider() {
+export function Audio() {
   const speaker = Wp.get_default()?.audio.defaultSpeaker!;
 
   return (
-    <box className="audio-slider" css="min-width: 140px">
+    <box className="audio">
       <icon icon={bind(speaker, "volumeIcon")} />
-      <slider
+      {/* <slider
         hexpand
         onDragged={({ value }) => (speaker.volume = value)}
         value={bind(speaker, "volume")}
-      />
+      /> */}
+      <label label={bind(speaker, "volume").as((v) => `${Math.round(v * 100)}%`)} />
     </box>
   );
 }

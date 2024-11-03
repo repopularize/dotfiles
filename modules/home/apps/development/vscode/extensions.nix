@@ -39,18 +39,7 @@ builtins.concatLists (builtins.attrValues {
     piousdeer.adwaita-theme
     pkief.material-icon-theme
     vscode-icons-team.vscode-icons
-    (pkgs.catppuccin-vsc.override {
-      accent = "mauve";
-      boldKeywords = true;
-      italicComments = true;
-      italicKeywords = true;
-      extraBordersEnabled = false;
-      workbenchMode = "flat";
-      bracketMode = "rainbow";
-      colorOverrides = { };
-      customUIColors = { };
-    })
-    catppuccin.catppuccin-vsc-icons
+    rendinjast.amoled-black
   ];
   rust = with extensions; [
     relm4.relm4-snippets

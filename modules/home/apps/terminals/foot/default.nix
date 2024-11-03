@@ -1,10 +1,10 @@
-{ lib, pkgs, inputs, defaults, osConfig, ... }:
+{ lib, osConfig, ... }:
 let inherit (osConfig.modules) programs;
 in {
   config = lib.mkIf programs.gui.terminals.foot.enable {
     programs.foot = {
       enable = true;
-      catppuccin.enable = true;
+
       settings = {
         main = {
           font = "JetBrainsMono NF:size=11";

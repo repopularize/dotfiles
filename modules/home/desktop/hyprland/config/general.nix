@@ -5,10 +5,10 @@
     gaps_in = 8;
     gaps_out = 8;
     gaps_workspaces = 0;
-    border_size = 2;
+    border_size = 1;
     no_border_on_floating = true;
 
-    "col.active_border" = "$lavender";
-    "col.inactive_border" = "$surface1";
+    "col.active_border" = "rgb(ffffff)";
+    "col.inactive_border" = "rgb(000000)";
   };
 }

@@ -45,6 +45,14 @@ in
       } --dmenu | ${lib.getExe pkgs.cliphist} decode | ${
         lib.getExe' pkgs.wl-clipboard "wl-copy"
       }"
+    ] ++ optionals (defaults.bar == "astal") [
+      "${mainMod}, R, exec, ags -m launcher"
+      "${mainMod}, escape, exec, wlogout"
+      "${mainMod}, V, exec, ${lib.getExe pkgs.cliphist} list | ${
+        lib.getExe pkgs.wofi
+      } --dmenu | ${lib.getExe pkgs.cliphist} decode | ${
+        lib.getExe' pkgs.wl-clipboard "wl-copy"
+      }"
     ];
 
     # mouse binds

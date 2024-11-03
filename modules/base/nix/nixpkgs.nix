@@ -13,7 +13,6 @@
     overlays = [
       # self.overlays.default
       inputs.rust-overlay.overlays.default
-      inputs.catppuccin-vsc.overlays.default
       self.overlays.default
     ];
   };
