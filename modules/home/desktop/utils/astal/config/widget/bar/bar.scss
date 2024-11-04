@@ -111,7 +111,7 @@ window.bar {
     .tray {
         @include space-between-x(0.5em);
         padding: 3px;
-        background-color: transparentize($fg, 0.1);
+        border: 1px solid $fg;
         border-radius: $radius;
         min-width: 15px;
 

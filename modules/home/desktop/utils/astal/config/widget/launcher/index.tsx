@@ -55,6 +55,9 @@ export function Launcher() {
         tooltipText={app.name}
         className={"launcher-item"}
         name={app.name}
+        onButtonPressEvent={(self) => {
+          self.activate();
+        }}
         onActivate={(self) => {
           app.launch();
           App.toggle_window("launcher");
@@ -93,6 +96,7 @@ export function Launcher() {
       widthRequest={512}
       className={"launcher"}
       opacity={0.7}
+      visible={false}
       monitor={hyprland.get_focused_monitor().id}
       application={App}
       onKeyPressEvent={(window, event) =>
@@ -109,7 +113,7 @@ export function Launcher() {
     >
       <box className={"launcher-container"} vertical>
         <Entry />
-        <scrollable vexpand className="scrollable">
+        <scrollable vexpand className="scrollable" marginTop={2}>
           <ListBox
             className={"launcher-items"}
             valign={Gtk.Align.FILL}

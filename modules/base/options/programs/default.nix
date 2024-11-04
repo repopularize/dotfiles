@@ -72,7 +72,6 @@ in
 
       terminals = {
         wezterm.enable = mkEnableOption "WezTerm terminal emulator";
-        ghostty.enable = mkEnableOption "Ghostty terminal emulator";
         kitty.enable = mkEnableOption "Kitty terminal emulator";
         alacritty.enable = mkEnableOption "Alacritty terminal emulator";
         foot.enable = mkEnableOption "Foot terminal emulator" // {

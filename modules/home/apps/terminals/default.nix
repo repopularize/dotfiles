@@ -1,5 +1,6 @@
 {
   imports = [
-    ./foot # foot terminal emulator configuration
+    ./foot.nix # foot terminal emulator configuration
+    ./alacritty.nix # alacritty terminal emulator configuration
   ];
 }

@@ -80,12 +80,13 @@
           terminals = {
             foot.enable = true;
             kitty.enable = true;
+            alacritty.enable = true;
           };
 
           fileManagers = { nautilus.enable = true; };
         };
         defaults = {
-          terminal = "foot";
+          terminal = "alacritty";
           fileManager = "nautilus";
           editor = "code";
           launcher = "wofi";
