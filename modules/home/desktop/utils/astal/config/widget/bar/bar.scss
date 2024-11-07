@@ -61,7 +61,8 @@ window.bar {
                 margin-bottom: -0.30em;
                 margin-top: -0.30em;
 
-                background-color: $accent;
+                background-color: $bg;
+                border: 1px solid $fg;
             }
         }
     }

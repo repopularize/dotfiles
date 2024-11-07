@@ -1,4 +1,4 @@
-import { Astal, Gtk, App } from "astal/gtk3";
+import { Astal, Gtk, App, Gdk } from "astal/gtk3";
 import { exec, timeout, Variable } from "astal";
 import Hyprland from "gi://AstalHyprland";
 import { style } from "lib/style";
@@ -17,6 +17,8 @@ export function Launcher() {
   style(css);
 
   const appList = apps.fuzzy_query("");
+
+  const search = Variable(false);
 
   function Entry() {
     return (
@@ -43,6 +45,10 @@ export function Launcher() {
             self.grab_focus();
             // reset text on app launch
             if (App.get_window("launcher")?.is_visible()) self.text = "";
+          });
+
+          search.subscribe((value) => {
+            if (value == true) self.grab_focus();
           });
         }}
       />
@@ -99,10 +105,27 @@ export function Launcher() {
       visible={false}
       monitor={hyprland.get_focused_monitor().id}
       application={App}
-      onKeyPressEvent={(window, event) =>
-        // Closes applauncher when Esc is pressed
-        event.get_keycode()[1] === 9 && window.hide()
-      }
+      onKeyPressEvent={(window, event) => {
+        const keycode = event.get_keycode()[1];
+
+        if (keycode == 9) window.hide();
+        else if (
+          keycode !== 111 &&
+          keycode !== 113 &&
+          keycode !== 116 &&
+          keycode !== 114
+        )
+          search.set(true);
+        else if (
+          keycode === 111 ||
+          keycode === 113 ||
+          keycode == 116 ||
+          keycode == 114
+        )
+          search.set(false);
+
+        if (search.get() == true && keycode == 116) search.set(false);
+      }}
       setup={(self) => {
         // Moves to screen with mouse focus
         self.hook(hyprland, "notify", (self) => {
@@ -118,6 +141,13 @@ export function Launcher() {
             className={"launcher-items"}
             valign={Gtk.Align.FILL}
             halign={Gtk.Align.FILL}
+            setup={(self) =>
+              search.subscribe((v) => {
+                if (v == false) {
+                  self.get_children()[0].grab_focus();
+                }
+              })
+            }
           >
             {appButtons}
           </ListBox>
