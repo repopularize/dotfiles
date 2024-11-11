@@ -11,6 +11,6 @@ in
       "wlsunset -S 8:00 -s 20:00"
       "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
     ] ++ optionals (defaults.bar == "waybar") [ "waybar" ]
-    ++ optionals (defaults.bar == "astal") [ "ags" ];
+    ++ optionals (defaults.bar == "astal") [ "ags run" ];
   };
 }

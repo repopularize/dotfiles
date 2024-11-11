@@ -4,7 +4,7 @@ import Hyprland from "gi://AstalHyprland";
 import { style } from "lib/style";
 import css from "inline:./launcher.scss";
 import Apps from "gi://AstalApps?version=0.1";
-import { FlowBoxChild, FlowBox, ListBox, ListBoxRow } from "widget/utils";
+import { ListBox, ListBoxRow } from "widget/utils";
 
 const hyprland = Hyprland.get_default();
 const apps = new Apps.Apps({

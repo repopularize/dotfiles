@@ -1,5 +1,5 @@
 import { App } from "astal/gtk3";
-import { Bar, Desktop, Launcher } from "widget";
+import { Bar, Desktop, Launcher } from "./widget";
 
 App.start({
   icons: `${SRC}/icons`,
