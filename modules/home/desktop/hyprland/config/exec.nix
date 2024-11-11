@@ -1,4 +1,4 @@
-{ pkgs, lib, config, defaults, ... }:
+{ lib, config, defaults, ... }:
 let
   inherit (lib) optionals;
   pointer = config.home.pointerCursor;
@@ -10,9 +10,6 @@ in
       "wl-paste --type image --watch cliphist store" # Stores only image data
       "wlsunset -S 8:00 -s 20:00"
       "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
-      "${lib.getExe pkgs.swww} init && ${lib.getExe pkgs.swww} img ${
-        ../../wallpapers/saturn.png
-      }"
     ] ++ optionals (defaults.bar == "waybar") [ "waybar" ]
     ++ optionals (defaults.bar == "astal") [ "ags" ];
   };
