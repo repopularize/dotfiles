@@ -1,5 +1,5 @@
 import { Astal, Gtk, Gdk } from "astal/gtk3";
-import { Wifi, Tray, Audio, Mpris, Clock, Workspaces } from "./buttons";
+import { Tray, Mpris, Clock, Workspaces, Indicators, Focused } from "./buttons";
 import { style } from "../../lib/style";
 import css from "inline:./bar.scss";
 
@@ -16,24 +16,18 @@ export function Bar(monitor: Gdk.Monitor) {
       exclusivity={Astal.Exclusivity.EXCLUSIVE}
       anchor={anchor}
     >
-      <centerbox className={"bar-box"}>
+      <centerbox className={"bar-centerbox"}>
         <box hexpand halign={Gtk.Align.START}>
-          <Tray />
-          <Workspaces />
-          {/* <FocusedClient /> */}
+          <Focused />
         </box>
-        <box></box>
-        <box hexpand halign={Gtk.Align.END}>
+        <box spacing={5}>
           <Mpris />
-          <Audio />
-          <box
-            hexpand
-            halign={Gtk.Align.END}
-            className={"command-center-access"}
-          >
-            {/* <Wifi /> */}
-            <Clock />
-          </box>
+          <Clock />
+          <Indicators />
+          <Tray />
+        </box>
+        <box hexpand halign={Gtk.Align.END}>
+          <Workspaces />
         </box>
       </centerbox>
     </window>

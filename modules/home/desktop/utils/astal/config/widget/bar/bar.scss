@@ -1,137 +1,171 @@
 window.bar {
-    border-bottom: 1px solid $accent;
-    box-shadow: none;
-    background-color: transparentize($bg, 0.3);
-    color: $fg;
+  box-shadow: none;
+  background-color: $base00;
+  color: $base06;
 
-    .bar-box {
-        padding: 10px 5px;
+  .bar-centerbox {
+    min-height: to-rem(45px);
+    padding-left: to-rem(20px);
+    padding-right: to-rem(20px);
+  }
+
+  .bar-box {
+    background-color: $base01;
+    min-width: to-rem(80px);
+    min-height: to-rem(35px);
+    @include rounded-full;
+
+    &.clock-box {
+      padding: 0 to-rem(15px);
     }
 
-    button {
-        all: unset;
-        background-color: transparent;
+    .indicators {
+      padding: 0 to-rem(15px);
+    }
+  }
 
-        &:hover label {
-            background-color: transparentize($fg, 0.84);
-            border-color: transparentize($accent, 0.8);
-        }
+  button {
+    all: unset;
+    background-color: transparent;
 
-        &:active label {
-            background-color: transparentize($fg, 0.8)
-        }
+    &:hover label {
+      background-color: transparentize($base06, 0.84);
+      border-color: transparentize($base09, 0.8);
     }
 
-    label {
-        transition: 200ms;
-        padding: 0 8px;
-        margin: 2px;
-        border-radius: $radius;
-        border: 1pt solid transparent;
-        color: $fg;
+    &:active label {
+      background-color: transparentize($base06, 0.8);
+    }
+  }
+
+  label {
+    transition: 200ms;
+    padding: 0 8px;
+    margin: 2px;
+    border-radius: $radius;
+    border: 1pt solid transparent;
+    color: $base06;
+  }
+
+  .bar-label {
+    font-weight: 600;
+    color: $base04;
+
+    &.title {
+      font-weight: 500;
+      font-size: to-rem(15px);
+      color: $base05;
+      margin: -1px 3px;
     }
 
-    .workspaces {
-        padding-top: 0.870em;
-        padding-bottom: 0.870em;
-        padding-left: 0.25em;
-        padding-right: 0.25em;
+    &.subtitle {
+      font-size: to-rem(12px);
+      color: $base03;
+      margin: -3px 3px;
+    }
+  }
 
-        @include space-between-x(0.5em);
+  .workspaces-box {
+    @include rounded-full;
+  }
 
-        .workspace {
-            @include rounded-full;
+  .workspaces {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
 
-            transition-property: min-width, background-color;
-            transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
-            transition-duration: 200ms;
+    @include space-between-x(0.3em);
 
-            min-height: 0.45em;
-            min-width: 0.6em;
+    .workspace {
+      @include rounded-full;
 
-            margin-bottom: -0.20em;
-            margin-top: -0.20em;
+      transition-property: min-width, background-color;
+      transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+      transition-duration: 200ms;
 
-            background-color: $fg;
+      background-color: $base03;
 
-            &.active {
-                min-height: 0.6em;
-                min-width: 1.8em;
+      min-height: 0.45em;
+      min-width: 0.45em;
 
-                margin-bottom: -0.30em;
-                margin-top: -0.30em;
+      &.active {
+        background-color: mix($base00, $base05, 50%);
+        font-weight: bold;
+        border: 1px solid $base03;
 
-                background-color: $bg;
-                border: 1px solid $fg;
-            }
-        }
+        min-height: 0.6em;
+        min-width: 1.8em;
+
+        margin-bottom: -0.3em;
+        margin-top: -0.3em;
+      }
+    }
+  }
+
+  .mpris {
+    transition: 0.3s;
+    padding: 0px 10px;
+
+    @include rounded-full;
+
+    .mpris-cover {
+      min-height: 1.5em;
+      min-width: 1.5em;
+      background-position: center;
+      background-size: contain;
+      transition: 0.3s;
+      @include rounded-full;
+    }
+  }
+
+  .indicators {
+    icon {
+      margin-right: 0.3em;
     }
 
-    .mpris {
-        transition: 0.3s;
-        padding: 2px 5px;
-        border-radius: $radius;
+    margin: 0 0.3em;
 
-        .mpris-cover {
-            min-height: 1.2em;
-            min-width: 1.2em;
-            border-radius: 3px;
-            background-position: center;
-            background-size: contain;
-            transition: 0.3s;
-        }
+    .volume-slider {
+      min-width: to-rem(100px);
+      margin-left: to-rem(10px);
+
+      trough {
+        background-color: transparentize($base00, 0.4);
+        border-radius: 10px;
+      }
+
+      highlight {
+        background-color: $base09;
+        min-height: to-rem(12px);
+        border-radius: to-rem(20px);
+      }
     }
+  }
 
-    .audio {
-        icon {
-            margin-right: .3em;
-        }
+  .tray {
+    @include space-between-x(0.5em);
+    padding: 3px;
+    border: 1px solid $base06;
+    border-radius: $radius;
+    min-width: 15px;
 
-        margin: 0 0.3em;
+    margin-left: 5px;
+    margin-right: 1em;
 
-        trough {
-            background-color: transparentize($fg, 0.8);
-            border-radius: $radius;
-        }
-
-        highlight {
-            background-color: $accent;
-            min-height: .8em;
-            border-radius: $radius;
-        }
-
-        slider {
-            background-color: $fg;
-            border-radius: $radius;
-            min-height: 1em;
-            min-width: 1em;
-            margin: -.2em;
-        }
+    .tray-item {
+      padding: 3px;
+      border-radius: 8px;
     }
+  }
 
-    .tray {
-        @include space-between-x(0.5em);
-        padding: 3px;
-        border: 1px solid $fg;
-        border-radius: $radius;
-        min-width: 15px;
+  .command-center-access {
+    transition: 0.3s;
+    padding: 2px 5px;
+    border-radius: $radius;
 
-        margin-left: 5px;
-        margin-right: 1em;
-
-        .tray-item {
-            padding: 3px;
-            border-radius: 8px;
-        }
+    &:hover {
+      background-color: $base09;
     }
-
-    .command-center-access {
-        transition: 0.3s;
-        padding: 2px 5px;
-        border-radius: $radius;
-
-        &:hover {
-            background-color: $accent;
-        }
-    }
+  }
 }

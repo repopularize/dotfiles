@@ -1,5 +1,5 @@
 /* @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css"); */
-@import "https://luckfire.github.io/amoled-cord/src/amoled-cord.css";
+@import url("https://raw.githubusercontent.com/GeopJr/DNOME/refs/heads/dist/DNOME.css");
 
 :root {
   --font-primary: "Inter";

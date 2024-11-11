@@ -8,7 +8,7 @@
     border_size = 1;
     no_border_on_floating = true;
 
-    "col.active_border" = "rgb(ffffff)";
-    "col.inactive_border" = "rgb(000000)";
+    "col.active_border" = "rgb(525252)";
+    "col.inactive_border" = "rgb(393939)";
   };
 }

@@ -2,11 +2,11 @@
 let
   cfg = osConfig.modules.programs.gui.browsers.firefox;
   font = "Inter";
-  background = "000000";
-  background-darker = "000000";
+  background = "262626";
+  background-darker = "161616";
   foreground = "#ffffff";
-  primary = "#ffffff";
-  border = "#ffffff";
+  primary = "#78a9ff";
+  border = "#525252";
 in
 {
   imports = [ inputs.arkenfox.hmModules.arkenfox ];
@@ -133,6 +133,7 @@ in
           }
           #urlbar-background, #searchbar {
               border: 0px none !important;
+              background-color: ${background-darker};
           }
           #urlbar {
               background: transparent !important;

@@ -61,8 +61,10 @@ export function Launcher() {
         tooltipText={app.name}
         className={"launcher-item"}
         name={app.name}
-        onButtonPressEvent={(self) => {
-          self.activate();
+        onButtonReleaseEvent={(self) => {
+          app.launch(); 
+          App.toggle_window("launcher");
+          if (self.is_selected()) self.set_state(Gtk.StateType.NORMAL);
         }}
         onActivate={(self) => {
           app.launch();
@@ -101,7 +103,6 @@ export function Launcher() {
       heightRequest={512}
       widthRequest={512}
       className={"launcher"}
-      opacity={0.7}
       visible={false}
       monitor={hyprland.get_focused_monitor().id}
       application={App}

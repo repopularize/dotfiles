@@ -1,6 +1,15 @@
 * {
-    font-family: "JetBrains Mono NF";
-    font-weight: 300;
+    &:not(menu):not(menuitem):not(separator):not(tooltip) {
+        all: unset;
+    }
+
+    font-family: "Cantarell";
+    font-weight: normal;
+    font-size: 16px;
+}
+
+@function to-rem($px) {
+    @return ($px / 16px) * 1rem;
 }
 
 @mixin rounded-full {

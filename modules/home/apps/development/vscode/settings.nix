@@ -3,7 +3,7 @@
 {
   "terminal.integrated.shell.linux" = "${lib.getExe pkgs.nushell}";
   "terminal.integrated.defaultProfile.linux" = "Nushell";
-  "workbench.colorTheme" = "AMOLED Black";
+  "workbench.colorTheme" = "Adwaita Dark & default syntax highlighting & colorful status bar";
   "workbench.iconTheme" = "vscode-icons";
   "editor.smoothScrolling" = true;
   "workbench.list.smoothScrolling" = true;

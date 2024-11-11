@@ -59,3 +59,7 @@ export function launchApp(app: Apps.Application) {
   bash(`${exe} &`);
   app.frequency += 1;
 }
+
+export function rem(px: number) {
+  return px / 16;
+}

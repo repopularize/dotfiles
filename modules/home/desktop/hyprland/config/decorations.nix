@@ -6,10 +6,9 @@
     inactive_opacity = 0.8;
     fullscreen_opacity = 1.0;
 
-    drop_shadow = false; # off for now
-    shadow_range = 10;
-    "col.shadow" = "rgb(ffffff)";
-    "col.shadow_inactive" = "rgb(000000)";
+    drop_shadow = true; # off for now
+    "col.shadow" = "rgb(161616)";
+    "col.shadow_inactive" = "rgb(262626)";
 
     blur = {
       enabled = true;
