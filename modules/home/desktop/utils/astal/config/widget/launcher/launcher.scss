@@ -6,20 +6,17 @@
 
     background-color: $base00;
     border-radius: $radius;
-    border: 2px $base01 solid;
 
     .flat {
-        all: unset;
-
         padding: 15px;
-        border-radius: $radius;
-        border-bottom: 1px solid $base01;
+        border: 1px solid $base01;
+        border-radius: 4px;
     }
 
     .launcher-container {
         background-color: $base00;
-        margin: 3px;
         border-radius: $radius;
+        padding: 15px;
 
         scrollable {
             all: unset;
@@ -27,8 +24,6 @@
 
             .launcher-items {
                 all: unset;
-                padding: 5px;
-                margin: 5px;
 
                 .launcher-item {
                     all: unset;
@@ -38,8 +33,7 @@
                     -gtk-icon-shadow: none;
                     border-radius: $radius;
                     padding: 5px 10px;
-                    border: 1px solid $base01;
-                    margin: 5px 5px;
+                    margin: 3px 10px;
 
 
                     &:focus {

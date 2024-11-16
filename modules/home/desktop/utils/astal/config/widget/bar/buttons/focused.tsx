@@ -15,7 +15,9 @@ export function Focused() {
               const client = hypr.focused_client;
 
               if (client) {
-                self.label = client.initialClass ? client.initialClass : `${client.width} x ${client.height} window`;
+                self.label = client.initialClass
+                  ? client.initialClass
+                  : `${client.width} x ${client.height} window`;
               } else {
                 self.label = `Desktop`;
               }

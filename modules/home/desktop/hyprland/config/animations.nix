@@ -18,6 +18,8 @@
       "border, 1, 1, linear"
       "borderangle, 1, 30, linear, loop"
       "fade, 1, 10, default"
+      "layersIn, 1, 6, winIn, slide"
+      "layersOut, 1, 6, winOut, slide"
       "workspaces, 1, 5, wind"
     ];
   };

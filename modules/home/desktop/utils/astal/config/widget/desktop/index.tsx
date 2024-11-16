@@ -33,7 +33,9 @@ export function Desktop(monitor: Gdk.Monitor) {
           self.drag_dest_add_text_targets();
         }}
       >
-        <box className={"desktop-box"} >
+        <box
+          className={"desktop-box"}
+        >
           <label
             valign={Gtk.Align.END}
             halign={Gtk.Align.CENTER}

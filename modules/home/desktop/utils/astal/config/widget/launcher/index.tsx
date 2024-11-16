@@ -62,7 +62,7 @@ export function Launcher() {
         className={"launcher-item"}
         name={app.name}
         onButtonReleaseEvent={(self) => {
-          app.launch(); 
+          app.launch();
           App.toggle_window("launcher");
           if (self.is_selected()) self.set_state(Gtk.StateType.NORMAL);
         }}
@@ -102,6 +102,7 @@ export function Launcher() {
       name={`launcher`}
       heightRequest={512}
       widthRequest={512}
+      layer={Astal.Layer.TOP}
       className={"launcher"}
       visible={false}
       monitor={hyprland.get_focused_monitor().id}
@@ -135,7 +136,7 @@ export function Launcher() {
         });
       }}
     >
-      <box className={"launcher-container"} vertical>
+      <box className={"launcher-container"} vertical >
         <Entry />
         <scrollable vexpand className="scrollable" marginTop={2}>
           <ListBox
