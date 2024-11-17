@@ -2,7 +2,8 @@
 let
   inherit (config.modules) environment;
   manager = environment.loginManager;
-in {
+in
+{
   services.xserver = {
     enable = manager == "gdm";
     displayManager = {

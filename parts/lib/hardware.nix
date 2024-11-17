@@ -4,4 +4,7 @@ let
   # get its name from the list of monitors
   # `primaryMonitor osConfig` -> "DP-1"
   primaryMonitor = config: builtins.elemAt config.modules.device.monitors 0;
-in { inherit primaryMonitor; }
+in
+{
+  inherit primaryMonitor;
+}

@@ -5,7 +5,8 @@ let
 
   # wrap the import with a pre-inherited lib to avoid typing it over and over again
   # credits to @nrabulinski
-  import' = path:
+  import' =
+    path:
     let
       func = import path;
       args = lib.functionArgs func;
@@ -13,8 +14,11 @@ let
       defaultArgs = (lib.mapAttrs (_: _: null) requiredArgs) // {
         inherit lib;
       };
-      functor = { __functor = _: attrs: func (defaultArgs // attrs); };
-    in (func defaultArgs) // functor;
+      functor = {
+        __functor = _: attrs: func (defaultArgs // attrs);
+      };
+    in
+    (func defaultArgs) // functor;
 
   builders = import' ./builders.nix { inherit inputs; };
   services = import' ./services.nix;
@@ -23,5 +27,12 @@ let
   hardware = import' ./hardware.nix;
 
   # recursively merges two attribute sets
-  importedLibs = [ builders services validators helpers hardware ];
-in lib.extend (_: _: foldl recursiveUpdate { } importedLibs)
+  importedLibs = [
+    builders
+    services
+    validators
+    helpers
+    hardware
+  ];
+in
+lib.extend (_: _: foldl recursiveUpdate { } importedLibs)

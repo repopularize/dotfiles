@@ -26,13 +26,12 @@
       });
 
       devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell
-          {
-            packages = with pkgs; [
-              nodejs_latest # NodeJS runtime + NPM
-              nodePackages_latest.pnpm # PNPM package manager
-            ];
-          };
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            nodejs_latest # NodeJS runtime + NPM
+            nodePackages_latest.pnpm # PNPM package manager
+          ];
+        };
       });
 
       overlays.default = final: _: { example = final.callPackage ./default.nix { }; };

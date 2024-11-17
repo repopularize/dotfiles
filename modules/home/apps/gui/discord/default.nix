@@ -1,6 +1,13 @@
-{ osConfig, lib, pkgs, ... }:
-let inherit (lib) mkIf;
-in {
+{
+  osConfig,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  inherit (lib) mkIf;
+in
+{
   config = mkIf (osConfig.modules.programs.gui.discord.enable) {
     home.packages = [ (pkgs.vesktop.override { withSystemVencord = false; }) ];
 

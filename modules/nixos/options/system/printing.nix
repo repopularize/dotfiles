@@ -1,6 +1,8 @@
 { lib, ... }:
-let inherit (lib) mkEnableOption mkOption types;
-in {
+let
+  inherit (lib) mkEnableOption mkOption types;
+in
+{
   options.modules.system.printing = {
     enable = mkEnableOption "printing";
 

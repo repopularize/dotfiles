@@ -1,10 +1,22 @@
-{ lib, pkgs, inputs', osConfig, ... }:
-let inherit (osConfig.modules) environment;
-in {
+{
+  lib,
+  pkgs,
+  inputs',
+  osConfig,
+  ...
+}:
+let
+  inherit (osConfig.modules) environment;
+in
+{
   imports = [ ./config ];
 
   config = lib.modules.mkIf (environment.desktop == "Hyprland") {
-    home.packages = with pkgs; [ grim swww hyprpicker ];
+    home.packages = with pkgs; [
+      grim
+      swww
+      hyprpicker
+    ];
 
     wayland.windowManager.hyprland = {
       enable = true;

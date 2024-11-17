@@ -1,11 +1,16 @@
-{ lib, pkgs, inputs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   inherit (builtins) attrValues mapAttrs;
   inherit (lib) filterAttrs mkForce;
 
-  flakeInputs =
-    filterAttrs (name: value: (value ? outputs) && (name != "self")) inputs;
-in {
+  flakeInputs = filterAttrs (name: value: (value ? outputs) && (name != "self")) inputs;
+in
+{
   nix = {
     # https://github.com/nix-community/home-manager/issues/4692#issuecomment-1848832609
     package = pkgs.nixVersions.latest;
@@ -27,15 +32,28 @@ in {
       # https://github.com/NixOS/nix/issues/7273
       auto-optimise-store = pkgs.stdenv.isLinux;
       # allow sudo users to mark the following values as trusted
-      allowed-users = [ "@wheel" "root" "yusof" ];
+      allowed-users = [
+        "@wheel"
+        "root"
+        "yusof"
+      ];
       # only allow sudo users to manage the nix store
-      trusted-users = [ "@wheel" "root" "yusof" ];
+      trusted-users = [
+        "@wheel"
+        "root"
+        "yusof"
+      ];
       # let the system decide the number of max jobs
       max-jobs = "auto";
       # build inside sandboxed environments
       sandbox = pkgs.stdenv.isLinux;
       # supported system features
-      system-features = [ "nixos-test" "kvm" "recursive-nix" "big-parallel" ];
+      system-features = [
+        "nixos-test"
+        "kvm"
+        "recursive-nix"
+        "big-parallel"
+      ];
       # continue building derivations even if one fails
       keep-going = true;
       # show more log lines for failed builds, as this happens alot and is useful

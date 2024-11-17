@@ -1,1 +1,6 @@
-{ imports = [ ./device ./system ]; }
+{
+  imports = [
+    ./device
+    ./system
+  ];
+}

@@ -1,4 +1,10 @@
-{ lib, pkgs, config, ... }: {
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+{
   programs = {
     # type "fuck" to fix the last command that made you go "fuck"
     thefuck.enable = true;

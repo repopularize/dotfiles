@@ -1,6 +1,8 @@
 { lib, ... }:
-let inherit (lib) concatMapAttrs genAttrs mkForce;
-in {
+let
+  inherit (lib) concatMapAttrs genAttrs mkForce;
+in
+{
   systemd = {
     network.wait-online.enable = false;
 

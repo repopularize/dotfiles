@@ -3,7 +3,8 @@ let
   inherit (lib) mkIf mkDefault mkForce;
 
   dev = config.modules.device;
-in {
+in
+{
   imports = [
     ./firewall
 
@@ -17,8 +18,7 @@ in {
 
   networking = {
     # generate a host ID by hashing the hostname
-    hostId = builtins.substring 0 8
-      (builtins.hashString "md5" config.networking.hostName);
+    hostId = builtins.substring 0 8 (builtins.hashString "md5" config.networking.hostName);
 
     hostName = config.modules.system.hostname;
     # global dhcp has been deprecated upstream, so we use networkd instead
@@ -31,7 +31,11 @@ in {
     usePredictableInterfaceNames = mkDefault true;
 
     # dns
-    nameservers = mkIf (dev.type != "wsl") [ "1.1.1.1" "1.0.0.1" "9.9.9.9" ];
+    nameservers = mkIf (dev.type != "wsl") [
+      "1.1.1.1"
+      "1.0.0.1"
+      "9.9.9.9"
+    ];
 
     enableIPv6 = true;
   };

@@ -1,1 +1,6 @@
-{ imports = [ ./gtklock.nix ./swaylock.nix ]; }
+{
+  imports = [
+    ./gtklock.nix
+    ./swaylock.nix
+  ];
+}

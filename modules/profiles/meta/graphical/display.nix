@@ -1,6 +1,8 @@
 { config, ... }:
-let inherit (config.modules) environment;
-in {
+let
+  inherit (config.modules) environment;
+in
+{
   services.displayManager.sddm = {
     enable = environment.loginManager == "sddm";
     wayland.enable = true;

@@ -1,8 +1,16 @@
 { lib, config, ... }:
 let
-  inherit (lib) mkDefault mkForce mkOverride mkMerge mkIf optionals;
+  inherit (lib)
+    mkDefault
+    mkForce
+    mkOverride
+    mkMerge
+    mkIf
+    optionals
+    ;
   sys = config.modules.system;
-in {
+in
+{
   boot = {
     consoleLogLevel = 3;
 
@@ -25,32 +33,45 @@ in {
         verbose = false;
 
         # List of modules that are loaded by the initrd
-        kernelModules = [ "nvme" "xhci_pci" "ahci" "sd_mod" "dm_mod" ];
+        kernelModules = [
+          "nvme"
+          "xhci_pci"
+          "ahci"
+          "sd_mod"
+          "dm_mod"
+        ];
 
         # the set of kernel modules in the initial ramdisk used during the boot process
-        availableKernelModules =
-          [ "ehci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+        availableKernelModules = [
+          "ehci_pci"
+          "ahci"
+          "usb_storage"
+          "usbhid"
+          "sd_mod"
+        ];
       })
     ];
 
     # https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html
-    kernelParams = (optionals sys.boot.silentBoot [
-      # tell the kernel to not be verbose, the voices are too loud
-      "quiet"
+    kernelParams = (
+      optionals sys.boot.silentBoot [
+        # tell the kernel to not be verbose, the voices are too loud
+        "quiet"
 
-      # kernel log message level
-      "loglevel=3" # 1: system is unusable | 3: error condition | 7: very verbose
+        # kernel log message level
+        "loglevel=3" # 1: system is unusable | 3: error condition | 7: very verbose
 
-      # udev log message level
-      "udev.log_level=3"
+        # udev log message level
+        "udev.log_level=3"
 
-      # lower the udev log level to show only errors or worse
-      "rd.udev.log_level=3"
+        # lower the udev log level to show only errors or worse
+        "rd.udev.log_level=3"
 
-      # disable systemd status messages
-      # rd prefix means systemd-udev will be used instead of initrd
-      "systemd.show_status=auto"
-      "rd.systemd.show_status=auto"
-    ]);
+        # disable systemd status messages
+        # rd prefix means systemd-udev will be used instead of initrd
+        "systemd.show_status=auto"
+        "rd.systemd.show_status=auto"
+      ]
+    );
   };
 }

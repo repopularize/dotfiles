@@ -16,6 +16,8 @@
       };
     };
 
-    cursor = { no_hardware_cursors = true; };
+    cursor = {
+      no_hardware_cursors = true;
+    };
   };
 }

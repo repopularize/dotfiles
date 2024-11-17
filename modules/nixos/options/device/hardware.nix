@@ -1,15 +1,30 @@
 { lib, ... }:
-let inherit (lib) mkOption types;
-in {
+let
+  inherit (lib) mkOption types;
+in
+{
   options.modules.device = {
     cpu = mkOption {
-      type = types.nullOr (types.enum [ "intel" "vm-intel" "amd" "vm-amd" ]);
+      type = types.nullOr (
+        types.enum [
+          "intel"
+          "vm-intel"
+          "amd"
+          "vm-amd"
+        ]
+      );
       default = null;
       description = "The manufacturer of the primary system gpu";
     };
 
     gpu = mkOption {
-      type = types.nullOr (types.enum [ "amd" "intel" "nvidia" ]);
+      type = types.nullOr (
+        types.enum [
+          "amd"
+          "intel"
+          "nvidia"
+        ]
+      );
       default = null;
       description = "The manufacturer of the primary system gpu";
     };

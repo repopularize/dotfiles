@@ -1,6 +1,15 @@
-{ inputs, lib, pkgs, config, osConfig, ... }:
-let inherit (lib) mkIf isModernShell;
-in {
+{
+  inputs,
+  lib,
+  pkgs,
+  config,
+  osConfig,
+  ...
+}:
+let
+  inherit (lib) mkIf isModernShell;
+in
+{
   programs.atuin = mkIf (isModernShell osConfig) {
     enable = true;
     package = pkgs.atuin;

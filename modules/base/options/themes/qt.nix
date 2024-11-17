@@ -1,8 +1,14 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   inherit (lib) mkEnableOption mkOption types;
   cfg = config.modules.style;
-in {
+in
+{
   options.modules.style.qt = {
     enable = mkEnableOption "QT Style Module";
 
@@ -26,10 +32,8 @@ in {
 
     kdeglobals.source = mkOption {
       type = types.path;
-      default =
-        "${cfg.qt.theme.package}/share/color-schemes/CatppuccinMochaMauve.colors";
-      description =
-        "The source file for the kdeglobals file. Usually provided by the qt theme package";
+      default = "${cfg.qt.theme.package}/share/color-schemes/CatppuccinMochaMauve.colors";
+      description = "The source file for the kdeglobals file. Usually provided by the qt theme package";
     };
   };
 }

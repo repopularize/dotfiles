@@ -1,14 +1,27 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   inherit (lib) optionals mkIf concatLists;
   sys = config.modules.system;
   cfg = sys.virtualization;
-in {
+in
+{
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs;
+    environment.systemPackages =
+      with pkgs;
       concatLists [
-        (optionals cfg.qemu.enable [ virt-manager virt-viewer ])
-        (optionals cfg.docker.enable [ podman podman-compose ])
+        (optionals cfg.qemu.enable [
+          virt-manager
+          virt-viewer
+        ])
+        (optionals cfg.docker.enable [
+          podman
+          podman-compose
+        ])
         (optionals (cfg.docker.enable && sys.video.enable) [ lxd-lts ])
         (optionals cfg.waydroid.enable [ waydroid ])
       ];
@@ -31,11 +44,20 @@ in {
       };
 
       # podman
-      podman = mkIf (cfg.docker.enable || cfg.podman.enable) {
+      podman = mkIf (cfg.podman.enable) {
         enable = true;
-        dockerCompat = true;
-        dockerSocket.enable = true;
-        defaultNetwork.settings = { dns_enabled = true; };
+        defaultNetwork.settings = {
+          dns_enabled = true;
+        };
+        autoPrune = {
+          enable = true;
+          flags = [ "--all" ];
+          dates = "weekly";
+        };
+      };
+
+      docker = mkIf (cfg.docker.enable) {
+        enable = true;
         autoPrune = {
           enable = true;
           flags = [ "--all" ];
@@ -51,8 +73,10 @@ in {
         # good for testing this machine configuration
         services.qemuGuest.enable = true;
         boot = {
-          kernelParams =
-            [ "systemd.show_status=true" "systemd.log_level=debug" ];
+          kernelParams = [
+            "systemd.show_status=true"
+            "systemd.log_level=debug"
+          ];
         };
         virtualisation = {
           qemu.options = [

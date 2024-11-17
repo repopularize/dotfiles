@@ -1,4 +1,10 @@
-{ inputs, pkgs, osConfig, lib, ... }:
+{
+  inputs,
+  pkgs,
+  osConfig,
+  lib,
+  ...
+}:
 let
   cfg = osConfig.modules.programs.gui.browsers.firefox;
   font = "Inter";
@@ -53,8 +59,7 @@ in
             "0202"."geo.provider.use_gpsd".value = true;
           };
           "0300".enable = true; # Disable telemetry and all recommendation
-          "0400".enable =
-            true; # Disable safe browsing remotely checking downloads
+          "0400".enable = true; # Disable safe browsing remotely checking downloads
           "0700" = {
             # DNS / DoH / PROXY / SOCKS
             enable = true;
@@ -73,20 +78,15 @@ in
         settings = {
           "browser.tabs.firefox-view" = false; # Disable Firefox View
           "extensions.pocket.enabled" = false; # Disable Pocket
-          "browser.newtabpage.activity-stream.feeds.topsites" =
-            false; # Disable Shortcuts on home page
+          "browser.newtabpage.activity-stream.feeds.topsites" = false; # Disable Shortcuts on home page
           "browser.toolbars.bookmarks.visibility" = "never"; # Hide bookmark bar
-          "browser.newtabpage.activity-stream.feeds.section.topstories" =
-            false; # Disable Pocket recommendations on new tab page
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = false; # Disable Pocket recommendations on new tab page
           "signon.rememberSignons" = false; # Do not save passwords in Firefox
-          "toolkit.legacyUserProfileCustomizations.stylesheets" =
-            true; # Enable customisation
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable customisation
           "browser.compactmode.show" = true;
           "browser.uidensity" = 1;
-          "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts" =
-            false;
-          "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines" =
-            "";
+          "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts" = false;
+          "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines" = "";
           "browser.urlbar.suggest.topsites" = false;
           "browser.urlbar.suggest.trending" = false;
           "browser.urlbar.suggest.weather" = false;

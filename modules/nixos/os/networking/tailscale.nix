@@ -1,11 +1,17 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   inherit (lib) mkIf mkDefault optionals;
   inherit (config.services) tailscale;
 
   sys = config.modules.system.networking;
   cfg = sys.tailscale;
-in {
+in
+{
   config = mkIf cfg.enable {
     # make the tailscale command usable to users
     environment.systemPackages = [ pkgs.tailscale ];
@@ -24,7 +30,8 @@ in {
       enable = true;
       permitCertUid = "root";
       useRoutingFeatures = mkDefault "server";
-      extraUpFlags = sys.tailscale.defaultFlags
+      extraUpFlags =
+        sys.tailscale.defaultFlags
         ++ optionals sys.tailscale.enable [ "--advertise-exit-node" ];
     };
 

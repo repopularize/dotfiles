@@ -1,4 +1,10 @@
-{ lib, self, inputs, ... }: {
+{
+  lib,
+  self,
+  inputs,
+  ...
+}:
+{
   nixpkgs = {
     # pkgs = self.legacyPackages.${config.nixpkgs.system};
 

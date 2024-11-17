@@ -2,7 +2,8 @@
 let
   inherit (lib.attrsets) mapAttrs;
   inherit (lib.modules) mkForce;
-in {
+in
+{
   sound = mapAttrs (_: mkForce) {
     enable = false;
     mediaKeys.enable = false;

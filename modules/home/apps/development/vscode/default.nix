@@ -1,6 +1,14 @@
-{ inputs, pkgs, osConfig, lib, ... }:
-let inherit (lib) mkIf;
-in {
+{
+  inputs,
+  pkgs,
+  osConfig,
+  lib,
+  ...
+}:
+let
+  inherit (lib) mkIf;
+in
+{
   config = mkIf (osConfig.modules.programs.agnostic.editors.vscode.enable) {
     home.file.".vscode-oss/argv.json" = {
       force = true;
@@ -11,7 +19,10 @@ in {
       };
     };
 
-    home.packages = with pkgs; [ nil nixpkgs-fmt ];
+    home.packages = with pkgs; [
+      nil
+      nixpkgs-fmt
+    ];
 
     programs.vscode = {
       enable = true;
@@ -22,8 +33,8 @@ in {
       userSettings = import ./settings.nix { inherit lib pkgs; };
       extensions = pkgs.callPackage ./extensions.nix {
         extensions =
-          (inputs.vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion
-            pkgs.vscode.version).vscode-marketplace;
+          (inputs.vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
+          .vscode-marketplace;
       };
     };
   };

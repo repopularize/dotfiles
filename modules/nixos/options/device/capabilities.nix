@@ -1,6 +1,8 @@
 { lib, ... }:
-let inherit (lib) mkOption types;
-in {
+let
+  inherit (lib) mkOption types;
+in
+{
   options.modules.device = {
     hasBluetooth = mkOption {
       type = types.bool;
@@ -11,8 +13,7 @@ in {
     hasSound = mkOption {
       type = types.bool;
       default = true;
-      description =
-        "Whether the system has sound support (usually true except for servers)";
+      description = "Whether the system has sound support (usually true except for servers)";
     };
   };
 }

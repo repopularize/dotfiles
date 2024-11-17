@@ -1,1 +1,6 @@
-{ imports = [ ./polkit.nix ./tor.nix ]; }
+{
+  imports = [
+    ./polkit.nix
+    ./tor.nix
+  ];
+}

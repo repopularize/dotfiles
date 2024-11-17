@@ -1,9 +1,15 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   inherit (lib) mkIf mkDefault;
   inherit (config.modules) device;
   cfg = config.modules.system.sound;
-in {
+in
+{
   config = mkIf (cfg.enable && device.hasSound) {
     # able to change scheduling policies, e.g. to SCHED_RR
     security.rtkit.enable = config.services.pipewire.enable;
@@ -19,7 +25,9 @@ in {
       pulse.enable = true;
       jack.enable = true;
 
-      alsa = { enable = true; };
+      alsa = {
+        enable = true;
+      };
 
       wireplumber = {
         inherit (config.services.pipewire) enable;

@@ -1,15 +1,21 @@
-{ lib
-, pkgs
-, ...
+{
+  lib,
+  pkgs,
+  ...
 }:
 pkgs.stdenvNoCC.mkDerivation rec {
   version = "1.1.26";
   pname = "bun";
 
-  src = passthru.sources.${pkgs.stdenvNoCC.hostPlatform.system} or (throw "Unsupported system: ${pkgs.stdenvNoCC.hostPlatform.system}");
+  src =
+    passthru.sources.${pkgs.stdenvNoCC.hostPlatform.system}
+      or (throw "Unsupported system: ${pkgs.stdenvNoCC.hostPlatform.system}");
 
   strictDeps = true;
-  nativeBuildInputs = [ pkgs.unzip pkgs.installShellFiles ] ++ lib.optionals pkgs.stdenvNoCC.isLinux [ pkgs.autoPatchelfHook ];
+  nativeBuildInputs = [
+    pkgs.unzip
+    pkgs.installShellFiles
+  ] ++ lib.optionals pkgs.stdenvNoCC.isLinux [ pkgs.autoPatchelfHook ];
   buildInputs = [ pkgs.openssl ];
 
   dontConfigure = true;
@@ -54,15 +60,19 @@ pkgs.stdenvNoCC.mkDerivation rec {
         hash = "sha256-MecN8xkIurwqW/N7qRoIana76Mr0dV4sOcZfO/XCtHg=";
       };
       "x86_64-linux" = pkgs.fetchurl {
-        url =
-          "https://github.com/oven-sh/bun/releases/download/bun-v1.1.26/bun-linux-x64-baseline.zip";
-        hash =
-          "sha256-NFRx0L9qsPjooV8qHrAlnl0aadymDAvER2j22o1Mq2w=";
+        url = "https://github.com/oven-sh/bun/releases/download/bun-v1.1.26/bun-linux-x64-baseline.zip";
+        hash = "sha256-NFRx0L9qsPjooV8qHrAlnl0aadymDAvER2j22o1Mq2w=";
       };
     };
     updateScript = pkgs.writeShellScript "update-bun" ''
       set -o errexit
-      export PATH="${lib.makeBinPath [ pkgs.curl pkgs.jq pkgs.common-updater-scripts ]}"
+      export PATH="${
+        lib.makeBinPath [
+          pkgs.curl
+          pkgs.jq
+          pkgs.common-updater-scripts
+        ]
+      }"
       NEW_VERSION=$(curl --silent https://api.github.com/repos/oven-sh/bun/releases/latest | jq '.tag_name | ltrimstr("bun-v")' --raw-output)
       if [[ "${version}" = "$NEW_VERSION" ]]; then
           echo "The new version same as the old version."
@@ -86,7 +96,14 @@ pkgs.stdenvNoCC.mkDerivation rec {
       lgpl21Only # javascriptcore and webkit
     ];
     mainProgram = "bun";
-    maintainers = with maintainers; [ DAlperin jk thilobillerbeck cdmistman coffeeispower diogomdp ];
+    maintainers = with maintainers; [
+      DAlperin
+      jk
+      thilobillerbeck
+      cdmistman
+      coffeeispower
+      diogomdp
+    ];
     platforms = builtins.attrNames passthru.sources;
     # Broken for Musl at 2024-01-13, tracking issue:
     # https://github.com/NixOS/nixpkgs/issues/280716

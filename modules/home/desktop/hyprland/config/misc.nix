@@ -11,7 +11,6 @@
     # dpms
     mouse_move_enables_dpms = true; # enable dpms on mouse/touchpad action
     key_press_enables_dpms = true; # enable dpms on keyboard action
-    disable_autoreload =
-      true; # autoreload is unnecessary on nixos, because the config is readonly anyway
+    disable_autoreload = true; # autoreload is unnecessary on nixos, because the config is readonly anyway
   };
 }

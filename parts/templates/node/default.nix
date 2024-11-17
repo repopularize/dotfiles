@@ -1,4 +1,10 @@
-{ lib, nodejs, pnpm, stdenv }: stdenv.mkDerivation rec {
+{
+  lib,
+  nodejs,
+  pnpm,
+  stdenv,
+}:
+stdenv.mkDerivation rec {
   name = pname;
   pname = "nodejs-template";
 
@@ -24,7 +30,7 @@
     mkdir -p $out/bin
     mkdir -p $out/share
     cp -r * $out/share
-    
+
     echo "#!/usr/bin/env node" > $out/bin/${pname}
     cat dist/index.js >> $out/bin/${pname}
 

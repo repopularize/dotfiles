@@ -12,4 +12,7 @@ let
     Unit.After = [ "graphical-session.target" ];
     Install.WantedBy = [ "hyprland-session.target" ];
   };
-in { inherit mkGraphicalService mkHyprlandService; }
+in
+{
+  inherit mkGraphicalService mkHyprlandService;
+}

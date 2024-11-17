@@ -3,7 +3,8 @@ let
   inherit (lib) mkDefault mkIf optionalAttrs;
 
   cfg = config.modules.system.boot;
-in {
+in
+{
   config = mkIf (cfg.loader == "systemd-boot") {
     boot.loader = {
       systemd-boot = {

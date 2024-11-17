@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   services.dbus.apparmor = "disabled";
 
   # apparmor configuration

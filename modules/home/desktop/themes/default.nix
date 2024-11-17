@@ -1,1 +1,7 @@
-{ imports = [ ./gtk.nix ./qt.nix ./global.nix ]; }
+{
+  imports = [
+    ./gtk.nix
+    ./qt.nix
+    ./global.nix
+  ];
+}

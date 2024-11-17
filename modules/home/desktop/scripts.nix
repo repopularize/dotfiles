@@ -14,7 +14,11 @@ let
   screenshot = pkgs.writeShellApplication {
     name = "screenshot-bind";
 
-    runtimeInputs = with pkgs; [ satty grim wl-clipboard ];
+    runtimeInputs = with pkgs; [
+      satty
+      grim
+      wl-clipboard
+    ];
 
     text = ''
       grim - | satty --filename - --initial-tool="crop" --early-exit --copy-command="wl-copy"
@@ -24,7 +28,12 @@ let
   screenshot-window = pkgs.writeShellApplication {
     name = "screenshot-window-bind";
 
-    runtimeInputs = with pkgs; [ grim satty jq wl-clipboard ];
+    runtimeInputs = with pkgs; [
+      grim
+      satty
+      jq
+      wl-clipboard
+    ];
 
     text = ''
       # shellcheck disable=SC2046
@@ -35,13 +44,18 @@ let
   screenshot-quick = pkgs.writeShellApplication {
     name = "screenshot-quick-bind";
 
-    runtimeInputs = with pkgs; [ grim slurp wl-clipboard ];
+    runtimeInputs = with pkgs; [
+      grim
+      slurp
+      wl-clipboard
+    ];
 
     text = ''
       grim -g "$(slurp - d)" - | wl-copy
     '';
   };
-in {
+in
+{
   home.packages = [
     powermenu
     screenshot

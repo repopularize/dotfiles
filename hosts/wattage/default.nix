@@ -8,7 +8,10 @@
         cpu = "intel";
         gpu = "nvidia";
 
-        monitors = [ "HDMI-A-1" "DVI-D-1" ];
+        monitors = [
+          "HDMI-A-1"
+          "DVI-D-1"
+        ];
         hasBluetooth = false; # my computer is so old :sob:
         hasSound = true;
       };
@@ -31,7 +34,10 @@
           };
         };
 
-        fs = [ "ext4" "vfat" ];
+        fs = [
+          "ext4"
+          "vfat"
+        ];
 
         video.enable = true;
         sound.enable = true;
@@ -67,7 +73,6 @@
             astal.enable = true;
           };
 
-
           browsers = {
             # arkenfox.enable = false;
             firefox.enable = true;
@@ -83,7 +88,9 @@
             alacritty.enable = true;
           };
 
-          fileManagers = { nautilus.enable = true; };
+          fileManagers = {
+            nautilus.enable = true;
+          };
         };
         defaults = {
           terminal = "alacritty";

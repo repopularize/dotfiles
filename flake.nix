@@ -1,7 +1,8 @@
 {
   description = "yusof's dotfiles";
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ ./parts ];
     };
@@ -19,6 +20,26 @@
       owner = "NixOS";
       repo = "nixpkgs";
       ref = "master";
+    };
+
+    git-hooks = {
+      type = "github";
+      owner = "cachix";
+      repo = "git-hooks.nix";
+
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "";
+        flake-compat.follows = "";
+      };
+    };
+
+    # a tree-wide formatter
+    treefmt-nix = {
+      type = "github";
+      owner = "numtide";
+      repo = "treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # we can use this to provide overridable systems
@@ -98,7 +119,9 @@
       owner = "dwarfmaster";
       repo = "arkenfox-nixos";
 
-      inputs = { nixpkgs.follows = "nixpkgs"; };
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
     };
 
     spicetify-nix = {

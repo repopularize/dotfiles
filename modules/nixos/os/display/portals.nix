@@ -1,9 +1,15 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
   sys = config.modules.system;
   env = config.modules.environment;
   inherit (lib) mkForce mkIf isWayland;
-in {
+in
+{
   config = mkIf (sys.video.enable && pkgs.stdenv.isLinux) {
     xdg.portal = {
       enable = true;

@@ -1,1 +1,6 @@
-{ imports = [ ./chromium.nix ./firefox.nix ]; }
+{
+  imports = [
+    ./chromium.nix
+    ./firefox.nix
+  ];
+}

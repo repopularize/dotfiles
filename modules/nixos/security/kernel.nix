@@ -2,7 +2,8 @@
 let
   sys = config.modules.system;
   inherit (lib) mkIf optionals concatLists;
-in {
+in
+{
   security = {
     protectKernelImage = true;
     lockKernelModules = false; # breaks virtd, wireguard and iptables
@@ -167,7 +168,10 @@ in {
       ]
 
       # Disable Thunderbolt and FireWire to prevent DMA attacks
-      [ "thunderbolt" "firewire-core" ]
+      [
+        "thunderbolt"
+        "firewire-core"
+      ]
 
       (optionals (!sys.bluetooth.enable) [
         "bluetooth"

@@ -1,6 +1,8 @@
 { config, ... }:
-let theme = import ../theme.nix;
-in {
+let
+  theme = import ../theme.nix;
+in
+{
   programs.wofi = {
     enable = true;
 
