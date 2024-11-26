@@ -71,6 +71,7 @@ builtins.concatLists (
       formulahendry.auto-rename-tag
       usernamehw.errorlens
       ctcuff.font-preview
+      wakatime.vscode-wakatime
     ];
   }
 )
