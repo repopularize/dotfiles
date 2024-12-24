@@ -23,6 +23,7 @@ builtins.concatLists (
       antfu.unocss
       bradlc.vscode-tailwindcss
       vue.volar
+      biomejs.biome
     ];
     gnome = with extensions; [
       bodil.blueprint-gtk
