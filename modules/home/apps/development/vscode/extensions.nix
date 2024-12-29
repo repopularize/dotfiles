@@ -42,6 +42,18 @@ builtins.concatLists (
       pkief.material-icon-theme
       vscode-icons-team.vscode-icons
       rendinjast.amoled-black
+      (pkgs.catppuccin-vsc.override {
+        accent = "mauve";
+        boldKeywords = true;
+        italicComments = true;
+        italicKeywords = true;
+        extraBordersEnabled = false;
+        workbenchMode = "flat";
+        bracketMode = "rainbow";
+        colorOverrides = { };
+        customUIColors = { };
+      })
+      catppuccin.catppuccin-vsc-icons
     ];
     rust = with extensions; [
       relm4.relm4-snippets

@@ -4,17 +4,19 @@
         font-weight: 500;
     }
 
-    background-color: $base00;
+    background-color: $crust;
     border-radius: $radius;
+    border: 2px solid $mantle;
 
     .flat {
         padding: 15px;
-        border: 1px solid $base01;
+        border: 1px solid $mantle;
         border-radius: 4px;
+        color: $text;
     }
 
     .launcher-container {
-        background-color: $base00;
+        background-color: $base;
         border-radius: $radius;
         padding: 15px;
 
@@ -24,9 +26,11 @@
 
             .launcher-items {
                 all: unset;
+                
 
                 .launcher-item {
                     all: unset;
+                    color: $text;
 
                     @include space-between-x(15px);
                     transition: 0.3s;
@@ -38,13 +42,13 @@
 
                     &:focus {
                         padding-left: 15px;
-                        background-color: $base03;
-                        color: $base00;
+                        background-color: $crust;
+                        color: $text;
                     }
 
                     &:hover {
-                        background-color: transparentize($base06, 0.6);
-                        color: $base00;
+                        background-color: $crust;
+                        color: $text;
                     }
                 }
             }

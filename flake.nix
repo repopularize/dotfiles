@@ -12,7 +12,7 @@
       type = "github";
       owner = "NixOS";
       repo = "nixpkgs";
-      ref = "nixpkgs-unstable";
+      ref = "nixos-24.11";
     };
 
     nixpkgs-master = {
@@ -60,6 +60,7 @@
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
+      ref = "release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -84,10 +85,16 @@
       };
     };
 
+    # catppuccin nix
+
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # catppuccin the vscode extension
     catppuccin-vsc = {
       url = "github:catppuccin/vscode";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Rust overlay
@@ -111,7 +118,6 @@
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
-      submodules = true;
     };
 
     arkenfox = {
@@ -134,7 +140,7 @@
       type = "github";
       owner = "Aylur";
       repo = "ags";
-      ref = "v2";
+      ref = "main";
     };
   };
 }

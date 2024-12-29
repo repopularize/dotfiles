@@ -87,11 +87,11 @@ in
 
       fileManagers = {
         thunar.enable = mkEnableOption "Enable thunar file manager";
-        dolphin.enable = mkEnableOption "Enable dolphin file manager";
-        nemo.enable = mkEnableOption "Enable nemo file manager";
-        nautilus.enable = mkEnableOption "Enable nautilus file manager" // {
+        dolphin.enable = mkEnableOption "Enable dolphin file manager" // {
           default = cfg.gui.enable;
         };
+        nemo.enable = mkEnableOption "Enable nemo file manager";
+        nautilus.enable = mkEnableOption "Enable nautilus file manager";
       };
     };
   };

@@ -22,6 +22,7 @@ in
       nil
       nixpkgs-fmt
       wakatime-cli
+      biome
     ];
 
     programs.vscode = {

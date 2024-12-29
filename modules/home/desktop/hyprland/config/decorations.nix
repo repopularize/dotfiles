@@ -6,9 +6,12 @@
     inactive_opacity = 0.8;
     fullscreen_opacity = 1.0;
 
-    drop_shadow = true; # off for now
-    "col.shadow" = "rgb(161616)";
-    "col.shadow_inactive" = "rgb(262626)";
+    shadow = {
+      enabled = true;
+
+      color = "rgb(11111B)";
+      color_inactive = "rgba(11111B00)";
+    };
 
     blur = {
       enabled = true;
@@ -21,7 +24,7 @@
       ignore_opacity = true;
 
       new_optimizations = true;
-      xray = false;
+      xray = true;
     };
   };
 }

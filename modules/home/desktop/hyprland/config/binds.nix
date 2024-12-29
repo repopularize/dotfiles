@@ -21,6 +21,7 @@ in
         "${launchMod}, Q, exec, ${defaults.browser}"
         "${launchMod}, C, exec, ${defaults.editor}"
         "${launchMod}, L, exec, ${defaults.screenLocker}"
+        "${launchMod}, F, exec, ${defaults.fileManager}"
 
         # Screen Capturing
         ", Print, exec, screenshot-bind"

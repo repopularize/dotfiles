@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 {
   services = {
-    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    udev.packages = with pkgs; [ gnome-settings-daemon ];
 
     gnome = {
       glib-networking.enable = true;

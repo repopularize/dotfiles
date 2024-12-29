@@ -1,7 +1,7 @@
 window.bar {
   box-shadow: none;
-  background-color: $base00;
-  color: $base06;
+  background-color: $crust;
+  color: $text;
 
   .bar-centerbox {
     min-height: to-rem(45px);
@@ -10,7 +10,7 @@ window.bar {
   }
 
   .bar-box {
-    background-color: $base01;
+    background-color: $base;
     min-width: to-rem(80px);
     min-height: to-rem(35px);
     @include rounded-full;
@@ -29,12 +29,12 @@ window.bar {
     background-color: transparent;
 
     &:hover label {
-      background-color: transparentize($base06, 0.84);
-      border-color: transparentize($base09, 0.8);
+      background-color: transparentize($text, 0.84);
+      border-color: transparentize($mauve, 0.8);
     }
 
     &:active label {
-      background-color: transparentize($base06, 0.8);
+      background-color: transparentize($text, 0.8);
     }
   }
 
@@ -44,23 +44,23 @@ window.bar {
     margin: 2px;
     border-radius: $radius;
     border: 1pt solid transparent;
-    color: $base06;
+    color: $text;
   }
 
   .bar-label {
     font-weight: 600;
-    color: $base04;
+    color: $subtext1;
 
     &.title {
       font-weight: 500;
       font-size: to-rem(15px);
-      color: $base05;
+      color: $text;
       margin: -1px 3px;
     }
 
     &.subtitle {
       font-size: to-rem(12px);
-      color: $base03;
+      color: $subtext0;
       margin: -3px 3px;
     }
   }
@@ -84,15 +84,15 @@ window.bar {
       transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
       transition-duration: 200ms;
 
-      background-color: $base03;
+      background-color: $surface0;
 
       min-height: 0.45em;
       min-width: 0.45em;
 
       &.active {
-        background-color: mix($base00, $base05, 50%);
+        background-color: mix($overlay0, $overlay1, 50%);
         font-weight: bold;
-        border: 1px solid $base03;
+        border: 1px solid $subtext0;
 
         min-height: 0.6em;
         min-width: 1.8em;
@@ -131,12 +131,12 @@ window.bar {
       margin-left: to-rem(10px);
 
       trough {
-        background-color: transparentize($base00, 0.4);
+        background-color: transparentize($crust, 0.4);
         border-radius: 10px;
       }
 
       highlight {
-        background-color: $base09;
+        background-color: $mauve;
         min-height: to-rem(12px);
         border-radius: to-rem(20px);
       }
@@ -146,7 +146,7 @@ window.bar {
   .tray {
     @include space-between-x(0.5em);
     padding: 3px;
-    border: 1px solid $base06;
+    border: 1px solid $surface0;
     border-radius: $radius;
     min-width: 15px;
 
@@ -165,7 +165,7 @@ window.bar {
     border-radius: $radius;
 
     &:hover {
-      background-color: $base09;
+      background-color: $surface2;
     }
   }
 }

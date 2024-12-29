@@ -7,6 +7,7 @@ in
 {
   programs.alacritty = lib.mkIf cfg.enable {
     enable = true;
+    catppuccin.enable = true;
 
     settings = {
       window.opacity = 0.9;

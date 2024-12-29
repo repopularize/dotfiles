@@ -15,13 +15,13 @@ in
       name = mkOption {
         type = types.str;
         description = "The name of the cursor inside the package";
-        default = "Bibata-Modern-Ice";
+        default = "Catppuccin-Mocha-Mauve-Cursors";
       };
 
       package = mkOption {
         type = types.package;
         description = "The package providing the cursors";
-        default = pkgs.bibata-cursors;
+        default = pkgs.catppuccin-cursors.mochaMauve;
       };
 
       size = mkOption {

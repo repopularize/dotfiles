@@ -1,18 +1,17 @@
-{
-  inputs,
-  pkgs,
-  osConfig,
-  lib,
-  ...
+{ inputs
+, pkgs
+, osConfig
+, lib
+, ...
 }:
 let
   cfg = osConfig.modules.programs.gui.browsers.firefox;
   font = "Inter";
-  background = "262626";
-  background-darker = "161616";
-  foreground = "#ffffff";
-  primary = "#78a9ff";
-  border = "#525252";
+  background = "#1e1e2e";
+  background-darker = "#181825";
+  foreground = "#cdd6f4";
+  primary = "#cba6f7";
+  border = "#11111b";
 in
 {
   imports = [ inputs.arkenfox.hmModules.arkenfox ];
@@ -133,12 +132,12 @@ in
           }
           #urlbar-background, #searchbar {
               border: 0px none !important;
-              background-color: ${background-darker};
+              background-color: ${background-darker} !important;
           }
           #urlbar {
-              background: transparent !important;
               border: none !important;
               box-shadow: none !important;
+              background-color: ${background} !important;
           }
           #page-action-buttons {
               display: none !important;

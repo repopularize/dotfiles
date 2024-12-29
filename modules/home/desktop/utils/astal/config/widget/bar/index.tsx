@@ -1,4 +1,6 @@
-import { Astal, Gtk, Gdk } from "astal/gtk3";
+import { Astal } from "astal/gtk3";
+import Gtk from "gi://Gtk?version=3.0";
+import type Gdk from "gi://Gdk?version=3.0";
 import { Tray, Mpris, Clock, Workspaces, Indicators, Focused } from "./buttons";
 import { style } from "../../lib/style";
 import css from "inline:./bar.scss";

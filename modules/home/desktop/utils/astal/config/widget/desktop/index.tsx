@@ -36,6 +36,7 @@ export function Desktop(monitor: Gdk.Monitor) {
         <box
           className={"desktop-box"}
         >
+          {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
           <label
             valign={Gtk.Align.END}
             halign={Gtk.Align.CENTER}

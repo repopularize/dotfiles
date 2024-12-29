@@ -62,9 +62,8 @@ in
           "󰋞 /Music" = " ";
           "󰋞 /Pictures" = " ";
           "󰋞 /Videos" = " ";
-
-          "󰋞 /dev" = "󱌢 ";
-          "󰋞 /Dev" = "󱌢 ";
+          
+          "󰋞 /Development" = "󱌢 ";
 
           "󰋞 /skl" = "󰑴 ";
           "󰋞 /.config" = " ";

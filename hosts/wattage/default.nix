@@ -42,7 +42,7 @@
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = false;
-        printing.enable = true;
+        printing.enable = false;
 
         virtualization = {
           enable = true;
@@ -89,12 +89,13 @@
           };
 
           fileManagers = {
-            nautilus.enable = true;
+            dolphin.enable = true;
           };
         };
+        
         defaults = {
           terminal = "alacritty";
-          fileManager = "nautilus";
+          fileManager = "dolphin";
           editor = "code";
           launcher = "wofi";
           bar = "astal";

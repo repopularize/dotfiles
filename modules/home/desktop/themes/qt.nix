@@ -41,17 +41,17 @@ in
       "qt6ct/qt6ct.conf".source = qtctConfig;
       "qt5ct/qt5ct.conf".source = qtctConfig;
 
-      # "Kvantum/kvantum.kvconfig".source =
-      #   (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
-      #     General.theme = "Catppuccin-Mocha-Mauve";
-      #   };
+      "Kvantum/kvantum.kvconfig".source =
+        (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
+          General.theme = "Catppuccin-Mocha-Mauve";
+        };
 
-      # "Kvantum/Catppuccin-Mocha-Mauve".source = lib.mkDefault "${
-      #     pkgs.catppuccin-kvantum.override {
-      #       accent = "Mauve";
-      #       variant = "Mocha";
-      #     }
-      #   }/share/Kvantum/Catppuccin-Mocha-Rosewater";
+      "Kvantum/Catppuccin-Mocha-Mauve".source = lib.mkDefault "${
+          pkgs.catppuccin-kvantum.override {
+            accent = "Mauve";
+            variant = "Mocha";
+          }
+        }/share/Kvantum/Catppuccin-Mocha-Rosewater";
     };
 
     home.sessionVariables = {

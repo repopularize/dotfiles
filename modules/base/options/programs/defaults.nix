@@ -21,7 +21,7 @@ in
         "nemo"
         "nautilus"
       ];
-      default = "thunar";
+      default = "dolphin";
     };
 
     browser = mkOption {

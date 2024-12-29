@@ -3,8 +3,8 @@
 {
   "terminal.integrated.shell.linux" = "${lib.getExe pkgs.nushell}";
   "terminal.integrated.defaultProfile.linux" = "Nushell";
-  "workbench.colorTheme" = "Adwaita Dark & default syntax highlighting & colorful status bar";
-  "workbench.iconTheme" = "vscode-icons";
+  "workbench.colorTheme" = "Catppuccin Mocha";
+  "workbench.iconTheme" = "catppuccin-mocha";
   "editor.smoothScrolling" = true;
   "workbench.list.smoothScrolling" = true;
   "window.customTitleBarVisibility" = "auto";
@@ -35,27 +35,33 @@
   "security.workspace.trust.enabled" = false;
   "git.enableSmartCommit" = true;
   "[javascript]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    "editor.defaultFormatter" = "biomejs.biome";
   };
   "[javascriptreact]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    "editor.defaultFormatter" = "biomejs.biome";
   };
   "[jsonc]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    "editor.defaultFormatter" = "biomejs.biome";
   };
   "[json]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    "editor.defaultFormatter" = "biomejs.biome";
   };
   "[typescript]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    "editor.defaultFormatter" = "biomejs.biome";
   };
   "[typescriptreact]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    "editor.defaultFormatter" = "biomejs.biome";
   };
   "[html]" = {
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    "editor.defaultFormatter" = "biomejs.biome";
   };
   "[svelte]" = {
     "editor.defaultFormatter" = "svelte.svelte-vscode";
+  };
+  "[css]" = {
+    "editor.defaultFormatter" = "biomejs.biome";
+  };
+  "[scss]" = {
+    "editor.defaultFormatter" = "biomejs.biome";
   };
 }
