@@ -48,8 +48,8 @@ in
 
       "Kvantum/Catppuccin-Mocha-Mauve".source = lib.mkDefault "${
           pkgs.catppuccin-kvantum.override {
-            accent = "Mauve";
-            variant = "Mocha";
+            accent = "mauve";
+            variant = "mocha";
           }
         }/share/Kvantum/Catppuccin-Mocha-Rosewater";
     };
