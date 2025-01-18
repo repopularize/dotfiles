@@ -36,8 +36,9 @@ in
       type = types.enum [
         "nvim"
         "code"
+        "zed-editor"
       ];
-      default = "nvim";
+      default = "code";
     };
 
     launcher = mkOption {

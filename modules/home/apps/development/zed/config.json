@@ -1,0 +1,47 @@
+{
+	"vim_mode": false,
+	"assistant": {
+	  "default_model": {
+		"provider": "copilot_chat",
+		"model": "gpt-4"
+	  },
+	  "version": "2"
+	},
+	"leak_credentials_to_kas": true,
+	"ui_font_family": "SF Mono",
+	"ui_font_size": 16,
+	"buffer_font_family": "SF Mono",
+	"buffer_font_size": 14,
+	"format_on_save": "on",
+	"code_actions_on_format": {
+	  "source.fixAll": true,
+	  "source.organizeImports.biome": true
+	},
+	"terminal": {
+	  "font_family": "FiraCode Nerd Font",
+	  "font_size": 13,
+	  "line_height": "standard"
+	},
+	"theme": "One Dark",
+	"autosave": "on_focus_change",
+	"formatter": {
+	  "language_server": {
+		"name": "biome"
+	  }
+	},
+	"lsp": {
+	  "biome": {
+		"settings": {
+		  "require_config_file": true
+		}
+	  },
+	  "wakatime": {},
+	  "discord_presence": {
+		"initialization_options": {
+		  "application_id": "1263505205522337886"
+		},
+		"git_integration": true
+	  }
+	}
+  }
+  
