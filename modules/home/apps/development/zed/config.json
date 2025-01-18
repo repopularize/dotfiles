@@ -1,47 +1,60 @@
 {
-	"vim_mode": false,
-	"assistant": {
-	  "default_model": {
-		"provider": "copilot_chat",
-		"model": "gpt-4"
-	  },
-	  "version": "2"
-	},
-	"leak_credentials_to_kas": true,
-	"ui_font_family": "SF Mono",
-	"ui_font_size": 16,
-	"buffer_font_family": "SF Mono",
-	"buffer_font_size": 14,
-	"format_on_save": "on",
-	"code_actions_on_format": {
-	  "source.fixAll": true,
-	  "source.organizeImports.biome": true
-	},
-	"terminal": {
-	  "font_family": "FiraCode Nerd Font",
-	  "font_size": 13,
-	  "line_height": "standard"
-	},
-	"theme": "One Dark",
-	"autosave": "on_focus_change",
-	"formatter": {
-	  "language_server": {
-		"name": "biome"
-	  }
-	},
-	"lsp": {
-	  "biome": {
-		"settings": {
-		  "require_config_file": true
-		}
-	  },
-	  "wakatime": {},
-	  "discord_presence": {
-		"initialization_options": {
-		  "application_id": "1263505205522337886"
-		},
-		"git_integration": true
-	  }
-	}
+  "vim_mode": false,
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4"
+    },
+    "version": "2"
+  },
+  "leak_credentials_to_kas": true,
+  "ui_font_family": "SF Mono",
+  "ui_font_size": 16,
+  "buffer_font_family": "SF Mono",
+  "buffer_font_size": 14,
+  "format_on_save": "on",
+  "code_actions_on_format": {
+    "source.fixAll": true,
+    "source.organizeImports.biome": true
+  },
+  "terminal": {
+    "font_family": "FiraCode Nerd Font",
+    "font_size": 13,
+    "line_height": "standard"
+  },
+  "theme": "Catppuccin Mocha",
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred",
+    "background": "#1e1e2e80",
+    "panel.background": "#18182566",
+    "editor.background": "#1e1e2e4c",
+    "editor.gutter.background": "#1e1e2e4c",
+    "terminal.background": "#1e1e2e00",
+    "tab_bar.background": "#18182500",
+    "tab.inactive_background": "#1818254c",
+    "tab.active_background": "#1e1e2e66",
+    "toolbar.background": "#1e1e2e4d",
+    "title_bar.background": "#11111be0",
+    "status_bar.background": "#11111be0"
+  },
+  "autosave": "on_focus_change",
+  "formatter": {
+    "language_server": {
+      "name": "biome"
+    }
+  },
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    },
+    "wakatime": {},
+    "discord_presence": {
+      "initialization_options": {
+        "application_id": "1263505205522337886"
+      },
+      "git_integration": true
+    }
   }
-  
+}
