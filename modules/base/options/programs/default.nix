@@ -18,6 +18,7 @@ in
           default = cfg.gui.enable;
         };
         micro.enable = mkEnableOption "Micro editor";
+        zed.enable = mkEnableOption "Zed editor";
       };
     };
 

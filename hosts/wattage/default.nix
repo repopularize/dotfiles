@@ -63,6 +63,9 @@
       programs = {
         cli.enable = true;
         tui.enable = true;
+        agnostic.editors = {
+          zed.enable = true;
+        };
         gui = {
           enable = true;
           okular.enable = true;

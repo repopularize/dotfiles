@@ -1,8 +1,9 @@
-{ inputs
-, pkgs
-, osConfig
-, lib
-, ...
+{
+  inputs,
+  pkgs,
+  osConfig,
+  lib,
+  ...
 }:
 let
   inherit (lib) mkIf;
@@ -34,7 +35,8 @@ in
       userSettings = import ./settings.nix { inherit lib pkgs; };
       extensions = pkgs.callPackage ./extensions.nix {
         extensions =
-          (inputs.vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version).vscode-marketplace;
+          (inputs.vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
+          .vscode-marketplace;
       };
     };
   };
