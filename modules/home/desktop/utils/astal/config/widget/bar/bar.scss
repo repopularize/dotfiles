@@ -92,7 +92,6 @@ window.bar {
       &.active {
         background-color: mix($overlay0, $overlay1, 50%);
         font-weight: bold;
-        border: 1px solid $subtext0;
 
         min-height: 0.6em;
         min-width: 1.8em;
