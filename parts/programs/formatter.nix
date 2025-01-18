@@ -11,7 +11,6 @@
         projectRootFile = "flake.nix";
 
         programs = {
-          shellcheck.enable = true;
           taplo.enable = true;
           # TODO: configure this to not be ugly
           # yamlfmt.enable = true;
