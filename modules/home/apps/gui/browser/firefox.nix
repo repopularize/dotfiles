@@ -1,17 +1,18 @@
-{ inputs
-, pkgs
-, osConfig
-, lib
-, ...
+{
+  inputs,
+  pkgs,
+  osConfig,
+  lib,
+  ...
 }:
 let
   cfg = osConfig.modules.programs.gui.browsers.firefox;
   font = "Inter";
-  background = "#1e1e2e";
-  background-darker = "#181825";
-  foreground = "#cdd6f4";
-  primary = "#cba6f7";
-  border = "#11111b";
+  background = "1e1e2e";
+  background-darker = "181825";
+  foreground = "cdd6f4";
+  primary = "cba6f7";
+  border = "11111b";
 in
 {
   imports = [ inputs.arkenfox.hmModules.arkenfox ];
@@ -19,6 +20,7 @@ in
   config = lib.mkIf (cfg.enable) {
     programs.firefox = {
       enable = true;
+      package = pkgs.wrapFirefox pkgs.firefox-esr-128-unwrapped { }; # remove ESR branding
       arkenfox = {
         enable = true;
         version = "126.0";
@@ -108,9 +110,13 @@ in
           }
           #navigator-toolbox {
               border: 0px !important;
+              background: #${background-darker} !important;
           }
           #TabsToolbar {
               margin-left: 35vw !important;
+          }
+          .toolbar-items {
+            background-color: #${background-darker} !important;
           }
           #nav-bar {
               background: transparent !important;
@@ -123,6 +129,7 @@ in
               min-width: 0px !important;
               transition: min-width 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
               transition-property: min-width transform;
+              border-radius: 8px !important;
           }
           #nav-bar[urlbar-exceeds-toolbar-bounds="true"] #urlbar-container {
               min-width: 100vw !important;
@@ -132,12 +139,12 @@ in
           }
           #urlbar-background, #searchbar {
               border: 0px none !important;
-              background-color: ${background-darker} !important;
+              background-color: #${background-darker} !important;
           }
           #urlbar {
               border: none !important;
               box-shadow: none !important;
-              background-color: ${background} !important;
+              background-color: #${background} !important;
           }
           #page-action-buttons {
               display: none !important;
@@ -156,8 +163,8 @@ in
               font-family: "${font}" !important;
             }
 
-            html {
-              background: #${background-darker};
+            html, body {
+              background-color: #${background-darker};
             }
 
             :root {

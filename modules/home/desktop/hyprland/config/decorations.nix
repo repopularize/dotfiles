@@ -2,15 +2,15 @@
   wayland.windowManager.hyprland.settings.decoration = {
     rounding = 12;
 
-    active_opacity = 0.9;
-    inactive_opacity = 0.8;
+    active_opacity = 0.8;
+    inactive_opacity = 0.7;
     fullscreen_opacity = 1.0;
 
     shadow = {
-      enabled = true;
+      enabled = false;
 
-      color = "rgb(11111B)";
-      color_inactive = "rgba(11111B00)";
+      color = "rgb(cba6f7)";
+      color_inactive = "rgb(1e1e2e)";
     };
 
     blur = {

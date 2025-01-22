@@ -1,4 +1,9 @@
-{ lib, osConfig, inputs, ... }:
+{
+  lib,
+  osConfig,
+  inputs,
+  ...
+}:
 {
   imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
 
@@ -8,10 +13,12 @@
       flavor = "mocha";
       accent = "mauve";
 
-      pointerCursor = {
+      cursors = {
         enable = true;
         accent = "dark";
       };
+
+      alacritty.enable = true;
     };
 
     # pointer / cursor theming

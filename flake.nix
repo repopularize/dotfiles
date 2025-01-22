@@ -12,7 +12,7 @@
       type = "github";
       owner = "NixOS";
       repo = "nixpkgs";
-      ref = "nixos-24.11";
+      ref = "nixos-unstable";
     };
 
     nixpkgs-master = {
@@ -29,7 +29,6 @@
 
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "";
         flake-compat.follows = "";
       };
     };
@@ -60,7 +59,7 @@
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
-      ref = "release-24.11";
+      ref = "master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

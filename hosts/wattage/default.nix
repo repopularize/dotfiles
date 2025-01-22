@@ -95,7 +95,7 @@
             dolphin.enable = true;
           };
         };
-        
+
         defaults = {
           terminal = "alacritty";
           fileManager = "dolphin";

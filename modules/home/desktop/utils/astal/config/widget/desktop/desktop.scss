@@ -1,35 +1,16 @@
 window.desktop {
-    background-color: $crust;
-  
-    box {
-      margin-top: to-rem(46px); // bar-height + 1px
-      border-top-left-radius: to-rem(20px);
-      border-top-right-radius: to-rem(20px);
-      background-image: linear-gradient($base, $mantle);
-      padding: to-rem(20px);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: 250ms background-image;
-    }
+  background-color: rgba(0, 0, 0, 0);
+
+  box {
+    margin-top: to-rem(46px); // bar-height + 1px
+    border-top-left-radius: to-rem(20px);
+    border-top-right-radius: to-rem(20px);
+    border-top: 2px solid $mauve;
+    background-image: linear-gradient($crust, $base);
+    padding: to-rem(20px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 250ms background-image;
   }
-  
-  menu.desktop-menu {
-    background-color: $base;
-    min-width: to-rem(150px);
-    menuitem {
-      background-color: $base;
-      label {
-        color: $text;
-      }
-      icon {
-        color: $subtext0;
-      }
-      &:hover {
-        background-color: $mantle;
-      }
-    }
-    separator {
-      border-radius: to-rem(5px);
-    }
-  }
+}

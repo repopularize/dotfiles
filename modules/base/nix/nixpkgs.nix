@@ -1,7 +1,8 @@
-{ lib
-, self
-, inputs
-, ...
+{
+  lib,
+  self,
+  inputs,
+  ...
 }:
 {
   nixpkgs = {

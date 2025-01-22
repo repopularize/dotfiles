@@ -7,10 +7,13 @@ in
 {
   programs.alacritty = lib.mkIf cfg.enable {
     enable = true;
-    catppuccin.enable = true;
 
     settings = {
       window.opacity = 0.9;
+      window.padding = {
+        x = 16;
+        y = 16;
+      };
 
       font = {
         size = 11.0;

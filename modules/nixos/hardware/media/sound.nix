@@ -15,7 +15,7 @@ in
     security.rtkit.enable = config.services.pipewire.enable;
 
     # pulseaudio backup
-    hardware.pulseaudio.enable = !config.services.pipewire.enable;
+    services.pulseaudio.enable = !config.services.pipewire.enable;
 
     # pipewire is newer and just better
     services.pipewire = {

@@ -1,8 +1,6 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
+{ config
+, pkgs
+, ...
 }:
 
 {
@@ -14,12 +12,9 @@
       pkgs.go-font
       pkgs.monaspace
       pkgs.cantarell-fonts
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "Monaspace"
-          "JetBrainsMono"
-        ];
-      })
+
+      pkgs.nerd-fonts.jetbrains-mono
+      pkgs.nerd-fonts.monaspace
     ];
     fontDir.enable = true;
     fontconfig.defaultFonts = {

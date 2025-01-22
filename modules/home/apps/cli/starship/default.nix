@@ -62,7 +62,7 @@ in
           "󰋞 /Music" = " ";
           "󰋞 /Pictures" = " ";
           "󰋞 /Videos" = " ";
-          
+
           "󰋞 /Development" = "󱌢 ";
 
           "󰋞 /skl" = "󰑴 ";

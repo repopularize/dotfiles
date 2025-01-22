@@ -47,7 +47,7 @@ let
     // (lib.genAttrs browser (_: [ "firefox.desktop" ]))
     // {
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
-      "inode/directory" = [ "nautilus.desktop" ];
+      "inode/directory" = [ "dolphin.desktop" ];
     };
 
 in
