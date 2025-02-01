@@ -28,9 +28,10 @@ in
           "Hyprland"
           "Sway"
           "Gnome"
+          "KDE"
         ]
       );
-      default = "Hyprland";
+      default = "KDE";
       description = "The desktop environment to be used.";
     };
 

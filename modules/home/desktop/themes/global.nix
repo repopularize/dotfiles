@@ -1,8 +1,7 @@
-{
-  lib,
-  osConfig,
-  inputs,
-  ...
+{ lib
+, osConfig
+, inputs
+, ...
 }:
 {
   imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
@@ -15,7 +14,7 @@
 
       cursors = {
         enable = true;
-        accent = "dark";
+        accent = "mauve";
       };
 
       alacritty.enable = true;

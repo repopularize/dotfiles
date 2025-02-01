@@ -54,9 +54,11 @@
         networking.tailscale.enable = true;
       };
 
+      services.postgresql.enable = true;
+
       environment = {
-        desktop = "Hyprland";
-        loginManager = "gdm";
+        desktop = "KDE";
+        loginManager = "sddm";
         useHomeManager = true;
       };
 
@@ -86,10 +88,9 @@
           };
 
           terminals = {
-            foot.enable = true;
-            kitty.enable = true;
+            foot.enable = false;
             alacritty.enable = true;
-          };
+          }; # i gotta make konsole configuration
 
           fileManagers = {
             dolphin.enable = true;

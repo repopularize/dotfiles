@@ -27,7 +27,7 @@
     dconf.enable = true;
 
     # gnome's keyring manager
-    seahorse.enable = true;
+    # seahorse.enable = true;
 
     # # networkmanager tray uility, pretty useful actually (disabled because I can make my own)
     # nm-applet.enable = config.programs.waybar.enable;

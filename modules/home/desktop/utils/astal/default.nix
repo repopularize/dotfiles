@@ -13,7 +13,7 @@
 
     programs.ags = {
       enable = true;
-      configDir = ./config;
+      configDir = ./gtk3;
 
       extraPackages = with pkgs; [
         inputs.ags.packages.${pkgs.system}.hyprland

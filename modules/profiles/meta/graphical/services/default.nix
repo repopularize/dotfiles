@@ -1,6 +1,6 @@
 {
   imports = [
-    ./earlyoom.nix
+    # ./earlyoom.nix
     ./gnome.nix
     ./misc.nix
     ./printing.nix

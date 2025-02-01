@@ -1,8 +1,9 @@
-{ inputs
-, pkgs
-, osConfig
-, lib
-, ...
+{
+  inputs,
+  pkgs,
+  osConfig,
+  lib,
+  ...
 }:
 let
   inherit (lib) mkIf;

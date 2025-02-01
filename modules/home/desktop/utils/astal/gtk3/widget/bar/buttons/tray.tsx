@@ -50,8 +50,6 @@ export function Tray() {
         return items.map((item) => {
           if (item.icon_theme_path) App.add_icons(item.icon_theme_path);
 
-          const menu = item.create_menu();
-
           return (
             <button
               tooltipMarkup={bind(item, "tooltipMarkup")}
@@ -59,15 +57,9 @@ export function Tray() {
               valign={Gtk.Align.CENTER}
               halign={Gtk.Align.CENTER}
               onClickRelease={(self, event) => {
-                menu?.popup_at_widget(
-                  self,
-                  Gdk.Gravity.SOUTH,
-                  Gdk.Gravity.NORTH,
-                  null
-                );
               }}
             >
-              <icon g_icon={bind(item, "gicon")} />
+              <icon gicon={bind(item, "gicon")} />
             </button>
           );
         });

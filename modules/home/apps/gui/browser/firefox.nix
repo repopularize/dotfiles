@@ -1,9 +1,8 @@
-{
-  inputs,
-  pkgs,
-  osConfig,
-  lib,
-  ...
+{ inputs
+, pkgs
+, osConfig
+, lib
+, ...
 }:
 let
   cfg = osConfig.modules.programs.gui.browsers.firefox;
@@ -98,15 +97,13 @@ in
         };
 
         userChrome = ''
-          .titlebar-buttonbox {
-              display: none !important;
-          }
           .titlebar-spacer {
               display: none !important;
           }
           :root {
               --tab-border-radius: 50px !important;
               --tabs-border-color: transparent !important;
+              --accent-color: #${primary} !important;
           }
           #navigator-toolbox {
               border: 0px !important;
