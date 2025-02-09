@@ -32,6 +32,7 @@
       };
     };
   };
+  "svelte.enable-ts-plugin" = true;
   "security.workspace.trust.enabled" = false;
   "git.enableSmartCommit" = true;
   "[javascript]" = {

@@ -11,8 +11,10 @@
               "preferred://browser"
               "applications:org.kde.konsole.desktop"
               "applications:org.kde.dolphin.desktop"
-              "applications:vesktop.desktop"
+              "applications:equibop.desktop"
               "applications:code.desktop"
+              "applications:com.obsproject.Studio"
+              "applications:spotify.desktop"
             ];
           };
         }
