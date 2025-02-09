@@ -35,6 +35,7 @@
   "svelte.enable-ts-plugin" = true;
   "security.workspace.trust.enabled" = false;
   "git.enableSmartCommit" = true;
+  "githubPullRequests.createOnPublishBranch" = "never";
   "[javascript]" = {
     "editor.defaultFormatter" = "biomejs.biome";
   };
