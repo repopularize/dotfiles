@@ -1,18 +1,16 @@
-{
-  inputs',
-  inputs,
-  osConfig,
-  lib,
-  pkgs,
-  ...
+{ inputs'
+, inputs
+, osConfig
+, lib
+, ...
 }:
 let
   inherit (lib) mkIf;
 
-  spicePkgs = inputs'.spicetify-nix.packages.default;
+  spicePkgs = inputs'.spicetify-nix.legacyPackages;
 in
 {
-  imports = [ inputs.spicetify-nix.homeManagerModule ];
+  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
   config = mkIf (osConfig.modules.programs.gui.spotify.enable) {
     programs.spicetify = {
@@ -21,13 +19,21 @@ in
         fullAppDisplay
         adblock
         fullScreen
-        genre
-        shuffle
+        beautifulLyrics
+        featureShuffle
       ];
+
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
 
       enabledCustomApps = with spicePkgs.apps; [
         marketplace
-        spicePkgs.official.apps.lyrics-plus
+        lyricsPlus
+        nameThatTune
+        ncsVisualizer
+        newReleases
+        reddit
+        betterLibrary
       ];
     };
   };

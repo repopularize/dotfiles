@@ -13,7 +13,7 @@
               "applications:org.kde.dolphin.desktop"
               "applications:equibop.desktop"
               "applications:code.desktop"
-              "applications:com.obsproject.Studio"
+              "applications:com.obsproject.Studio.desktop"
               "applications:spotify.desktop"
             ];
           };

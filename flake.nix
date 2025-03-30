@@ -135,11 +135,7 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    spicetify-nix = {
-      type = "github";
-      owner = "yuu-fur";
-      repo = "spicetify-flake";
-    };
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     ags = {
       type = "github";
