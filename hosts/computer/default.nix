@@ -17,8 +17,8 @@
       };
 
       system = {
-        hostname = "wattage";
-        mainUser = "yusof";
+        hostname = "computer";
+        mainUser = "user";
         autoLogin = true;
 
         boot = {
@@ -27,11 +27,6 @@
           loadRecommendedModules = true;
 
           plymouth.enable = true;
-
-          initrd = {
-            enableTweaks = true;
-            optimizeCompressor = true;
-          };
         };
 
         fs = [
@@ -41,8 +36,8 @@
 
         video.enable = true;
         sound.enable = true;
-        bluetooth.enable = false;
-        printing.enable = false;
+        bluetooth.enable = true;
+        printing.enable = true;
 
         virtualization = {
           enable = true;
@@ -82,9 +77,8 @@
 
           browsers = {
             # arkenfox.enable = false;
-            firefox.enable = true;
             chromium = {
-              enable = false;
+              enable = true;
               ungoogled = true;
             };
           };
@@ -106,7 +100,7 @@
           launcher = "wofi";
           bar = "astal";
           screenLocker = "gtklock";
-          browser = "firefox";
+          browser = "chromium";
         };
       };
 

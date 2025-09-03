@@ -1,14 +1,11 @@
-{
-  lib,
-  pkgs,
-  osConfig,
-  ...
+{ lib
+, pkgs
+, osConfig
+, ...
 }:
 let
   progs = osConfig.modules.programs;
   cfg = progs.gui.browsers.chromium;
-
-  chrome_pkg = if cfg.ungoogled then pkgs.ungoogled-chromium else pkgs.chromium;
 in
 {
   config = lib.mkIf cfg.enable {
@@ -24,7 +21,7 @@ in
         "jaoafjdoijdconemdmodhbfpianehlon" # skip redirect
       ];
 
-      package = chrome_pkg.override {
+      package = pkgs.ungoogled-chromium.override {
         enableWideVine = true;
 
         commandLineArgs =
@@ -44,15 +41,6 @@ in
             "--no-default-browser-check"
             "--no-service-autorun"
             "--disable-features=PreloadMediaEngagementData,MediaEngagementBypassAutoplayPolicies"
-            "--no-pings"
-            "--no-first-run"
-            "--no-experiments"
-            "--no-crash-upload"
-            "--disable-wake-on-wifi"
-            "--disable-breakpad"
-            "--disable-sync"
-            "--disable-speech-api"
-            "--disable-speech-synthesis-api"
           ]
           ++ lib.optionals (lib.isWayland osConfig) [
             # Wayland

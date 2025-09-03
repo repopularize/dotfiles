@@ -56,7 +56,7 @@
       (mkSystems [
         {
           inherit withSystem;
-          host = "wattage";
+          host = "computer";
           system = "x86_64-linux";
           modules = [ graphical ] ++ concatLists [ shared ];
           specialArgs = sharedArgs;

@@ -19,8 +19,11 @@
   "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'DejaVu Sans Mono'";
   "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
   "vscord.status.buttons.button1.enabled" = true;
-  "vscord.status.state.text.debugging" = "⚠️ {file_name}:{current_line}:{current_column}";
-  "vscord.status.details.textx.debugging" = "🪐✏️ {workspace} {problems}";
+  "discord.detailsDebugging" = "⚠️ {file_name}:{current_line}:{current_column}";
+  "discord.detailsEditing" = "✏️ {file_name}:{current_line}:{current_column}";
+  "discord.lowerDetailsIdling" = "😪💤";
+  "discord.lowerDetailsEditing" = "🪐 {workspace}";
+  "discord.detailsIdling" = "😪💤";
   "vscord.status.image.small" = "Code";
   "nix.enableLanguageServer" = true;
   "nix.serverPath" = "${lib.getExe pkgs.nil}";

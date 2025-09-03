@@ -1,5 +1,5 @@
 {
-  description = "yusof's dotfiles";
+  description = "chosen's dotfiles";
 
   outputs =
     inputs:
@@ -91,19 +91,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # catppuccin the vscode extension
-    catppuccin-vsc = {
-      url = "github:catppuccin/vscode";
-    };
-
     # Rust overlay
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

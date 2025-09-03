@@ -15,7 +15,7 @@ in
     home.packages =
       [ ]
       ++ optionals (fileManagers.nautilus.enable) [ pkgs.nautilus ]
-      ++ optionals (fileManagers.dolphin.enable) [ pkgs.dolphin ]
+      ++ optionals (fileManagers.dolphin.enable) [ pkgs.kdePackages.dolphin ]
       ++ optionals (fileManagers.nemo.enable) [ pkgs.nemo ];
   };
 }

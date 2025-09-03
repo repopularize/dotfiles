@@ -13,8 +13,8 @@ in
     systemd.user.startServices = mkDefault "sd-switch"; # or "legacy" if "sd-switch" breaks again
 
     home = {
-      username = "yusof";
-      homeDirectory = "/home/yusof";
+      username = "user";
+      homeDirectory = "/home/user";
 
       stateVersion = mkDefault "24.05";
     };
@@ -25,8 +25,8 @@ in
     # git config
 
     programs.git = {
-      userName = "zramctl";
-      userEmail = "zerowatts@tuta.io";
+      userName = "repopularize";
+      userEmail = "9@sexi.st";
     };
   };
 }

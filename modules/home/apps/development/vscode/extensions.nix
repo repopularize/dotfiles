@@ -42,17 +42,7 @@ builtins.concatLists (
       pkief.material-icon-theme
       vscode-icons-team.vscode-icons
       rendinjast.amoled-black
-      (pkgs.catppuccin-vsc.override {
-        accent = "mauve";
-        boldKeywords = true;
-        italicComments = true;
-        italicKeywords = true;
-        extraBordersEnabled = false;
-        workbenchMode = "flat";
-        bracketMode = "rainbow";
-        colorOverrides = { };
-        customUIColors = { };
-      })
+      catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
     ];
     rust = with extensions; [
@@ -74,7 +64,6 @@ builtins.concatLists (
       redhat.vscode-xml
       redhat.vscode-yaml
       mkhl.direnv
-      spgoding.datapack-language-server
       thenuprojectcontributors.vscode-nushell-lang
       ultram4rine.vscode-choosealicense
       usernamehw.errorlens
@@ -84,7 +73,6 @@ builtins.concatLists (
       formulahendry.auto-rename-tag
       usernamehw.errorlens
       ctcuff.font-preview
-      wakatime.vscode-wakatime
     ];
   }
 )

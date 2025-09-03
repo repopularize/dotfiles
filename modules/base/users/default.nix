@@ -1,1 +1,1 @@
-{ imports = [ ./yusof.nix ]; }
+{ imports = [ ./user.nix ]; }

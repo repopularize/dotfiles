@@ -29,20 +29,7 @@ in
         isDefault = true;
         name = "default";
         id = 0;
-        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-          multi-account-containers
-          firefox-color
-          violentmonkey
-          stylus
-          ublock-origin
-          ublacklist
-          darkreader
-          proton-pass
-          decentraleyes
-          clearurls
-          youtube-shorts-block
-        ];
-
+    
         arkenfox = {
           enable = true;
           "0000".enable = true; # about:config warning disabled

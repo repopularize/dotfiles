@@ -9,7 +9,6 @@
       '';
     in
     {
-      inherit extraConfig;
       user = {
         inherit extraConfig;
       };

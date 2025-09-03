@@ -20,7 +20,7 @@ in
 
     users = mkOption {
       type = with types; listOf str;
-      default = [ "yusof" ];
+      default = [ "user" ];
       description = ''
         A list of users that you wish to declare as your non-system users. The first username
         in the list will be treated as your main user unless `modules.system.mainUser` is set.

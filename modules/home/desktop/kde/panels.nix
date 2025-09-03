@@ -8,13 +8,12 @@
           name = "org.kde.plasma.icontasks";
           config = {
             launchers = [
-              "preferred://browser"
-              "applications:org.kde.konsole.desktop"
+              "applications:chromium-browser.desktop"
+              "applications:Alacritty.desktop"
               "applications:org.kde.dolphin.desktop"
               "applications:equibop.desktop"
               "applications:code.desktop"
               "applications:com.obsproject.Studio.desktop"
-              "applications:spotify.desktop"
             ];
           };
         }

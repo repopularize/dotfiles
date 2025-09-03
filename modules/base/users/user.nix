@@ -7,8 +7,8 @@ let
   inherit (lib) ifTheyExist;
 in
 {
-  users.users.yusof = {
-    home = "/home/yusof";
+  users.users.user = {
+    home = "/home/user";
     shell = pkgs.nushell;
     isNormalUser = true;
     extraGroups =

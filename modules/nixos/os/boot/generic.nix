@@ -22,6 +22,7 @@ in
     loader = {
       # we need to allow installation to modify EFI variables
       efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot";
     };
 
     # initrd and kernel tweaks

@@ -1,6 +1,6 @@
 {
     "name": "astal",
     "dependencies": {
-        "astal": "/home/yusof/.local/share/ags"
+        "astal": "/home/user/.local/share/ags"
     }
 }

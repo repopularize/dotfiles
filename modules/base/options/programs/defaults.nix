@@ -29,7 +29,7 @@ in
         "chromium"
         "firefox"
       ];
-      default = "firefox";
+      default = "chromium";
     };
 
     editor = mkOption {

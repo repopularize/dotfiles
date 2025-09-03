@@ -35,13 +35,13 @@ in
       allowed-users = [
         "@wheel"
         "root"
-        "yusof"
+        "user"
       ];
       # only allow sudo users to manage the nix store
       trusted-users = [
         "@wheel"
         "root"
-        "yusof"
+        "user"
       ];
       # let the system decide the number of max jobs
       max-jobs = "auto";
