@@ -1,8 +1,7 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
+{ lib
+, pkgs
+, config
+, ...
 }:
 let
   inherit (lib) mkIf isModernShell;
@@ -16,4 +15,6 @@ in
       eval "$(${lib.getExe pkgs.starship} init bash)"
     '';
   };
+
+  environment.systemPackages = [ pkgs.comma ];
 }
