@@ -1,8 +1,7 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
+{ lib
+, pkgs
+, config
+, ...
 }:
 let
   browser = [
@@ -44,7 +43,7 @@ let
     (lib.genAttrs code (_: [ "code.desktop" ]))
     // (lib.genAttrs media (_: [ "mpv.desktop" ]))
     // (lib.genAttrs images (_: [ "okular.desktop" ]))
-    // (lib.genAttrs browser (_: [ "firefox.desktop" ]))
+    // (lib.genAttrs browser (_: [ "chromium-browser.desktop" ]))
     // {
       "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       "inode/directory" = [ "dolphin.desktop" ];
