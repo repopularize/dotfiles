@@ -11,7 +11,7 @@
               "applications:chromium-browser.desktop"
               "applications:Alacritty.desktop"
               "applications:org.kde.dolphin.desktop"
-              "applications:equibop.desktop"
+              "applications:vesktop.desktop"
               "applications:code.desktop"
               "applications:com.obsproject.Studio.desktop"
             ];
