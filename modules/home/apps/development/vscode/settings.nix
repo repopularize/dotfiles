@@ -24,6 +24,7 @@
   "discord.lowerDetailsIdling" = "😪💤";
   "discord.lowerDetailsEditing" = "🪐 {workspace}";
   "discord.detailsIdling" = "😪💤";
+  "editor.mouseWheelZoom" = true;
   "vscord.status.image.small" = "Code";
   "nix.enableLanguageServer" = true;
   "nix.serverPath" = "${lib.getExe pkgs.nil}";
